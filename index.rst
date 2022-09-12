@@ -27,3 +27,16 @@ See the `reStructuredText Style Guide <https://developer.lsst.io/restructuredtex
 .. 
 .. .. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
 ..    :style: lsst_aa
+
+Adhere to our pedagogical principles
+====================================
+
+CET Jupyter Notebooks should be all of the following:
+
+1. Inclusive. All notebook developers should keep research inclusion in mind as our primary goal: providing equitable access to the LSST data products for a diverse community.
+
+Follow our format, style and code standards
+===========================================
+
+1. Template Notebook. Use this template notebook in the rubin-dp0 GitHub Organization's cet-dev repository as a starting point.  The template contains an example of the header and the mandatory first section, as described below.
+
