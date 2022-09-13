@@ -174,6 +174,7 @@ Install the required packages
 Install the required packages locally in your RSP@IDF home directory:
 
   pip install --user flake8-nb
+  
   pip install --user pycodestyle_magic
   
 Create a configureation file
@@ -181,12 +182,15 @@ Create a configureation file
 Create a configuration file for flake8. These instructions use emacs but it doesn't matter so long as the end result is correctly-named file with the right contents. From the command line in your home directory, execute:
 
   touch .config/flake8
+  
   emacs .config/flake8
   
 Then copy-paste the following into the opened config file:
   
   [flake8]
+  
   max-line-length = 99
+  
   ignore = E133, E226, E228, N802, N803, N806, N812, N813, N815, N816, W503
   
 Use x-s x-c to save and exit emacs.
@@ -196,8 +200,11 @@ While developing a notebook.
 While developing a notebook, have the following 'magic' commands as the first code cell:
 
   %load_ext pycodestyle_magic
+  
   %flake8_on
+  
   import logging
+  
   logging.getLogger("flake8").setLevel(logging.FATAL)
   
 Whenever you execute a cell, it will use flake8 to check for adherence to the PEP8 coding style guide, and report violations. Fix them as you go. Once you're done with the entire notebook you can remove that cell with the magic commands. 
