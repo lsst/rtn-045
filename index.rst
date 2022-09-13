@@ -70,6 +70,9 @@ Template Notebook.
 ------------------
 Use this `template notebook <https://github.com/rubin-dp0/cet-dev/blob/main/template.ipynb>`_ in the rubin-dp0 GitHub Organization's cet-dev repository as a starting point.  The template contains an example of the header and the mandatory first section, as described below.
 
+Format and Style.
+-----------------
+
 Header.
 ^^^^^^^
 Logo.
