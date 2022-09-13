@@ -114,8 +114,4 @@ Color Palette.
 """"""""""""""
 To be colorblind-friendly, plots should use the matplotlib color tables viridis or `cividis <https://matplotlib.org/stable/users/prev_whats_new/whats_new_2.2.html#cividis-colormap>`_ (or a greyscale), or the new `tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_ (see important statement below). 
 
-.. code-block:: <language>
-   :name: optional-label
-   :emphasize-lines: <optional lines to highlight>
 
-   <code>
