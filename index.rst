@@ -134,9 +134,13 @@ Image Orientation.
 If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transofrmations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_. Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
 
   deepCoadd = butler.get('deepCoadd', dataId=dataId)
+  
   deepCoadd_bbox = butler.get('deepCoadd_calexp.bbox', dataId=dataId)
+  
   deepCoadd_wcs = butler.get('deepCoadd_calexp.wcs', dataId=dataId)
+  
   deepCoadd_WCSfMd = WCS(deepCoadd_wcs.getFitsMetadata())
+  
   deepCoadd_extent = (deepCoadd_bbox.beginX, deepCoadd_bbox.endX, deepCoadd_bbox.beginY, deepCoadd_bbox.endY)
   
   plt.subplot(projection=deepCoadd_WCSfMd
