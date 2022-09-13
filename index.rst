@@ -101,8 +101,8 @@ Use section titles that actively describe what is being done, e.g., "2.2 Create 
 Mandatory first section: "1. Introduction".
 """""""""""""""""""""""""""""""""""""""""""
 It should provide a brief narrative about this notebook, e.g., "This notebook will teach the user...". It should also cite or link to any external information or documentation, and cross-reference to other notebooks.
-In the first section, the first sub-section should always be "1.1 Package Imports". It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.  All package imports should be done in the first code cell.
-In the first section, the sub-section should be "1.2 Define Functions and Parameters", if applicable.  Globally defined utility functions, plotting defaults, or constants should be here.  It is OK to rename the subsection to be more specific to the notebook, and/or to use sub-sub-sections like "1.2.1 Define global cosmological parameter values" or "1.2.2 Define a function to make an image cutout". It is OK to remove this sub-section if it is not being used.
+- In the first section, the first sub-section should always be "1.1 Package Imports". It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.  All package imports should be done in the first code cell.
+- In the first section, the sub-section should be "1.2 Define Functions and Parameters", if applicable.  Globally defined utility functions, plotting defaults, or constants should be here.  It is OK to rename the subsection to be more specific to the notebook, and/or to use sub-sub-sections like "1.2.1 Define global cosmological parameter values" or "1.2.2 Define a function to make an image cutout". It is OK to remove this sub-section if it is not being used.
 
 Table Data Format.
 ^^^^^^^^^^^^^^^^^^
