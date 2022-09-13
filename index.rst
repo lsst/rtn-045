@@ -63,8 +63,8 @@ Properly Credited.
 Appropriate acknowledgements should be provided, in order to (1) give credit to individuals whose notebooks were used as examples and (2) set a precident of prioritizing credits in an openly collaborative environment.
 
 
-Follow our format, style and code standards
-===========================================
+Follow our format, style and code standards.
+============================================
 
 Template Notebook. 
 ------------------
