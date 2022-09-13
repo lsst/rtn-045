@@ -144,6 +144,7 @@ If using a WCS: east left, north up.  If only using pixels, (0,0) should be lowe
   deepCoadd_extent = (deepCoadd_bbox.beginX, deepCoadd_bbox.endX, deepCoadd_bbox.beginY, deepCoadd_bbox.endY)
   
   plt.subplot(projection=deepCoadd_WCSfMd
+  
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
   
 Remove Figures.
