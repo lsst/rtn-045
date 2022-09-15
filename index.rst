@@ -10,13 +10,6 @@
 
    **This technote is a work-in-progress.**
 
-Abstract.
-=========
-
-Principles, guidelines, conventions, formatting style, and workflow for tutorials developed by the Community Engagement Team (CET).
-
-
-See the `reStructuredText Style Guide <https://developer.lsst.io/restructuredtext/style.html>`__ to learn how to create sections, links, images, tables, equations, and more.
 
 .. Make in-text citations with: :cite:`bibkey`.
 .. Uncomment to use citations
@@ -83,15 +76,15 @@ Second-Fifth Markdown Cells.
 """"""""""""""""""""""""""""
 The second, third, fourth, and fifth markdown cells should contain a very brief description, a list of core skills, a list of the LSST data products, and a list of the python packages used by the notebook.  The contents of these four cells will be used to generate a table of notebook metadata in the README.md file for the repository.
 
-  Note regarding listing package imports - List the packages being taught first (e.g., afwDisplay for a notebook about diaplaying images), and then supporting packages (e.g., lsst.daf.butler for a notebook about displaying images). OK to leave out of this list basic support packages like os, glob, numpy, matplotlib.
+  Note regarding listing package imports - List the packages being taught first (e.g., afwDisplay for a notebook about displaying images), and then supporting packages (e.g., lsst.daf.butler for a notebook about displaying images). OK to leave out of this list basic support packages like os, glob, numpy, matplotlib.
 
 Sixth and Seventh Markdown Cells.
 """""""""""""""""""""""""""""""""
-The sixth and seventh markdown cells should contain the credits and acknowledgements, and inforamtion about where users got to get support.  
+The sixth and seventh markdown cells should contain the credits and acknowledgements, and inforamtion about where users go to get support.  
 
 Use of Template Notebook.
 """""""""""""""""""""""""
-Use the template notebook to ensure the same format (and wording, where possible) is used for all notebooks, as this might help us to implement the metadata stetch goal.
+Use the template notebook to ensure the same format (and wording, where possible) is used for all notebooks, as this might help us to implement the metadata stretch goal.
 
 Section Structure.
 ^^^^^^^^^^^^^^^^^^
@@ -127,11 +120,11 @@ To be colorblind-friendly, plots should use the matplotlib color tables viridis 
   
   For the LSST filter set ugrizy, adopt the same colors as DES, which were chosen to be colorblind-friendly:
   
-  plot_filter_colors = {'u' : '#56b4e9', 'g' : '#008060', 'r' : '#ff4000', 'i' : '#850000', 'z' : '#660cc', 'y' : '#000000'}
+  plot_filter_colors = {'u' : '#56b4e9', 'g' : '#008060', 'r' : '#ff4000', 'i' : '#850000', 'z' : '#6600cc', 'y' : '#000000'}
   
 Image Orientation.
 """"""""""""""""""
-If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transofrmations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_. Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
+If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transformations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_. Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
 
   deepCoadd = butler.get('deepCoadd', dataId=dataId)
   
@@ -143,7 +136,7 @@ If using a WCS: east left, north up.  If only using pixels, (0,0) should be lowe
   
   deepCoadd_extent = (deepCoadd_bbox.beginX, deepCoadd_bbox.endX, deepCoadd_bbox.beginY, deepCoadd_bbox.endY)
   
-  plt.subplot(projection=deepCoadd_WCSfMd
+  plt.subplot(projection=deepCoadd_WCSfMd)
   
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
   
@@ -153,7 +146,7 @@ To reduce the memory footprint of a notebook, remove figures once they're no lon
 
 "Assert" Statements.
 ^^^^^^^^^^^^^^^^^^^^
-Where essential, or where a very specific value is expected, use "assert" statements. E.g., check that service objects like TAB are not `None` or `null` before moving on and using that instance, or check that values meet expectations (e.g., total rows returned from a query).  However, take care not to use when, e.g., querying dynamic (prompt) datasets. Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
+Where essential, or where a very specific value is expected, use "assert" statements. E.g., check that service objects like TAP are not `None` or `null` before moving on and using that instance, or check that values meet expectations (e.g., total rows returned from a query).  However, take care not to use when, e.g., querying dynamic (prompt) datasets. Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
 
 Warnings.
 ^^^^^^^^^
@@ -177,7 +170,7 @@ Install the required packages locally in your RSP@IDF home directory:
   
   pip install --user pycodestyle_magic
   
-Create a configureation file
+Create a configuration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Create a configuration file for flake8. These instructions use emacs but it doesn't matter so long as the end result is correctly-named file with the right contents. From the command line in your home directory, execute:
 
@@ -191,7 +184,7 @@ Then copy-paste the following into the opened config file:
   
   max-line-length = 99
   
-  ignore = E133, E226, E228, N802, N803, N806, N812, N813, N815, N816, W503
+  ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
   
 Use x-s x-c to save and exit emacs.
 
@@ -224,7 +217,7 @@ The following applies when creating or updating notebooks in the `tutorial-noteb
 
 Branch.
 -------
-Develop new notebooks, or update existin ones, in a new branch (from main, not from prod) named for the associated Jira ticket (e.g., tickets/PREOPS-12345) or with the username/task convention (e.g., u/melissag/makeNB10). Only update one notebook per ticket branch, unless the ticket is to make similar updates to all notebooks (e.g., when bumping the RSP's recommended image). Update the README file when appropriate.
+Develop new notebooks, or update existing ones, in a new branch (from main, not from prod) named for the associated Jira ticket (e.g., tickets/PREOPS-12345) or with the username/task convention (e.g., u/melissag/makeNB10). Only update one notebook per ticket branch, unless the ticket is to make similar updates to all notebooks (e.g., when bumping the RSP's recommended image). Update the README file when appropriate.
 
 Commit and Push.
 ----------------
@@ -232,7 +225,7 @@ Always restart the kernel and clear all outputs before saving, committing, and p
 
 Pull Request.
 -------------
-When the notebook is complete, and at least two weeks before the planned deployment data wherever possible, open a pull request to merge the ticket branch into the main branch (*not* to prod). 
+When the notebook is complete, and at least two weeks before the planned deployment date wherever possible, open a pull request to merge the ticket branch into the main branch (*not* to prod). 
 
 Review.
 -------
@@ -248,7 +241,7 @@ After the reviewers have approved the pull request, rebase and merge your ticket
 
 Release.
 --------
-To "release" the new version of main to prod branch (i.e., to update all RSP users' tutorial notebooks), open a new pull request from the main to the prod (production) branch, and rebase and merge. Do not squash commits, in order to keep prod and main with the same commit history. This stage does not need another review. Usually Melissa or Matthew handle this. The very last step is to do a final PR of prod->main, rebase and merge, to ensure main is now 'up to date' with prod, and avoid future conflics. 
+To "release" the new version of main to prod branch (i.e., to update all RSP users' tutorial notebooks), open a new pull request from the main to the prod (production) branch, and rebase and merge. Do not squash commits, in order to keep prod and main with the same commit history. This stage does not need another review. Usually Melissa or Matthew handle this. The very last step is to do a final PR of prod->main, rebase and merge, to ensure main is now 'up to date' with prod, and avoid future conflicts. 
 
 Coordinate.
 -----------
@@ -310,7 +303,7 @@ Improve notebooks' accessibility to non-English speakers by finding and implemen
 
 Garbage Collection.
 -------------------
-Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures. Do not rely on the 'del' command for this.
+Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures. Do not rely on the "del" command for this.
 
 Functions.
 ----------
@@ -327,7 +320,7 @@ Making the tutorial-notebooks directory read-only.
 --------------------------------------------------
 As discussed in LSSTC Slack space #ops-data-previews: `https://lsstc.slack.com/archives/C015B006ZAB/p1661200755846119 <https://lsstc.slack.com/archives/C015B006ZAB/p1661200755846119>`_ .
 
-After identify migration at the IDF (planned for fall 2022), the notebooks/tutorial-notebooks directory will be read-only as a default, but since the directory is owned by the user, they can change the permissions to be writeable. The README.md file and relevant documentation will be updated by the CET at that time, and messaging sent to delegates, about the change in this directory, with a recommendation to leave it as read-only. The RSP team will adjust the system such that, if the user's "notebooks/tutorial-notebooks/" directory is deleted to be not in a clean state (or maybe just if the directory permission have bene changed, if that's and easier test), then the following file is added.
+After identity migration at the IDF (planned for fall 2022), the notebooks/tutorial-notebooks directory will be read-only as a default, but since the directory is owned by the user, they can change the permissions to be writeable. The README.md file and relevant documentation will be updated by the CET at that time, and messaging sent to delegates, about the change in this directory, with a recommendation to leave it as read-only. The RSP team will adjust the system such that, if the user's "notebooks/tutorial-notebooks/" directory is deleted to be not in a clean state (or maybe just if the directory permission have bene changed, if that's and easier test), then the following file is added.
 
 00_WARNING_README.md
 
