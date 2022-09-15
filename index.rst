@@ -60,7 +60,7 @@ Beginner and intermediate notebooks should attempt to provide the names of more 
 
 Properly Credited.
 ------------------
-Appropriate acknowledgements should be provided, in order to (1) give credit to individuals whose notebooks were used as examples and (2) set a precident of prioritizing credits in an openly collaborative environment.
+Appropriate acknowledgements should be provided, in order to (1) give credit to individuals whose notebooks were used as examples and (2) set a precedent of prioritizing credits in an openly collaborative environment.
 
 
 Follow our format, style and code standards.
