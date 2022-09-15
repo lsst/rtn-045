@@ -124,7 +124,7 @@ To be colorblind-friendly, plots should use the matplotlib color tables viridis 
   
 Image Orientation.
 """"""""""""""""""
-If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transformations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_. Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
+If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transformations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_ Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
 
   deepCoadd = butler.get('deepCoadd', dataId=dataId)
   
