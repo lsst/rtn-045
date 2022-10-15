@@ -241,7 +241,7 @@ After the reviewers have approved the pull request, rebase and merge your ticket
 
 Release.
 --------
-To "release" the new version of main to prod branch (i.e., to update all RSP users' tutorial notebooks), open a new pull request from the main to the prod (production) branch, and rebase and merge. Do not squash commits, in order to keep prod and main with the same commit history. This stage does not need another review. Usually Melissa or Matthew handle this. The very last step is to do a final PR of prod->main, rebase and merge, to ensure main is now 'up to date' with prod, and avoid future conflicts. 
+To "release" the new version of main to prod branch (i.e., to update all RSP users' tutorial notebooks), ask Melissa or Matthew to handle it. This stage does not need another review. *Delete current prod-prior-to-rebranch. Rename prod to prod-prior-to-rebranch. Then create new prod branch from main. Doing it this way avoids weird git issues that cause conflicts in main-->prod merges.* 
 
 Coordinate.
 -----------
@@ -280,7 +280,7 @@ Close the loop with DM and report on their original ticket that CET is ready to 
 
 PR to prod.
 -----------
-*(Use rebase and merge (do not squash), as in 3.7 above. Do the merge during Patch Thursday. Then immediately do a PR prod->main to avoid future issues.)*
+*Delete current prod-prior-to-rebranch. Rename prod to prod-prior-to-rebranch. Then create new prod branch from main. Doing it this way avoids weird git issues that cause conflicts in main-->prod merges.*
 
 Close PREOPS Ticket.
 --------------------
