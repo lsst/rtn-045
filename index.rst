@@ -114,17 +114,25 @@ Color Palette.
 """"""""""""""
 To be colorblind-friendly, plots should use the matplotlib color tables viridis or `cividis <https://matplotlib.org/stable/users/prev_whats_new/whats_new_2.2.html#cividis-colormap>`_ (or a greyscale), or the new `tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_ (see important statement below). 
 
+
+:: 
+
   import matplotlib.pyplot as plt
-  
   plt.style.use('tableau-colorblind10')
-  
-  For the LSST filter set ugrizy, adopt the same colors as DES, which were chosen to be colorblind-friendly:
-  
+
+
+For the LSST filter set ugrizy, adopt the same colors as DES, which were chosen to be colorblind-friendly: 
+
+::
+
   plot_filter_colors = {'u' : '#56b4e9', 'g' : '#008060', 'r' : '#ff4000', 'i' : '#850000', 'z' : '#6600cc', 'y' : '#000000'}
-  
+
+
 Image Orientation.
 """"""""""""""""""
 If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transformations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_ Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
+
+::
 
   deepCoadd = butler.get('deepCoadd', dataId=dataId)
   
@@ -139,7 +147,8 @@ If using a WCS: east left, north up.  If only using pixels, (0,0) should be lowe
   plt.subplot(projection=deepCoadd_WCSfMd)
   
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
-  
+
+
 Remove Figures.
 """""""""""""""
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.  See the DP0.1 Notebook 03_Image_Display_and_Manipulation.ipynb.
@@ -152,8 +161,11 @@ Warnings.
 ^^^^^^^^^
 If a code cell consistently produces a warning which is known and not a cause for worry, consider adding a warning exception in Section 1.1 (see below) or including a markdown text to let the user know that the warning is known and to not report it.
 
+::
+
   warnings.simplefilter("ignore", category=UserWarning)
-  
+
+
 Code Cell Comments.
 ^^^^^^^^^^^^^^^^^^^
 Keep comments within a code cell brief and on a separate single line.  Use of code-cell comments should be limited, and markdown cells are the preferred way to provide descriptive text.
@@ -166,31 +178,42 @@ Install the required packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install the required packages locally in your RSP@IDF home directory:
 
+::
+
   pip install --user flake8-nb
   
   pip install --user pycodestyle_magic
-  
+
+
 Create a configuration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Create a configuration file for flake8. These instructions use emacs but it doesn't matter so long as the end result is correctly-named file with the right contents. From the command line in your home directory, execute:
 
+::
+
   touch .config/flake8
   
   emacs .config/flake8
-  
+
+
 Then copy-paste the following into the opened config file:
-  
+
+::
+
   [flake8]
   
   max-line-length = 99
   
   ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
+
   
 Use x-s x-c to save and exit emacs.
 
 While developing a notebook.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 While developing a notebook, have the following 'magic' commands as the first code cell:
+
+::
 
   %load_ext pycodestyle_magic
   
@@ -199,15 +222,19 @@ While developing a notebook, have the following 'magic' commands as the first co
   import logging
   
   logging.getLogger("flake8").setLevel(logging.FATAL)
-  
+
+
 Whenever you execute a cell, it will use flake8 to check for adherence to the PEP8 coding style guide, and report violations. Fix them as you go. Once you're done with the entire notebook you can remove that cell with the magic commands. 
 
 When the notebook is complete.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When the notebook is complete, from the command line in the notebook's directory execute:
 
+::
+
   flake8-nb notebook_name.ipynb
-  
+
+
 This will give you a final check of any violations with PEP8. This will catch things that can be missed line-by-line, such as packages that are imported but never used.  
 
 Comply with out GitHub branch, merge, and review policy.
