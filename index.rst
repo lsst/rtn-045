@@ -1,4 +1,4 @@
-:tocdepth: 3
+:tocdepth: 2
 
 .. sectnum::
 
@@ -74,9 +74,6 @@ Use the `template notebook <https://github.com/rubin-dp0/cet-dev/blob/main/templ
 Organization's `cet-dev` repository as a starting point.
 The template contains an example of the header and the mandatory first section described below.
 
-Format and style
-----------------
-
 Header
 ^^^^^^
 
@@ -116,16 +113,27 @@ and/or to use sub-sub-sections like "1.2.1 Define global cosmological parameter 
 "1.2.2 Define a function to make an image cutout".
 It is OK to remove this sub-section if it is not being used.
 
-Table Data Format.
-^^^^^^^^^^^^^^^^^^
-Results from a TAP service search are best displayed as an astropy table using .to_table(), or as a pandas dataframe using .to_table().to_pandas().  However, do not use the .to_table().show_in_notebook() method.  This can cause issues in the RSP JupyterLab environment that make the notebook hang indefinitely.
 
-Plotting.
-^^^^^^^^^
-Color Palette.
-""""""""""""""
-To be colorblind-friendly, plots should use the matplotlib color tables viridis or `cividis <https://matplotlib.org/stable/users/prev_whats_new/whats_new_2.2.html#cividis-colormap>`_ (or a greyscale), or the new `tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_ (see important statement below). 
+Tables and plots
+----------------
 
+Table data format
+^^^^^^^^^^^^^^^^^
+
+Results from a TAP service search are best displayed as an astropy table using .to_table(),
+or as a pandas dataframe using .to_table().to_pandas().
+However, do not use the .to_table().show_in_notebook() method.
+This can cause issues in the RSP JupyterLab environment that make the notebook hang indefinitely.
+
+Plots
+^^^^^
+
+Color palette
+"""""""""""""
+
+To be colorblind-friendly, plots should use the matplotlib color tables viridis or
+`cividis <https://matplotlib.org/stable/users/prev_whats_new/whats_new_2.2.html#cividis-colormap>`_ (or a greyscale),
+or the new `tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_. 
 
 :: 
 
@@ -137,74 +145,110 @@ For the LSST filter set ugrizy, adopt the same colors as DES, which were chosen 
 
 ::
 
-  plot_filter_colors = {'u' : '#56b4e9', 'g' : '#008060', 'r' : '#ff4000', 'i' : '#850000', 'z' : '#6600cc', 'y' : '#000000'}
+  plot_filter_colors = {'u': '#56b4e9', 'g': '#008060', 'r': '#ff4000', 'i': '#850000', 'z': '#6600cc', 'y': '#000000'}
 
 
-Image Orientation.
-""""""""""""""""""
-If using a WCS: east left, north up.  If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.  When using other plotting packages, transformations might be needed in order to match the afwDisplay default.  See the LSST Science Pipelines documentation about `Image Indexing. <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_ Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, let's use it all the time:
+Image orientation
+"""""""""""""""""
+
+If using a WCS, display east left, north up.
+If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.
+
+When using other plotting packages, transformations might be needed in order to match the afwDisplay default.
+See the LSST Science Pipelines documentation about `Image Indexing <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_.
+
+Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, use it all the time:
 
 ::
 
   deepCoadd = butler.get('deepCoadd', dataId=dataId)
-  
   deepCoadd_bbox = butler.get('deepCoadd_calexp.bbox', dataId=dataId)
-  
   deepCoadd_wcs = butler.get('deepCoadd_calexp.wcs', dataId=dataId)
-  
   deepCoadd_WCSfMd = WCS(deepCoadd_wcs.getFitsMetadata())
-  
   deepCoadd_extent = (deepCoadd_bbox.beginX, deepCoadd_bbox.endX, deepCoadd_bbox.beginY, deepCoadd_bbox.endY)
-  
   plt.subplot(projection=deepCoadd_WCSfMd)
-  
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
 
 
-Remove Figures.
-"""""""""""""""
-To reduce the memory footprint of a notebook, remove figures once they're no longer needed.  See the DP0.1 Notebook 03_Image_Display_and_Manipulation.ipynb.
+Clearing memory
+---------------
 
-"Assert" Statements.
+These are optional methods for keeping memory use manageable in notebooks which are, e.g., demonstrating
+data visualization techniques with big datasets.
+
+Remove large figures
 ^^^^^^^^^^^^^^^^^^^^
-Where essential, or where a very specific value is expected, use "assert" statements. E.g., check that service objects like TAP are not `None` or `null` before moving on and using that instance, or check that values meet expectations (e.g., total rows returned from a query).  However, take care not to use when, e.g., querying dynamic (prompt) datasets. Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
 
-Warnings.
-^^^^^^^^^
-If a code cell consistently produces a warning which is known and not a cause for worry, consider adding a warning exception in Section 1.1 (see below) or including a markdown text to let the user know that the warning is known and to not report it.
+To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
+See the `remove_figure` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
+
+Delete arrays
+^^^^^^^^^^^^^
+
+_A method for clearing memory of, for example, large arrays that are not going to be used further on in the notebook is in development._
+
+
+Assert statements
+-----------------
+
+Where essential, or where a very specific value is expected, the `assert` command can be used to demonstrate to users that a condition is true.
+
+For example, `assert` statements can be used to confirm that service objects like TAP are not `None` or `null` before moving on and using that instance,
+or to check that values meet expectations (e.g., total rows returned from a query).
+
+However, take care not to use `assert` statements when, e.g., querying dynamic (prompt) datasets.
+Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
+
+
+Known warnings
+--------------
+
+If a code cell produces a warning which is known, the preferred method to ignore warnings is to add a markdown cell,
+_before_ the code cell which produces the warning, to tell the user it is OK to ignore.
+
+_The appropriate use-cases for ignoring categories of warnings (below) is still under consideration._
+This is not preferred because ignore categories of warnings can allow real issues to go unnoticed.
 
 ::
 
   warnings.simplefilter("ignore", category=UserWarning)
 
 
-Code Cell Comments.
-^^^^^^^^^^^^^^^^^^^
-Keep comments within a code cell brief and on a separate single line.  Use of code-cell comments should be limited, and markdown cells are the preferred way to provide descriptive text.
+Code cell comments
+------------------
 
-Code Standards.
----------------
-Use flake8 to ensure notebook code conforms to codebase style `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ , with a few exceptions. 
+Avoid using comments within a code cell as documentation.
+Markdown cells are the preferred way to provide descriptive text.
 
-Install the required packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Install the required packages locally in your RSP@IDF home directory:
+
+Code style standard
+-------------------
+
+Use `flake8` to ensure notebook code conforms to codebase style `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ , with a few exceptions. 
+
+Notebook tutorial developers must install the following packages locally in their home directory:
 
 ::
 
   pip install --user flake8-nb
-  
   pip install --user pycodestyle_magic
 
+It is known that the most up-to-date version of flake8 has some issues.
+If errors are encountered such as "AttributeError: '_io.StringIO' object has no attribute 'buffer'", 
+force-downgrade `flake8` from vesion 4.0.1 to 3.9.2 with `pip install flake8=3.9.2`.
 
-Create a configuration file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Create a configuration file for flake8. These instructions use emacs but it doesn't matter so long as the end result is correctly-named file with the right contents. From the command line in your home directory, execute:
+
+The flake8 config file
+^^^^^^^^^^^^^^^^^^^^^^
+
+Create a configuration file for `flake8`.
+
+These instructions use emacs but it doesn’t matter so long as the end result is correctly-named file with the right contents. 
+For example, from the command line in your home directory, execute:
 
 ::
 
   touch .config/flake8
-  
   emacs .config/flake8
 
 
@@ -213,33 +257,32 @@ Then copy-paste the following into the opened config file:
 ::
 
   [flake8]
-  
   max-line-length = 99
-  
   ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
 
-  
-Use x-s x-c to save and exit emacs.
+Use `x-s` then `x-c` to save and exit emacs.
 
-While developing a notebook.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While developing a notebook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 While developing a notebook, have the following 'magic' commands as the first code cell:
 
 ::
 
   %load_ext pycodestyle_magic
-  
   %flake8_on
-  
   import logging
-  
   logging.getLogger("flake8").setLevel(logging.FATAL)
 
+Whenever you execute a cell, it will use `flake8` to check for adherence to the PEP8 coding style guide, and report violations.
+Fix them as you go.
+Once you're done with the entire notebook you can remove that cell with the magic commands. 
 
-Whenever you execute a cell, it will use flake8 to check for adherence to the PEP8 coding style guide, and report violations. Fix them as you go. Once you're done with the entire notebook you can remove that cell with the magic commands. 
 
-When the notebook is complete.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When the notebook is complete
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 When the notebook is complete, from the command line in the notebook's directory execute:
 
 ::
@@ -247,7 +290,9 @@ When the notebook is complete, from the command line in the notebook's directory
   flake8-nb notebook_name.ipynb
 
 
-This will give you a final check of any violations with PEP8. This will catch things that can be missed line-by-line, such as packages that are imported but never used.  
+This will give you a final check of any violations with `PEP8`.
+This will catch things that can be missed line-by-line, such as packages that are imported but never used.  
+
 
 Comply with out GitHub branch, merge, and review policy.
 ========================================================
