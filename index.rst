@@ -215,6 +215,17 @@ This is not preferred because ignore categories of warnings can allow real issue
   warnings.simplefilter("ignore", category=UserWarning)
 
 
+Markdown style
+--------------
+
+Any references to variables used in code cells or any code commands should be in ``monospaced font``.
+
+Use of indented text should be limited to warnings and notices, e.g., ``> **Warning:** the following cell...``. 
+
+*The most appropriate narrative voice for tutorials is still under consideration.*
+Adopt your own style for now.
+
+
 Code cell comments
 ------------------
 
@@ -222,8 +233,8 @@ Avoid using comments within a code cell as documentation.
 Markdown cells are the preferred way to provide descriptive text.
 
 
-Code style standard PEP8
-------------------------
+Code cell style standard PEP8
+-----------------------------
 
 ``PEP8`` is the standard, and ``flake8`` is a tool to ensure compliance with the standards.
 
@@ -432,6 +443,11 @@ Notebook metadata
 -----------------
 
 Embed notebook metadata (e.g., version, skills, packages) in a way that can be scraped and used to auto-generate the `README.md <http://readme.md/>`_ file or a Table of Contents, to emable users to browse notebook contents. 
+
+Narrative voice
+---------------
+
+Adopt a best practice for narrative instructions: should we use terms like "you" or "let's"? Or should a more passive voice be adopted?
 
 Accessibility
 -------------
