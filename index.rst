@@ -71,11 +71,13 @@ Template
 --------
 
 Use the `template notebook <https://github.com/rubin-dp0/cet-dev/blob/main/template.ipynb>`_ in the rubin-dp0 GitHub 
-Organization's `cet-dev` repository as a starting point.
+Organization's ``cet-dev`` repository as a starting point.
 The template contains an example of the header and the mandatory first section described below.
 
 Header
 ^^^^^^
+
+The structure of the header is mandatory.
 
 In the first markdown cell, display the Rubin Observatory logo at upper left.
 To the right of the logo list the contact author, date last verified, version, container size, and targeted learning level.
@@ -89,15 +91,11 @@ The contents of cells two through five are used to generate a table of notebook 
 
 The sixth and seventh markdown cells should contain the credits and acknowledgements, and information about where users go to get support.  
 
-Section structure
-^^^^^^^^^^^^^^^^^
 
-Use numbers for sections, sub-sections, and sub-sub-sections to enable referencing, e.g., "I'm having trouble with the second code cell in Section 2.3."
+First section
+^^^^^^^^^^^^^
 
-Use section titles that actively describe what is being done, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot", so that the auto-generated table of contents is easy to navigate.
-
-Mandatory first section: "1. Introduction"
-""""""""""""""""""""""""""""""""""""""""""
+The structure of the first section is mandatory.
 
 Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
 Cite or link to any external information or documentation, and cross-reference to other notebooks.
@@ -108,10 +106,19 @@ All package imports must be done in the first code cell.
 
 The second sub-section should always be "1.2 Define Functions and Parameters", if applicable.
 Globally defined utility functions, plotting defaults, or constants should be here.
-It is OK to rename the subsection to be more specific to the notebook,
-and/or to use sub-sub-sections like "1.2.1 Define global cosmological parameter values" or
-"1.2.2 Define a function to make an image cutout".
-It is OK to remove this sub-section if it is not being used.
+It is OK to rename the subsection to be more specific to the notebook, and/or to use sub-sub-sections like
+"1.2.1 Define global cosmological parameter values" or "1.2.2 Define a function to make an image cutout".
+It is OK to remove sub-section 1.2 if it is not used.
+
+
+Section structure
+^^^^^^^^^^^^^^^^^
+
+For all sections after the first, use numbers for sections, sub-sections, and sub-sub-sections to enable referencing in support requests,
+e.g., "I'm having trouble with the second code cell in Section 2.3."
+
+Use section titles that actively describe what is being done, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot", so that the auto-generated table of contents is easy to navigate.
+
 
 
 Tables and plots
@@ -120,9 +127,9 @@ Tables and plots
 Table data format
 ^^^^^^^^^^^^^^^^^
 
-Results from a TAP service search are best displayed as an astropy table using .to_table(),
-or as a pandas dataframe using .to_table().to_pandas().
-However, do not use the .to_table().show_in_notebook() method.
+Results from a TAP service search are best displayed as an astropy table using ``.to_table()``,
+or as a pandas dataframe using ``.to_table().to_pandas()``.
+However, do not use the ``.to_table().show_in_notebook()`` method.
 This can cause issues in the RSP JupyterLab environment that make the notebook hang indefinitely.
 
 Plots
@@ -180,23 +187,23 @@ Remove large figures
 ^^^^^^^^^^^^^^^^^^^^
 
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
-See the `remove_figure` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
+See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
 
 Delete arrays
 ^^^^^^^^^^^^^
 
-_A method for clearing memory of, for example, large arrays that are not going to be used further on in the notebook is in development._
+*A method for clearing memory of, for example, large arrays that are not going to be used further on in the notebook is in development.*
 
 
 Assert statements
 -----------------
 
-Where essential, or where a very specific value is expected, the `assert` command can be used to demonstrate to users that a condition is true.
+Where essential, or where a very specific value is expected, the ``assert`` command can be used to demonstrate to users that a condition is true.
 
-For example, `assert` statements can be used to confirm that service objects like TAP are not `None` or `null` before moving on and using that instance,
+For example, ``assert`` statements can be used to confirm that service objects like TAP are not ``None`` or ``null`` before moving on and using that instance,
 or to check that values meet expectations (e.g., total rows returned from a query).
 
-However, take care not to use `assert` statements when, e.g., querying dynamic (prompt) datasets.
+However, take care not to use ``assert`` statements when, e.g., querying dynamic (prompt) datasets.
 Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
 
 
@@ -204,9 +211,9 @@ Known warnings
 --------------
 
 If a code cell produces a warning which is known, the preferred method to ignore warnings is to add a markdown cell,
-_before_ the code cell which produces the warning, to tell the user it is OK to ignore.
+*before* the code cell which produces the warning, to tell the user it is OK to ignore.
 
-_The appropriate use-cases for ignoring categories of warnings (below) is still under consideration._
+*The appropriate use-cases for ignoring categories of warnings (below) is still under consideration.*
 This is not preferred because ignore categories of warnings can allow real issues to go unnoticed.
 
 ::
@@ -221,10 +228,12 @@ Avoid using comments within a code cell as documentation.
 Markdown cells are the preferred way to provide descriptive text.
 
 
-Code style standard
--------------------
+Code style standard PEP8
+------------------------
 
-Use `flake8` to ensure notebook code conforms to codebase style `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ , with a few exceptions. 
+``PEP8`` is the standard, and ``flake8`` is a tool to ensure compliance with the standards.
+
+Use ``flake8`` to ensure notebook code conforms to codebase style `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ , with a few exceptions. 
 
 Notebook tutorial developers must install the following packages locally in their home directory:
 
@@ -235,13 +244,13 @@ Notebook tutorial developers must install the following packages locally in thei
 
 It is known that the most up-to-date version of flake8 has some issues.
 If errors are encountered such as "AttributeError: '_io.StringIO' object has no attribute 'buffer'", 
-force-downgrade `flake8` from vesion 4.0.1 to 3.9.2 with `pip install flake8=3.9.2`.
+force-downgrade ``flake8`` from vesion 4.0.1 to 3.9.2 with ``pip install flake8=3.9.2``.
 
 
 The flake8 config file
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Create a configuration file for `flake8`.
+Create a configuration file for ``flake8``.
 
 These instructions use emacs but it doesn’t matter so long as the end result is correctly-named file with the right contents. 
 For example, from the command line in your home directory, execute:
@@ -260,7 +269,7 @@ Then copy-paste the following into the opened config file:
   max-line-length = 99
   ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
 
-Use `x-s` then `x-c` to save and exit emacs.
+Use ``x-s`` then ``x-c`` to save and exit emacs.
 
 
 While developing a notebook
@@ -275,7 +284,7 @@ While developing a notebook, have the following 'magic' commands as the first co
   import logging
   logging.getLogger("flake8").setLevel(logging.FATAL)
 
-Whenever you execute a cell, it will use `flake8` to check for adherence to the PEP8 coding style guide, and report violations.
+Whenever you execute a cell, it will use ``flake8`` to check for adherence to the ``PEP8`` coding style guide, and report violations.
 Fix them as you go.
 Once you're done with the entire notebook you can remove that cell with the magic commands. 
 
@@ -290,50 +299,73 @@ When the notebook is complete, from the command line in the notebook's directory
   flake8-nb notebook_name.ipynb
 
 
-This will give you a final check of any violations with `PEP8`.
+This will give you a final check of any violations with ``PEP8``.
 This will catch things that can be missed line-by-line, such as packages that are imported but never used.  
 
 
-Comply with out GitHub branch, merge, and review policy.
-========================================================
+GitHub branch, merge, and review policy
+=======================================
 
-The following applies when creating or updating notebooks in the `tutorial-notebooks` repository of the `rubin-dp0` GitHub Org.
+The following applies when creating or updating notebooks in the ``tutorial-notebooks`` repository of the ``rubin-dp0`` GitHub Org.
 
-Branch.
--------
-Develop new notebooks, or update existing ones, in a new branch (from main, not from prod) named for the associated Jira ticket (e.g., tickets/PREOPS-12345) or with the username/task convention (e.g., u/melissag/makeNB10). Only update one notebook per ticket branch, unless the ticket is to make similar updates to all notebooks (e.g., when bumping the RSP's recommended image). Update the README file when appropriate.
+Branch
+------
 
-Commit and Push.
-----------------
+Develop new notebooks, or update existing ones, in a new branch.
+This branch should be named for the corresponding Jira ticket (e.g., "tickets/PREOPS-12345").
+The new branch should be made from ``main``, *not* from ``prod``.
+
+Typically, only update one notebook per ticket branch, unless the ticket is to make similar updates to all notebooks
+(e.g., when bumping the RSP's recommended image).
+
+Update the README file when appropriate.
+
+Commit and push
+---------------
+
 Always restart the kernel and clear all outputs before saving, committing, and pushing changes.
 
-Pull Request.
--------------
-When the notebook is complete, and at least two weeks before the planned deployment date wherever possible, open a pull request to merge the ticket branch into the main branch (*not* to prod). 
+Pull request
+------------
 
-Review.
--------
-Contact one or more Rubin staff members (it need not be a Community Engagement team member) with the appropriate expertise and ask them to review the notebook.  If they agree, assign them as a reviewer on your pull request.
+When the notebook is complete open a pull request to merge the ticket branch into the ``main`` branch (*not* to ``prod``). 
 
-Update.
--------
-After the reviewers have provided comments or requested changes, make new commits to the branch, incorporate as many of their requests as possible. In GitHub, respond to all comments with either a confirmation or an explanation of why the request was not implemented. Contact the reviewers to let them know the pull request now awaits their approval.
-
-Merge.
+Review
 ------
-After the reviewers have approved the pull request, rebase and merge your ticket branch into the main branch (*not* to prod). Resolve all conlicts, if there are any. After the successful merge, delete your branch.
 
-Release.
---------
-To "release" the new version of main to prod branch (i.e., to update all RSP users' tutorial notebooks), ask Melissa or Matthew to handle it. This stage does not need another review. *Delete current prod-prior-to-rebranch. Rename prod to prod-prior-to-rebranch. Then create new prod branch from main. Doing it this way avoids weird git issues that cause conflicts in main-->prod merges.* 
+Contact one or more Rubin staff members (it need not be a Community Engagement team member) with the appropriate expertise
+and ask them to review the notebook.
+If they agree, assign them as a reviewer on your pull request.
 
-Coordinate.
------------
-The number of pushes to the prod branch should be minimized. E.g., if there are a few tickets being completed within a week, coordinate with other notebook developers to collect all changes in the main branch, and then do a single pull request from main to prod.
+Ensure that all of the reviewers comments are addressed.
+Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
+or an explanation of why the request was not implemented. 
 
-Jira Tickets.
--------------
-Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as Done once the brainch has been merged into main.
+Contact the reviewers to let them know the pull request now awaits their approval.
+
+Merge
+-----
+
+After the reviewers have approved the pull request, rebase and merge your ticket branch into the ``main`` branch (*not* to prod).
+Resolve all conlicts, if there are any.
+After the successful merge, delete your branch.
+
+Release to ``prod``
+-------------------
+
+To "release" the new version of ``main`` to ``prod`` branch (i.e., to update all RSP users' tutorial notebooks),
+delete the current ``prod-prior-to-rebranch`` branch, rename ``prod`` as ``prod-prior-to-rebranch``, then create a new ``prod`` branch from ``main``.
+Doing it this way avoids weird git issues that cause conflicts in ``main`` to ``prod`` merges.
+
+The number of pushes to the ``prod`` branch should be minimized.
+E.g., if there are a few tickets being completed within a week, coordinate with other notebook developers to collect all changes in
+the ``main`` branch, and then do a single release to ``prod``.
+
+Jira tickets
+------------
+
+Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
+
 
 Update Notebooks when the RSP's recommended version is bumped.
 ==============================================================
@@ -370,8 +402,10 @@ Close PREOPS Ticket.
 --------------------
 You're done!
 
-Work towards our stretch goals.
-===============================
+
+
+Stretch goals
+=============
 
 Notebook Metadata.
 ------------------
