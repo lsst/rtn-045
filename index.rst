@@ -132,11 +132,8 @@ or as a pandas dataframe using ``.to_table().to_pandas()``.
 However, do not use the ``.to_table().show_in_notebook()`` method.
 This can cause issues in the RSP JupyterLab environment that make the notebook hang indefinitely.
 
-Plots
-^^^^^
-
-Color palette
-"""""""""""""
+Plot color palette
+^^^^^^^^^^^^^^^^^^
 
 To be colorblind-friendly, plots should use the matplotlib color tables viridis or
 `cividis <https://matplotlib.org/stable/users/prev_whats_new/whats_new_2.2.html#cividis-colormap>`_ (or a greyscale),
@@ -156,7 +153,7 @@ For the LSST filter set ugrizy, adopt the same colors as DES, which were chosen 
 
 
 Image orientation
-"""""""""""""""""
+^^^^^^^^^^^^^^^^^
 
 If using a WCS, display east left, north up.
 If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.
@@ -183,14 +180,8 @@ Clearing memory
 These are optional methods for keeping memory use manageable in notebooks which are, e.g., demonstrating
 data visualization techniques with big datasets.
 
-Remove large figures
-^^^^^^^^^^^^^^^^^^^^
-
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
 See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
-
-Delete arrays
-^^^^^^^^^^^^^
 
 *A method for clearing memory of, for example, large arrays that are not going to be used further on in the notebook is in development.*
 
@@ -303,8 +294,8 @@ This will give you a final check of any violations with ``PEP8``.
 This will catch things that can be missed line-by-line, such as packages that are imported but never used.  
 
 
-GitHub branch, merge, and review policy
-=======================================
+Git branch, merge, and review policy
+====================================
 
 The following applies when creating or updating notebooks in the ``tutorial-notebooks`` repository of the ``rubin-dp0`` GitHub Org.
 
@@ -367,86 +358,65 @@ Jira tickets
 Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
 
 
-Update Notebooks when the RSP's recommended version is bumped.
-==============================================================
+Updates to the RSP's recommended version
+========================================
 
-DM Instigates.
---------------
-When the Data Management team is ready to bump the recommended, they will make a DM ticket and confirm that the tutorial-notebooks run to completion with the new version.
+Decisions on whether to bump the recommended image for the RSP are made jointly between the CET and the RSP team.
+Once the decision has been made, a PREOPS ticket will be created and assigned to a CET member.
 
-PREOPS Ticket.
---------------
-*(Open, describe, link to DM ticket, assign, etc.)*
+Bumping the recommended always occurs during a Patch Thursday window.
+The notebook updates should be merged to the ``main`` branch by the day before.
 
-Branch.
--------
-*(From main, NOT from prod. Name it for the PREOPS ticket.)*
+The workflow is to create a new branch of the ``tutorial-notebooks`` repository from the ``main`` branch,
+test all of the notebooks with the new version, and make updates as needed.
 
-Update NBs.
------------
-*(Login to RSP selecting the weekly that will become the recommended. Update notebook headers etc. Execute all notebooks and check for any warnings. Address warnings in text of NB (or remove text that addresses warnings which no longer appear). Make sure all NBs are cleared (unexecuted) in commit. Discuss with CET or the NB's contact author if any big changes are needed (DM will have verified that all notebooks run, and they generally do not want big changes to occur in these version bumps).)*
+Do not suppress warnings while testing.
+It is not necessary to use the ``flake8`` 'magic' commands while testing, unless significant changes to the code are required.
 
-PR to main.
------------
-*(Use rebase and merge (do not squash), as in 3.6 above. No need for a review, as it should only be small changes to the header & text. Delete the PREOPS-named ticket branch.)*
+At minimum, the header will have to be updated with a new date and verified version.
+Ensure that all notebooks are cleared before committing new versions.
 
-Confirm with DM. 
-----------------
-Close the loop with DM and report on their original ticket that CET is ready to PR main -> prod during Patch Thursday after the recommended is updated.
+When the updates are complete, use a new pull request to merge the branch into ``main``. 
+A review is not typically needed at this stage.
 
-PR to prod.
------------
-*Delete current prod-prior-to-rebranch. Rename prod to prod-prior-to-rebranch. Then create new prod branch from main. Doing it this way avoids weird git issues that cause conflicts in main-->prod merges.*
+During the Patch Thursday window, after the recommended has been bumped, release to ``prod`` following the steps above.
 
-Close PREOPS Ticket.
---------------------
-You're done!
-
+Remember to set the PREOPS ticket to done.
 
 
 Stretch goals
 =============
 
-Notebook Metadata.
-------------------
+Work is ongoing in these areas.
+
+Notebook metadata
+-----------------
+
 Embed notebook metadata (e.g., version, skills, packages) in a way that can be scraped and used to auto-generate the `README.md <http://readme.md/>`_ file or a Table of Contents, to emable users to browse notebook contents. 
 
-Accessibility for Visual Disabilities.
---------------------------------------
+Accessibility
+-------------
+
 Improve notebooks' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages.
 
-Translations.
--------------
+Translations
+------------
+
+At minimum, translate any undergraduate-level tutorials into Spanish.
+
 Improve notebooks' accessibility to non-English speakers by finding and implementing automatic translation software.
 
-Garbage Collection.
--------------------
-Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures. Do not rely on the "del" command for this.
+Garbage collection
+------------------
 
-Functions.
-----------
-Create a set of functions for common user activities, like cutouts or image display with a particular scaling (or anything else we find ourselves repeating). Use these in the advanced notebooks, and use the "inspect.getsource' functionality (pass it a function and it will print the source code that defined it) for users to see function code in-NB.
+Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures.
+Do not rely on the ``del`` command for this.
 
-Support users with updates and git issues.
-==========================================
-
-Troubleshooting.
+Recipe functions
 ----------------
-The notebooks/tutorial-notebooks directory is not read-only, and when users change and save files in that directory, it can lead to issues when the prod branch is updated. Troubleshooting those issues is documented at `https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html#troubleshooting-tips <https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html#troubleshooting-tips>`_ , but doing this is still confusing and tiime-consuming for users, especially those new to git.
 
-Making the tutorial-notebooks directory read-only.
---------------------------------------------------
-As discussed in LSSTC Slack space #ops-data-previews: `https://lsstc.slack.com/archives/C015B006ZAB/p1661200755846119 <https://lsstc.slack.com/archives/C015B006ZAB/p1661200755846119>`_ .
+Create a set of functions for common user activities, like cutouts or image display with a particular scaling.
+Use these in the advanced notebooks, and use the "inspect.getsource' functionality for users to display function code in the notebook.
 
-After identity migration at the IDF (planned for fall 2022), the notebooks/tutorial-notebooks directory will be read-only as a default, but since the directory is owned by the user, they can change the permissions to be writeable. The README.md file and relevant documentation will be updated by the CET at that time, and messaging sent to delegates, about the change in this directory, with a recommendation to leave it as read-only. The RSP team will adjust the system such that, if the user's "notebooks/tutorial-notebooks/" directory is deleted to be not in a clean state (or maybe just if the directory permission have bene changed, if that's and easier test), then the following file is added.
 
-00_WARNING_README.md
-
-The presence of this file indicates the user has changed the permissions on this directory from read-only, and that the directory's contents might no longer be in sync with the prod ('production') branch of the tutorial-notebooks repository in the rubin-dp0 GitHub organization [link].
-
-The recommended recovery method is to move this directory to a new location with a new name (or simply delete the directory if you do not need to save your changes), stop your current JupyterLab instance, and then start a new one (i.e., log back into the RSP's Notebook Aspect). An up-to-date read-only version of the tutorial-notebooks directory will appear.  It is recommended to leave that directory as read-only.
-
-Find more detailed options for recovery and use of git here in the documentation [link].
-
-The first link will go to `https://github.com/rubin-dp0/tutorial-notebooks <https://github.com/rubin-dp0/tutorial-notebooks>`_ , and the second link to an updated version of `https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html#troubleshooting-tips <https://dp0-2.lsst.io/data-access-analysis-tools/nb-intro.html#troubleshooting-tips>`_ .
 
