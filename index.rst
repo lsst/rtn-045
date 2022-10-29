@@ -398,8 +398,8 @@ During the Patch Thursday window, after the recommended has been bumped, release
 Remember to set the PREOPS ticket to done.
 
 
-Portal tutorials
-================
+Portal tutorial format and style
+================================
 
 The portal tutorials are written in RST format and are kept within the data release documentation at
 `dp0-2.lsst.io/tutorials-examples <https://dp0-2.lsst.io/tutorials-examples/index.html>`__.
@@ -418,7 +418,7 @@ how the user can make changes to the tutorial test options, or take the next ste
 
 
 Git branch, merge, and review policy for portal tutorials
----------------------------------------------------------
+=========================================================
 
 The following applies when creating or updating tutorials in the ``dp0-2_lsst_io`` repository of the ``lsst`` GitHub Org.
 
