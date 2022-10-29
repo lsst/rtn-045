@@ -6,11 +6,6 @@
 
 .. TODO: Delete the note below before merging new content to the main branch.
 
-.. note::
-
-   **This technote is a work-in-progress.**
-
-
 .. Make in-text citations with: :cite:`bibkey`.
 .. Uncomment to use citations
 .. .. rubric:: References
@@ -18,46 +13,58 @@
 .. .. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
 ..    :style: lsst_aa
 
-Adhere to our pedagogical principles.
-=====================================
+Abstract
+========
 
-CET Jupyter Notebooks should be all of the following:
+A guideline for anyone creating or updating tutorials for the Rubin science community.
+This includes all community-facing demonstrations of how to use the Rubin Science Platform or how to analyze LSST data.
 
-Inclusive. 
+Pedagogical principles
+======================
+
+All tutorial developers should strive to adhere to the following principles.
+
+Inclusivity
+-----------
+
+Avoid offensive or exclusionary language at all times (e.g., violent or ableist terms).
+Ensure jargon and acronyms are defined.
+
+Level-appropriate
+-----------------
+
+Tutorials should clearly identify and teach to their target audience (beginner, intermediate, or advanced).
+
+Skill-focused
+-------------
+
+Tutorials should focus on teaching one or a few new skills or techniques, or providing one scientific demonstration.
+
+Consumable
 ----------
 
-All notebook developers should keep research inclusion in mind as our primary goal: providing equitable access to the LSST data products for a diverse community.
+The user should be able to work through the core contents of a tutorial within 30 minutes.
+Additional examples could be included, but should be clearly labeled as extra steps.
 
-Level-Appropriate.
-------------------
-Notebooks should be clearly identify and teach to their target audience (beginner, intermediate, or advanced).
+Well-documented
+---------------
 
-Skill-Focused.
---------------
-Notebooks should be focused on teaching one or a few new skills or techniques, or providing one scientific demonstration.
-
-Consumable.
------------
-The user should be able to work through the core contents of the notebooks within 30 minutes.  Additional examples could be included, 
-but should be clearly labeled as such.
-
-Well-Documented.
-----------------
-High quality documentation should be provided in the notebook, including narrative descriptions, citations, references, 
+High quality documentation should be provided with the tutorial, including narrative descriptions, citations, references, 
 and external links to, e.g., package documentation.
 
-Cross-Referenced.
+Cross-referenced
+----------------
+
+Tutorials should reference an precursor or advanced tutorials that users should consider as pre-requisit or follow-up resources.
+
+Properly credited
 -----------------
-Intermediate and advanced notebooks should attempt to provide the names of precursory notebooks that teach any basic skills required. 
-Beginner and intermediate notebooks should attempt to provide the names of more advanced notebooks developed in a series on the same topic.
 
-Properly Credited.
-------------------
-Appropriate acknowledgements should be provided, in order to (1) give credit to individuals whose notebooks were used as examples and (2) set a precedent of prioritizing credits in an openly collaborative environment.
+Appropriate acknowledgements should be provided, in order to give credit to individuals whose notebooks were used as examples and to set a precedent of prioritizing credits in an openly collaborative environment.
 
 
-Follow our format, style and code standards.
-============================================
+Format, style and code standards
+================================
 
 Template Notebook. 
 ------------------
