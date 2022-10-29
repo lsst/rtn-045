@@ -119,6 +119,9 @@ e.g., "I'm having trouble with the second code cell in Section 2.3."
 
 Use section titles that actively describe what is being done, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot", so that the auto-generated table of contents is easy to navigate.
 
+It is very common, but not mandatory, to end all notebook tutorials with a section called "Exercises for the learner" with suggestions of
+how the user can make changes to the tutorial test options, or take the next step forward on their own.
+
 
 
 Tables and plots
@@ -294,8 +297,8 @@ This will give you a final check of any violations with ``PEP8``.
 This will catch things that can be missed line-by-line, such as packages that are imported but never used.  
 
 
-Git branch, merge, and review policy
-====================================
+Git branch, merge, and review policy for ``tutorial-notebooks``
+===============================================================
 
 The following applies when creating or updating notebooks in the ``tutorial-notebooks`` repository of the ``rubin-dp0`` GitHub Org.
 
@@ -359,7 +362,7 @@ Remember to make comments in the associated Jira tickets about the major updates
 
 
 Updates to the RSP's recommended version
-========================================
+----------------------------------------
 
 Decisions on whether to bump the recommended image for the RSP are made jointly between the CET and the RSP team.
 Once the decision has been made, a PREOPS ticket will be created and assigned to a CET member.
@@ -384,6 +387,25 @@ During the Patch Thursday window, after the recommended has been bumped, release
 Remember to set the PREOPS ticket to done.
 
 
+Portal tutorials
+================
+
+The portal tutorials are written in RST format and are kept within the data release documentation at
+`dp0-2.lsst.io/tutorials-examples <https://dp0-2.lsst.io/tutorials-examples/index.html>`__.
+
+All portal tutorials should have a descriptive title, and list the contact authors, the date last verified to run, and the targeted learning level.
+A brief narrative introduction to the tutorial should be provided at the top of the page.
+
+The rest of the portal tutorial should be divided into sequentially numbered steps and sub-steps.
+Use descriptive text and screenshots to demonstrate what the user should do.
+Augment screenshots with arrows or circles to guide the users attention as needed.
+
+Ensure that any ADQL is put into code boxes in RST so that users may copy-and-paste whenever possible.
+
+It is very common, but not mandatory, to end all portal tutorials with a section called "Exercises for the learner" with suggestions of
+how the user can make changes to the tutorial test options, or take the next step forward on their own.
+
+
 Stretch goals
 =============
 
@@ -397,17 +419,17 @@ Embed notebook metadata (e.g., version, skills, packages) in a way that can be s
 Accessibility
 -------------
 
-Improve notebooks' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages.
+Improve tutorials' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages.
 
 Translations
 ------------
 
 At minimum, translate any undergraduate-level tutorials into Spanish.
 
-Improve notebooks' accessibility to non-English speakers by finding and implementing automatic translation software.
+Additionally, improve tutorials' accessibility to non-English speakers by finding and implementing automatic translation software.
 
-Garbage collection
-------------------
+Garbage collection in notebooks
+-------------------------------
 
 Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures.
 Do not rely on the ``del`` command for this.
@@ -415,8 +437,10 @@ Do not rely on the ``del`` command for this.
 Recipe functions
 ----------------
 
-Create a set of functions for common user activities, like cutouts or image display with a particular scaling.
-Use these in the advanced notebooks, and use the "inspect.getsource' functionality for users to display function code in the notebook.
+Create recipes for common user activities.
+These could be, e.g., ADQL searches for the portal, code snippets for the command line, or python modules that can be imported.
+
+When these are used in the advanced notebooks, also demonstrate use of the ``inspect.getsource`` functionality for users to display function code.
 
 
 
