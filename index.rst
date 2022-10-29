@@ -22,7 +22,7 @@ This includes all community-facing demonstrations of how to use the Rubin Scienc
 Pedagogical principles
 ======================
 
-All tutorial developers should strive to adhere to the following principles.
+All tutorial developers should adhere to the following principles.
 
 Inclusivity
 -----------
