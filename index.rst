@@ -1,4 +1,4 @@
-:tocdepth: 2
+:tocdepth: 1
 
 .. sectnum::
 
@@ -404,6 +404,23 @@ Ensure that any ADQL is put into code boxes in RST so that users may copy-and-pa
 
 It is very common, but not mandatory, to end all portal tutorials with a section called "Exercises for the learner" with suggestions of
 how the user can make changes to the tutorial test options, or take the next step forward on their own.
+
+
+Git branch, merge, and review policy for portal tutorials
+---------------------------------------------------------
+
+The following applies when creating or updating tutorials in the ``dp0-2_lsst_io`` repository of the ``lsst`` GitHub Org.
+
+Develop new tutorials (or update existing ones) in a new branch, created from ``main``, and named for the corresponding Jira ticket (e.g., "tickets/PREOPS-12345").
+Typically, only one tutorial is updated per ticket branch.
+
+Make commits and push changes to the ``dp0-2_lsst_io`` repo until work is complete, then open a pull request to ``main``.
+
+Request a review from at least one Rubin staff member, and ensure that all of their comments and suggestions are incorporated and/or addressed.
+After the reviewer has approved the PR, rebase and merge to the ``main`` branch of ``dp0-2_lsst_io`` and delete the branch.
+
+Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
+
 
 
 Stretch goals
