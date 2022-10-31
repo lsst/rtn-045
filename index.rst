@@ -16,7 +16,7 @@
 Abstract
 ========
 
-This document provides guidelines for anyone creating or updating tutorials for the Rubin Observatory science community.
+This document provides guidelines for anyone creating or updating tutorials for the Vera C. Rubin Observatory Community Engagement Team (CET) and the Rubin Observatory science community.
 This includes all community-facing demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
 
 Pedagogical principles
@@ -50,7 +50,7 @@ If your tutorial is longer, consider how to break up the information into indivi
 Well-documented
 ---------------
 
-High quality documentation should be provided with the tutorial, including narrative descriptions, citations, references,
+High-quality documentation should be provided with the tutorial, including narrative descriptions, citations, references,
 and external links to, e.g., package documentation.
 
 Cross-referenced
@@ -86,7 +86,7 @@ The second, third, fourth, and fifth markdown cells should contain a very brief 
 a list of core skills, a list of the LSST data products, and a list of the python packages used by the notebook.
 List the packages being taught first (e.g., afwDisplay for a notebook about displaying images), and then supporting packages
 (e.g., lsst.daf.butler for a notebook about displaying images).
-It is acceptable to omit basic support packages (notably, os, glob, numpy, matplotlib).
+It is acceptable to omit basic support packages (e.g., os, glob, numpy, matplotlib).
 The contents of cells two through five are used to generate a table of notebook metadata in the ``README.md`` file for the repository.
 
 The sixth and seventh markdown cells should contain the credits and acknowledgments, and information about where users go to get support.
@@ -353,7 +353,7 @@ Review
 ------
 
 Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the notebook.
-Reviewers do not need to be members of the Community Engagement Team (CET).
+Reviewers do not need to be members of the CET.
 If they agree, assign them as a reviewer on your pull request.
 
 Ensure that all of the reviewers' comments are addressed.
