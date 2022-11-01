@@ -33,7 +33,7 @@ Ensure jargon and acronyms are defined.
 Level-appropriate
 -----------------
 
-Tutorials should clearly identify and teach to their target audience (beginner, intermediate, or advanced).
+Tutorials should clearly identify and teach to their target audience:  beginner, intermediate, or advanced.
 
 Skill-focused
 -------------
@@ -84,12 +84,12 @@ To the right of the logo list the contact author, date last verified, version, c
 
 The second, third, fourth, and fifth markdown cells should contain a very brief description,
 a list of core skills, a list of the LSST data products, and a list of the python packages used by the notebook.
-List the packages being taught first (e.g., afwDisplay for a notebook about displaying images), and then supporting packages
-(e.g., lsst.daf.butler for a notebook about displaying images).
+List the packages being taught first (e.g., ``afwDisplay`` for a notebook about displaying images), and then supporting packages
+(e.g., ``lsst.daf.butler`` for a notebook about displaying images).
 It is acceptable to omit basic support packages (e.g., os, glob, numpy, matplotlib).
-The contents of cells two through five are used to generate a table of notebook metadata in the ``README.md`` file for the repository.
+The contents of cells two through five are used to generate a table of notebook metadata in the README.md file for the repository.
 
-The sixth and seventh markdown cells should contain the credits and acknowledgments, and information about where users go to get support.
+The sixth and seventh markdown cells should contain the credits and acknowledgements, and information about where users should go to get support.
 
 
 First section
@@ -165,7 +165,7 @@ Image orientation
 ^^^^^^^^^^^^^^^^^
 
 When using a World Coordinate System (WCS), display East left, North up.
-If only using pixels, ``(0,0)`` should be the lower-left, which is the default for awfDisplay.
+If only using pixels, ``(0,0)`` should be the lower-left, which is the default for ``awfDisplay``.
 
 When using other plotting packages, transformations might be needed in order to match the afwDisplay default.
 See the LSST Science Pipelines documentation about `Image Indexing <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_.
@@ -190,7 +190,7 @@ These are optional methods for keeping memory use manageable in notebooks which 
 e.g., demonstrating data visualization techniques with big datasets.
 
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
-See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`_.
+See the ``remove_figure`` function defined in the Data Preview 0 (DP0) notebook `03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
 
 .. Note::
 
@@ -259,7 +259,7 @@ Notebook tutorial developers must install the following packages locally in thei
   pip install --user flake8-nb
   pip install --user pycodestyle_magic
 
-It is known that the most up-to-date version of flake8 has some issues.
+It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
 force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8=3.9.2``.
 
