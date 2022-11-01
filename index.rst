@@ -16,8 +16,8 @@
 Abstract
 ========
 
-A guideline for anyone creating or updating tutorials for the Rubin science community.
-This includes all community-facing demonstrations of how to use the Rubin Science Platform or how to analyze LSST data.
+A guideline for anyone creating or updating tutorials for Vera C. Rubin Observatory Community Engagement Team (CET) and the Rubin science community.
+This includes all community-facing demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
 
 Pedagogical principles
 ======================
@@ -33,7 +33,7 @@ Ensure jargon and acronyms are defined.
 Level-appropriate
 -----------------
 
-Tutorials should clearly identify and teach to their target audience (beginner, intermediate, or advanced).
+Tutorials should clearly identify and teach to their target audience:  beginner, intermediate, or advanced.
 
 Skill-focused
 -------------
@@ -49,13 +49,13 @@ Additional examples could be included, but should be clearly labeled as extra st
 Well-documented
 ---------------
 
-High quality documentation should be provided with the tutorial, including narrative descriptions, citations, references, 
+High-quality documentation should be provided with the tutorial, including narrative descriptions, citations, references, 
 and external links to, e.g., package documentation.
 
 Cross-referenced
 ----------------
 
-Tutorials should reference an precursor or advanced tutorials that users should consider as pre-requisit or follow-up resources.
+Tutorials should reference precursor or advanced tutorials that users should consider as prerequisite or follow-up resources.
 
 Properly credited
 -----------------
@@ -84,12 +84,12 @@ To the right of the logo list the contact author, date last verified, version, c
 
 The second, third, fourth, and fifth markdown cells should contain a very brief description,
 a list of core skills, a list of the LSST data products, and a list of the python packages used by the notebook.
-List the packages being taught first (e.g., afwDisplay for a notebook about displaying images), and then supporting packages
-(e.g., lsst.daf.butler for a notebook about displaying images).
-It is OK to leave basic support packages (os, glob, numpy, matplotlib) out of this list.
+List the packages being taught first (e.g., ``afwDisplay`` for a notebook about displaying images), and then supporting packages
+(e.g., ``lsst.daf.butler`` for a notebook about displaying images).
+It is OK to leave basic support packages (e.g., os, glob, numpy, matplotlib) out of this list.
 The contents of cells two through five are used to generate a table of notebook metadata in the README.md file for the repository.
 
-The sixth and seventh markdown cells should contain the credits and acknowledgements, and information about where users go to get support.  
+The sixth and seventh markdown cells should contain the credits and acknowledgements, and information about where users should go to get support.  
 
 
 First section
@@ -130,7 +130,7 @@ Tables and plots
 Table data format
 ^^^^^^^^^^^^^^^^^
 
-Results from a TAP service search are best displayed as an astropy table using ``.to_table()``,
+Results from a Table Access Protocol (TAP) service search are best displayed as an astropy table using ``.to_table()``,
 or as a pandas dataframe using ``.to_table().to_pandas()``.
 However, do not use the ``.to_table().show_in_notebook()`` method.
 This can cause issues in the RSP JupyterLab environment that make the notebook hang indefinitely.
@@ -158,13 +158,13 @@ For the LSST filter set ugrizy, adopt the same colors as DES, which were chosen 
 Image orientation
 ^^^^^^^^^^^^^^^^^
 
-If using a WCS, display east left, north up.
+If using a World Coordinate System (WCS), display east left, north up.
 If only using pixels, (0,0) should be lower left, which is the default for awfDisplay.
 
 When using other plotting packages, transformations might be needed in order to match the afwDisplay default.
 See the LSST Science Pipelines documentation about `Image Indexing <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_.
 
-Since use of "extent" is necessry for displaying a WCS overlay for deepCoaads, use it all the time:
+Since use of "extent" is necessary for displaying a WCS overlay for deepCoaads, use it all the time:
 
 ::
 
@@ -184,7 +184,7 @@ These are optional methods for keeping memory use manageable in notebooks which 
 data visualization techniques with big datasets.
 
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
-See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
+See the ``remove_figure`` function defined in the Data Preview 0 (DP0) notebook `03_Image_Display_and_Manipulation.ipynb <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
 
 *A method for clearing memory of, for example, large arrays that are not going to be used further on in the notebook is in development.*
 
@@ -247,7 +247,7 @@ Notebook tutorial developers must install the following packages locally in thei
   pip install --user flake8-nb
   pip install --user pycodestyle_magic
 
-It is known that the most up-to-date version of flake8 has some issues.
+It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as "AttributeError: '_io.StringIO' object has no attribute 'buffer'", 
 force-downgrade ``flake8`` from vesion 4.0.1 to 3.9.2 with ``pip install flake8=3.9.2``.
 
@@ -351,7 +351,7 @@ Contact the reviewers to let them know the pull request now awaits their approva
 Merge
 -----
 
-After the reviewers have approved the pull request, rebase and merge your ticket branch into the ``main`` branch (*not* to prod).
+After the reviewers have approved the pull request, rebase and merge your ticket branch into the ``main`` branch (*not* to ``prod``).
 Resolve all conlicts, if there are any.
 After the successful merge, delete your branch.
 
@@ -401,17 +401,17 @@ Remember to set the PREOPS ticket to done.
 Portal tutorial format and style
 ================================
 
-The portal tutorials are written in RST format and are kept within the data release documentation at
+The portal tutorials are written in ReStructured Text (RST) format and are kept within the data release documentation at
 `dp0-2.lsst.io/tutorials-examples <https://dp0-2.lsst.io/tutorials-examples/index.html>`__.
 
-All portal tutorials should have a descriptive title, and list the contact authors, the date last verified to run, and the targeted learning level.
+All portal tutorials should have a descriptive title, list the contact authors, the date last verified to run, RSP/code version used to verify the run, and the targeted learning level.
 A brief narrative introduction to the tutorial should be provided at the top of the page.
 
 The rest of the portal tutorial should be divided into sequentially numbered steps and sub-steps.
 Use descriptive text and screenshots to demonstrate what the user should do.
 Augment screenshots with arrows or circles to guide the users attention as needed.
 
-Ensure that any ADQL is put into code boxes in RST so that users may copy-and-paste whenever possible.
+Ensure that any Astronomical Data Query Language (ADQL) is put into code boxes in RST so that users may copy-and-paste whenever possible.
 
 It is very common, but not mandatory, to end all portal tutorials with a section called "Exercises for the learner" with suggestions of
 how the user can make changes to the tutorial test options, or take the next step forward on their own.
