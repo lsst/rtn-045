@@ -86,10 +86,10 @@ The second, third, fourth, and fifth markdown cells should contain a very brief 
 a list of core skills, a list of the LSST data products, and a list of the python packages used by the notebook.
 List the packages being taught first (e.g., ``afwDisplay`` for a notebook about displaying images), and then supporting packages
 (e.g., ``lsst.daf.butler`` for a notebook about displaying images).
-It is acceptable to omit basic support packages (e.g., os, glob, numpy, matplotlib).
+It is acceptable to omit basic support packages (e.g., ``os``, ``glob``, ``numpy``, ``matplotlib``).
 The contents of cells two through five are used to generate a table of notebook metadata in the README.md file for the repository.
 
-The sixth and seventh markdown cells should contain the credits and acknowledgements, and information about where users should go to get support.
+The sixth and seventh markdown cells should contain the credits and acknowledgments, and information about where users should go to get support.
 
 
 First section
@@ -130,7 +130,7 @@ Tables and plots
 Table data format
 ^^^^^^^^^^^^^^^^^
 
-Results from a Table Access Protocol (TAP) service search are best displayed as an astropy table using ``.to_table()``,
+Results from a Table Access Protocol (TAP) service search are best displayed as an ``astropy`` table using ``.to_table()``,
 or as a pandas dataframe using ``.to_table().to_pandas()``.
 
 .. Important::
@@ -143,7 +143,7 @@ Plot color palette
 ^^^^^^^^^^^^^^^^^^
 
 To be colorblind-friendly, plots should use either
-(1) matplotlib color tables ``viridis``,
+(1) ``matplotlib`` color tables ``viridis``,
 (2) `cividis <https://matplotlib.org/stable/users/prev_whats_new/whats_new_2.2.html#cividis-colormap>`_,
 (3) a greyscale, or
 (4) the new `tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_.
@@ -170,7 +170,7 @@ If only using pixels, ``(0,0)`` should be the lower-left, which is the default f
 When using other plotting packages, transformations might be needed in order to match the afwDisplay default.
 See the LSST Science Pipelines documentation about `Image Indexing <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_.
 
-Since use of "extent" is necessary for displaying a WCS overlay for deepCoadds, use it all the time:
+Since use of "extent" is necessary for displaying a WCS overlay for ``deepCoadds``, use it all the time:
 
 ::
 
@@ -271,7 +271,7 @@ Create a configuration file for ``flake8``.
 
 .. Note::
 
-   These instructions use emacs, but it doesn’t matter so long as the end result is correctly-named file with the right contents.
+   These instructions use ``emacs``, but it doesn’t matter so long as the end result is correctly-named file with the right contents.
 
 For example, from the command line in your home directory, execute:
 
@@ -347,7 +347,7 @@ Always restart the kernel and clear all outputs before saving, committing, and p
 Pull request
 ------------
 
-When the notebook is complete open a pull request to merge the ticket branch into the ``main`` branch (again, *note* to ``prod``).
+When the notebook is complete open a pull request to merge the ticket branch into the ``main`` branch (again, *not* to ``prod``).
 
 Review
 ------
@@ -355,6 +355,7 @@ Review
 Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the notebook.
 Reviewers do not need to be members of the CET.
 If they agree, assign them as a reviewer on your pull request.
+If you are unsure whom to assign as a reviewer, ask the community by posting on the `Rubin Community Forum <https://community.lsst.org>`_ under the `Support category <https://community.lsst.org/c/support/6>`__.
 
 Ensure that all of the reviewers' comments are addressed.
 Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
@@ -393,7 +394,7 @@ Updates to the RSP's recommended version
 Decisions on whether to update (or, "bump") the recommended image for the RSP are made jointly between the CET and the RSP teams.
 Once the decision has been made, a PREOPS Jira ticket will be created and assigned to a CET member.
 
-Bumping the recommended image always occurs during a Patch Thursday window.
+Bumping the recommended image always occurs during the regularly scheduled maintenance periods, "Patch Thursday."
 The notebook updates should be merged to the ``main`` branch by the day before.
 
 The workflow is to create a new branch of the ``tutorial-notebooks`` repository from the ``main`` branch,
