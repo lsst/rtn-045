@@ -215,14 +215,9 @@ Known warnings
 If a code cell produces a warning which is known and it should be ignored, the preferred method is to add a markdown cell
 *before* the code cell which produces the warning, to tell the user it is acceptable to ignore.
 
-.. Note::
-
-   This is not preferred because ignore categories of warnings can allow real issues to go unnoticed.
-   The appropriate use-cases for ignoring categories of warnings (below) is still under consideration.
-
-::
-
-  warnings.simplefilter("ignore", category=UserWarning)
+Guidelines about the options to ignore categories of warnings are under consideration, and will be added here in the future.
+Until then, use of, e.g., ``warnings.simplefilter("ignore", category=UserWarning)`` is not preferred because ignore categories
+of warnings can allow real issues to go unnoticed.  
 
 
 Markdown style
