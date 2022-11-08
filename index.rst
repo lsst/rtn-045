@@ -18,6 +18,11 @@ Abstract
 
 This document provides guidelines for anyone creating or updating tutorials for the Vera C. Rubin Observatory Community Engagement Team (CET) and the Rubin Observatory science community.
 This includes all community-facing demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
+Formatting, editorial standards, workflow, and review policies are provided.
+
+The CET uses these quidelines in`Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`__ and
+GitHub `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_.
+Members of the Rubin Observatory staff, as well as the broad community, are encouraged to contribute to the tutorial documentation.
 
 Pedagogical principles
 ======================
@@ -29,6 +34,8 @@ Inclusivity
 
 Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
 Ensure jargon and acronyms are defined.
+
+Please see the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
 
 Level-appropriate
 -----------------
@@ -87,7 +94,7 @@ a list of core skills, a list of the LSST data products, and a list of the pytho
 List the packages being taught first (e.g., ``afwDisplay`` for a notebook about displaying images), and then supporting packages
 (e.g., ``lsst.daf.butler`` for a notebook about displaying images).
 It is acceptable to omit basic support packages (e.g., ``os``, ``glob``, ``numpy``, ``matplotlib``).
-The contents of cells two through five are used to generate a table of notebook metadata in the README.md file for the repository.
+The contents of cells two through five are used to automatically generate a table of notebook metadata in the README.md file for the repository.
 
 The sixth and seventh markdown cells should contain the credits and acknowledgments, and information about where users should go to get support.
 
@@ -104,11 +111,11 @@ The first subsection should always be ``1.1 Package Imports``.
 It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
 All package imports must be done in the first code cell.
 
-The second subsection should always be ``1.2 Define Functions and Parameters``, if applicable.
+The second subsection should always be ``1.2 Define Functions and Parameters``.
 Globally defined utility functions, plotting defaults, or constants should be here.
 It is acceptable to rename the subsection to be more specific to the notebook, and/or to use sub-subsections like
 ``1.2.1 Define global cosmological parameter values`` or ``1.2.2 Define a function to make an image cutout``.
-It is preferred to leave this subsection and state that no globally defined items are used.
+If applicable, it is preferred to leave this subsection header in the document and state that no additional functions and parameters are used.
 
 
 Section structure
@@ -190,7 +197,7 @@ These are optional methods for keeping memory use manageable in notebooks which 
 e.g., demonstrating data visualization techniques with big datasets.
 
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
-See the ``remove_figure`` function defined in the Data Preview 0 (DP0) notebook `03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
+See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`__.
 
 .. Note::
 
@@ -216,8 +223,8 @@ If a code cell produces a warning which is known and it should be ignored, the p
 *before* the code cell which produces the warning, to tell the user it is acceptable to ignore.
 
 Guidelines about the options to ignore categories of warnings are under consideration, and will be added here in the future.
-Until then, use of, e.g., ``warnings.simplefilter("ignore", category=UserWarning)`` is not preferred because ignore categories
-of warnings can allow real issues to go unnoticed.  
+Until then, use of, e.g., ``warnings.simplefilter("ignore", category=UserWarning)`` is not preferred because ignoring categories
+of warnings can allow real issues to go unnoticed.
 
 
 Markdown style
@@ -243,7 +250,8 @@ Avoid using comments within a code cell as documentation.
 Code cell style standard PEP8
 -----------------------------
 
-``PEP8`` is the standard, and ``flake8`` is a tool to ensure compliance with the standards.
+``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
+and ``flake8`` is a tool to ensure compliance with these standards.
 
 Use ``flake8`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
 
@@ -320,7 +328,10 @@ This will catch things that can be missed line-by-line, such as packages that ar
 Git branch, merge, and review policy for tutorial-notebooks repository
 ======================================================================
 
-The following applies when creating or updating notebooks in the `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_ , which is part of the ``rubin-dp0`` GitHub Organization.
+The following applies when creating or updating notebooks in the `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_,
+which is part of the ``rubin-dp0`` GitHub Organization.
+The ``main`` branch is where changes are collected before pushing ``prod`` branch.
+The ``prod`` branch is the version available in the RSP.
 
 Branch
 ------
@@ -337,7 +348,7 @@ Update the repository's ``README.md`` file in the branch, when appropriate.
 Commit and push
 ---------------
 
-Always restart the kernel and clear all outputs before saving, committing, and pushing changes.
+Always restart the Jupyter Notebook kernel and clear all outputs before saving, committing, and pushing changes to your branch.
 
 Pull request
 ------------
@@ -347,7 +358,7 @@ When the notebook is complete open a pull request to merge the ticket branch int
 Review
 ------
 
-Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the notebook.
+Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
 Reviewers do not need to be members of the CET.
 If they agree, assign them as a reviewer on your pull request.
 If you are unsure whom to assign as a reviewer, ask the community by posting on the `Rubin Community Forum <https://community.lsst.org>`_ under the `Support category <https://community.lsst.org/c/support/6>`__.
@@ -361,7 +372,7 @@ Contact the reviewers to let them know the pull request now awaits their approva
 Merge
 -----
 
-After the reviewers have approved the pull request, ``rebase and merge`` your ticket branch into the ``main`` branch (again, *note* to ``prod``).
+After the reviewers have approved the pull request, ``rebase and merge`` your ticket branch into the ``main`` branch (again, *not* to ``prod``).
 Resolve all conflicts, if there are any.
 After the successful merge, delete your branch.
 
@@ -415,7 +426,7 @@ Portal tutorial format and style
 The portal tutorials are written in reStructuredText (RST) format and are kept within the data release documentation at
 `Portal Tutorials under DP0.2 Tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html#portal-tutorials>`_.
 
-All portal tutorials should have a descriptive title, list the contact authors, the date last verified to run, and the targeted learning level.
+All portal tutorials should have a descriptive title, list the contact authors, the date last verified to run, RSP/code version that was last verified to run, and the targeted learning level.
 A brief narrative introduction to the tutorial should be provided at the top of the page.
 
 The rest of the portal tutorial should be divided into sequentially numbered steps and substeps.
@@ -440,7 +451,7 @@ Typically, only one tutorial is updated per ticket branch.
 
 Make commits and push changes to your branch in the ``dp0-2_lsst_io`` repository until work is complete, then open a pull request to ``main``.
 
-Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the notebook.
+Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
 At least one reviewer should be a member of the CET.
 If they agree, assign them as a reviewer on your pull request.
 
@@ -460,6 +471,10 @@ Remember to make comments in the associated Jira tickets about the major updates
 Stretch goals
 =============
 
+.. note::
+
+   Listed below are CET future content or capability goals under consideration.
+
 Work is on-going in these areas.
 
 Notebook metadata
@@ -470,7 +485,7 @@ Embed notebook metadata (e.g., version, skills, packages) in a way that can be s
 Narrative voice
 ---------------
 
-Adopt a best practice for narrative instructions: should we use terms like "you," or should a passive voice be adopted?
+Adopt a best practice for narrative instructions (e.g., use terms like "you" or write in passive voice).
 
 Accessibility
 -------------
