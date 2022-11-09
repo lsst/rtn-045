@@ -264,7 +264,7 @@ Notebook tutorial developers must install the following packages locally in thei
 
 It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
-force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8=3.9.2``.
+force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
 
 
 The flake8 config file
