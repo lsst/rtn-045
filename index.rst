@@ -20,7 +20,7 @@ This document provides guidelines for anyone creating or updating tutorials for 
 This includes all community-facing demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
 Formatting, editorial standards, workflow, and review policies are provided.
 
-The CET uses these quidelines in`Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`__ and
+The CET uses these quidelines in `Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`_ and
 GitHub `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_.
 Members of the Rubin Observatory staff, as well as the broad community, are encouraged to contribute to the tutorial documentation.
 
