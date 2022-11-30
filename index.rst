@@ -69,8 +69,8 @@ Properly credited
 -----------------
 
 Appropriate acknowledgments should be provided to credit individuals whose notebooks were used as examples,
-and to set a precedent of prioritizing credits in an openly collaborative environment. Authors may cite other scientists
-or papers within the text of the tutorial, if appropriate.
+and to set a precedent of prioritizing credits in an openly collaborative environment.
+Authors should cite other scientists or papers within the text of the tutorial where appropriate.
 
 
 Jupyter notebook format, style, and code standards
@@ -85,7 +85,7 @@ The template contains an example of the header and the mandatory first section d
 Header
 ^^^^^^
 
-The structure of the header is mandatory.
+The structure of the header is mandatory, and all of the following is already set up in the template.
 
 In the first markdown cell, display the Rubin Observatory logo at upper left.
 To the right of the logo list the contact author, date last verified, version, container size, and targeted learning level.
@@ -103,7 +103,7 @@ The sixth and seventh markdown cells should contain the credits and acknowledgme
 First section
 ^^^^^^^^^^^^^
 
-The structure of the first section is mandatory.
+The structure of the first section is mandatory, and all of the following is already set up in the template.
 
 Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
 Cite or link to any external information or documentation, and cross-reference to other notebooks.
@@ -208,12 +208,13 @@ See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display
 Assert statements
 -----------------
 
-Where essential, or where a very specific value is expected, the ``assert`` command can be used to demonstrate to users that a condition is true.
+It is not mandatory nor expected for assert statements to be included in python scripts or notebooks, but tutorial developers should consider the following guidance.
 
+Where essential, or where a very specific value is expected, the ``assert`` command can be used to demonstrate to users that a condition is true.
 For example, ``assert`` statements can be used to confirm that service objects like TAP are not ``None`` or ``null`` before moving on and using that instance,
 or to check that values meet expectations (e.g., total rows returned from a query).
 
-However, take care not to use ``assert`` statements when, e.g., querying dynamic (prompt) datasets.
+However, take care not to use ``assert`` statements when, e.g., querying dynamic (prompt) datasets, which could return different results and cause the assert statement to fail.
 Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
 
 
@@ -476,7 +477,7 @@ Stretch goals
 
    Listed below are CET future content or capability goals under consideration.
 
-Work is on-going in these areas.
+Work is on-going in these areas, and in time they will become part of the guidelines above.
 
 Notebook metadata
 -----------------
@@ -504,7 +505,7 @@ Purge extraneous items in notebooks
 -----------------------------------
 
 Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures.
-Do not rely on the ``del`` command for this.
+E.g., whether or not the ``del`` command is sufficient for this.
 
 Recipe functions
 ----------------
