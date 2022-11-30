@@ -16,8 +16,8 @@
 Abstract
 ========
 
-This document provides guidelines for anyone creating or updating tutorials for the Vera C. Rubin Observatory Community Engagement Team (CET) and the Rubin Observatory science community.
-This includes all community-facing demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
+This document provides guidelines for anyone creating or updating the tutorials produced and maintained by the Vera C. Rubin Observatory Community Engagement Team (CET).
+This includes all community-facing demonstrations made by CET members of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
 Formatting, editorial standards, workflow, and review policies are provided.
 
 The CET uses these guidelines in `Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`_ and
