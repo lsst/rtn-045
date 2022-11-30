@@ -13,11 +13,11 @@ serial_number: "045"
 doc_id: "RTN-045"
 
 # Title of the document, without the series/serial designation
-doc_title: "Community Engagement Team (CET) Guidelines for Tutorials"
+doc_title: "Guidelines for User Tutorials"
 
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
-  - "Christina Adair"
+  - "The Rubin Observatory Community Engagement Team"
 
 # Current document revision date, YYYY-MM-DD
 # Only set this field if you need to manually fix the revision date;
