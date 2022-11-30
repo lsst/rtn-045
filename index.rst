@@ -422,6 +422,12 @@ During the Patch Thursday window, after the recommended image has been bumped, r
 Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
 
 
+Major updates log
+-----------------
+
+All new tutorials or significant changes should be documented for users in the `Log of Major Tutorial Updates <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`__.
+
+
 Portal tutorial format and style
 ================================
 
@@ -468,6 +474,8 @@ Resolve all conflicts, if there are any.
 After the successful merge, delete your branch.
 
 Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
+
+All new tutorials or significant changes should be documented for users in the `Log of Major Tutorial Updates <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`__.
 
 
 Stretch goals
