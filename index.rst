@@ -363,7 +363,7 @@ Review
 Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
 Reviewers do not need to be members of the CET.
 If they agree, assign them as a reviewer on your pull request.
-If you are unsure whom to assign as a reviewer, ask the community by posting on the `Rubin Community Forum <https://community.lsst.org>`_ under the `Support category <https://community.lsst.org/c/support/6>`__.
+If you are unsure whom to assign as a reviewer, ask the Lead Community Scientist to help identify someone.
 
 Ensure that all of the reviewers' comments are addressed.
 Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
