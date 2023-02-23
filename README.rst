@@ -7,14 +7,14 @@
   .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.#####.svg
      :target: http://dx.doi.org/10.5281/zenodo.#####
 
-########################################################
-Community Engagement Team (CET) Guidelines for Tutorials
-########################################################
+#####################################################
+Community Science Team (CST) Guidelines for Tutorials
+#####################################################
 
 RTN-045
 =======
 
-Principles, guidelines, conventions, formatting style, and workflow for tutorials developed by the Community Engagement Team (CET).
+Principles, guidelines, conventions, formatting style, and workflow for tutorials developed by the Community Science Team (CST).
 
 **Links:**
 
