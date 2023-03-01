@@ -16,11 +16,11 @@
 Abstract
 ========
 
-This document provides guidelines for anyone creating or updating the tutorials produced and maintained by the Vera C. Rubin Observatory Community Engagement Team (CET).
-This includes all community-facing demonstrations made by CET members of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
+This document provides guidelines for anyone creating or updating the tutorials produced and maintained by the Vera C. Rubin Observatory Community Science Team (CST).
+This includes all community-facing demonstrations made by CST members of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
 Formatting, editorial standards, workflow, and review policies are provided.
 
-The CET uses these guidelines in `Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`_ and
+The CST uses these guidelines in `Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`_ and
 GitHub `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_.
 Members of the Rubin Observatory staff, as well as the broad community, are encouraged to contribute to the tutorial documentation.
 
@@ -361,7 +361,7 @@ Review
 ------
 
 Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
-Reviewers do not need to be members of the CET.
+Reviewers do not need to be members of the CST.
 If they agree, assign them as a reviewer on your pull request.
 If you are unsure whom to assign as a reviewer, ask the Lead Community Scientist to help identify someone.
 
@@ -399,8 +399,8 @@ Remember to make comments in the associated Jira tickets about the major updates
 Updates to the RSP's recommended version
 ----------------------------------------
 
-Decisions on whether to update (or, "bump") the recommended image for the RSP are made jointly between the CET and the RSP teams.
-Once the decision has been made, a PREOPS Jira ticket will be created and assigned to a CET member.
+Decisions on whether to update (or, "bump") the recommended image for the RSP are made jointly between the CST and the RSP teams.
+Once the decision has been made, a PREOPS Jira ticket will be created and assigned to a CST member.
 
 Bumping the recommended image always occurs during the regularly scheduled maintenance periods, "Patch Thursday."
 The notebook updates should be merged to the ``main`` branch by the day before.
@@ -460,7 +460,7 @@ Typically, only one tutorial is updated per ticket branch.
 Make commits and push changes to your branch in the ``dp0-2_lsst_io`` repository until work is complete, then open a pull request to ``main``.
 
 Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
-At least one reviewer should be a member of the CET.
+At least one reviewer should be a member of the CST.
 If they agree, assign them as a reviewer on your pull request.
 
 Ensure that all of the reviewers' comments are addressed.
@@ -483,7 +483,7 @@ Stretch goals
 
 .. note::
 
-   Listed below are CET future content or capability goals under consideration.
+   Listed below are CST future content or capability goals under consideration.
 
 Work is on-going in these areas, and in time they will become part of the guidelines above.
 
