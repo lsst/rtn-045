@@ -72,6 +72,69 @@ Appropriate acknowledgments should be provided to credit individuals whose noteb
 and to set a precedent of prioritizing credits in an openly collaborative environment.
 Authors should cite other scientists or papers within the text of the tutorial where appropriate.
 
+Accessiblity and Universal Design
+=================================
+
+Universal Design Principles for Tutorials
+-----------------------------------------
+
+Add paragraph on the principles CST will use in tutorials: alt-text, sonification, other screen reader capabilities, any jupyter notebook functions, other functionality?
+
+Alternate-Text for Images, Figures, and Graphics
+------------------------------------------------
+
+Add paragraph on function of alt-text
+
+
+Using the ``:alt:`` command allows you to add alt-text to an image.  Coding example:
+
+
+::
+
+     .. figure:: /_static/figure_filename.png
+       :name: name_of_figure
+       :alt: Left image displays... 
+
+
+
+Guidance for how to structure alt-text for images
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rewrite guidance into CST guidance (this is from the web and needs to be updated)
+
+#. Every <img> must have an alt= attribute
+#. Describe the information, not the picture
+#. Active images require descriptive alt text.
+#. Images that contain information require descriptive alt text.
+#. Decorative images should have empty alt text.
+
+JWST guidance:
+^^^^^^^^^^^^^^
+* Explain what the subject is
+* Convey why it is important
+* Describe what it looks like
+* Overview
+   * What is the phenomenon depicted?
+   * What does it look like?
+   * Type of image
+* Organize and Elaborate
+   * Organize your thoughts
+   * Elaborate on the elements outlined in the Overview
+   * Organized according to the specifics of the image and the complexity of the phenomenon
+* Add detail
+   * Ensure that the mental picture you’re helping to create is complete
+   * Make the description rich and evocative
+
+Jupyter Notebooks resources for vision-impaired astronomers
+-----------------------------------------------------------
+
+(Taken from Confluence page - NEEDS rewrite) Summary: 
+
+The editable notebook format of Jupyter notebooks is intrinsically inaccessible, in the sense that their interactive part (cells) makes it difficult to edit and navigate. Therefore, one thing we could/should do is to ensure that what can be done in the notebook aspect of the RSP can also be done in the other aspects. 
+
+Having pointed this out,  there are still actions that could be taken to make the notebooks more accessible, ranging from adding extensions to help screen readers (e.g., Nbextension such as this “Accessibility Toolbar”), converting each notebook to a static format such as HTML for a better read-only experience, to making changes in the format and contents of the notebooks (e.g., font types, sizes, color contrast, alternative-text in figures, etc). 
+
+In the future, we should also consider using “focus groups with different users from the target audience (students and astronomers with disabilities)”, as pointed out in the “Recommendations for Astronomical Publications” from the American Astronomical Society Working Group on Accessibility and Disability. They also point out that this would require the approval of an Institutional Review Board. Our colleagues from STScI also emphasized the importance of this, and that these people should be compensated. 
 
 Jupyter notebook format, style, and code standards
 ==================================================
