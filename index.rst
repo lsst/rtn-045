@@ -93,7 +93,7 @@ Using the ``:alt:`` command allows you to add alt-text to an image.  Coding exam
 
      .. figure:: /_static/figure_filename.png
        :name: name_of_figure
-       :alt: Left image displays... 
+       :alt: Descriptive text of image 
 
 
 
