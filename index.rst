@@ -100,30 +100,11 @@ Using the ``:alt:`` command allows you to add alt-text to an image.  Coding exam
 Guidance for how to structure alt-text for images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rewrite guidance into CST guidance (this is from the web and needs to be updated)
+The goal of adding alt-text to figures/images is to ensure our documentation is accessible to visually impaired 
+individuals who use screen readers to assist them in their daily work. The alt-text description can be written as either a literal description of the figure/image, 
+or a more general, creative description.  The length of the alt-text description also depends on the message of the figure/image and how easy or difficult 
+it is to properly describe the information.
 
-#. Every <img> must have an alt= attribute
-#. Describe the information, not the picture
-#. Active images require descriptive alt text.
-#. Images that contain information require descriptive alt text.
-#. Decorative images should have empty alt text.
-
-JWST guidance:
-^^^^^^^^^^^^^^
-* Explain what the subject is
-* Convey why it is important
-* Describe what it looks like
-* Overview
-   * What is the phenomenon depicted?
-   * What does it look like?
-   * Type of image
-* Organize and Elaborate
-   * Organize your thoughts
-   * Elaborate on the elements outlined in the Overview
-   * Organized according to the specifics of the image and the complexity of the phenomenon
-* Add detail
-   * Ensure that the mental picture you’re helping to create is complete
-   * Make the description rich and evocative
 
 Jupyter Notebooks resources for vision-impaired astronomers
 -----------------------------------------------------------
