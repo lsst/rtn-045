@@ -83,10 +83,13 @@ Add paragraph on the principles CST will use in tutorials: alt-text, sonificatio
 Alternate-Text for Images, Figures, and Graphics
 ------------------------------------------------
 
-Add paragraph on function of alt-text
+The goal of adding alt-text to figures/images is to ensure our documentation is accessible to visually impaired 
+individuals who use screen readers to assist them in their daily work. The alt-text description can be written as either a literal description of the figure/image, 
+or a more general, creative description.  The length of the alt-text description also depends on the message of the figure/image and how easy or difficult 
+it is to properly describe the information.
 
 
-Using the ``:alt:`` command allows you to add alt-text to an image.  Coding example:
+Use the ``:alt:`` command to add alt-text to an image.  Coding example:
 
 
 ::
@@ -94,16 +97,6 @@ Using the ``:alt:`` command allows you to add alt-text to an image.  Coding exam
      .. figure:: /_static/figure_filename.png
        :name: name_of_figure
        :alt: Descriptive text of image 
-
-
-
-Guidance for how to structure alt-text for images
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The goal of adding alt-text to figures/images is to ensure our documentation is accessible to visually impaired 
-individuals who use screen readers to assist them in their daily work. The alt-text description can be written as either a literal description of the figure/image, 
-or a more general, creative description.  The length of the alt-text description also depends on the message of the figure/image and how easy or difficult 
-it is to properly describe the information.
 
 
 Jupyter Notebooks resources for vision-impaired astronomers
