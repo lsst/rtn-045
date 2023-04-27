@@ -72,13 +72,14 @@ Appropriate acknowledgments should be provided to credit individuals whose noteb
 and to set a precedent of prioritizing credits in an openly collaborative environment.
 Authors should cite other scientists or papers within the text of the tutorial where appropriate.
 
-Accessiblity and Universal Design
+Accessiblity and universal design
 =================================
 
-Universal Design Principles for Tutorials
+Universal design principles for tutorials
 -----------------------------------------
 
-Add paragraph on the principles CST will use in tutorials: alt-text, sonification, other screen reader capabilities, any jupyter notebook functions, other functionality?
+CST will use universal design principles such as alt-text, sonification, other screen reader capabilities, 
+and jupyter notebook accessibility techniques in documents and tutorials.
 
 Alternate-Text (alt-text) for images, figures, and graphics
 -----------------------------------------------------------
