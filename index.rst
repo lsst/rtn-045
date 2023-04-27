@@ -72,56 +72,6 @@ Appropriate acknowledgments should be provided to credit individuals whose noteb
 and to set a precedent of prioritizing credits in an openly collaborative environment.
 Authors should cite other scientists or papers within the text of the tutorial where appropriate.
 
-Accessiblity and universal design
-=================================
-
-Universal design principles for tutorials
------------------------------------------
-
-CST will use universal design principles such as alt-text, sonification, other screen reader capabilities, 
-and jupyter notebook accessibility techniques in documents and tutorials.
-
-Alternate-Text (alt-text) for images, figures, and graphics
------------------------------------------------------------
-
-Alternate-text (alt-text) is added to figures or images, in CST documents and tutorials, to ensure visually impaired 
-individuals, who use screen readers, are given sufficient information to understand what is displayed. 
-Alt-text descriptions can be written as either a literal description of the figure or image, 
-or a more general, creative description.  The length of the alt-text description also depends on the message of the figure or image and how easy or difficult 
-it is to properly describe the information.
-
-Guidelines for writing alt-text:
-
-- Be brief, if possible
-- Spell out acronyms (e.g. Right Ascension versus RA)
-- Symbols and equations should be expressed in words (e.g. use "equals" rather than "=")
-- Write for the words to be read outloud, visual cues with quotation marks or dashes are not necessary
-- Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center)
-- Figures demonstrating computer interfaces (such as the Portal input area) should describe the actions the user should take and the results expected
-- Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see")
-- If color is a useful attribute to distinguish items in a figure or image, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star)
-
-
-To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
-
-
-::
-
-     .. figure:: /_static/figure_filename.png
-       :name: name_of_figure
-       :alt: Descriptive text of image 
-
-
-Jupyter Notebooks resources for vision-impaired astronomers
------------------------------------------------------------
-
-(Taken from Confluence page - NEEDS rewrite) Summary: 
-
-The editable notebook format of Jupyter notebooks is intrinsically inaccessible, in the sense that their interactive part (cells) makes it difficult to edit and navigate. Therefore, one thing we could/should do is to ensure that what can be done in the notebook aspect of the RSP can also be done in the other aspects. 
-
-Having pointed this out,  there are still actions that could be taken to make the notebooks more accessible, ranging from adding extensions to help screen readers (e.g., Nbextension such as this “Accessibility Toolbar”), converting each notebook to a static format such as HTML for a better read-only experience, to making changes in the format and contents of the notebooks (e.g., font types, sizes, color contrast, alternative-text in figures, etc). 
-
-In the future, we should also consider using “focus groups with different users from the target audience (students and astronomers with disabilities)”, as pointed out in the “Recommendations for Astronomical Publications” from the American Astronomical Society Working Group on Accessibility and Disability. They also point out that this would require the approval of an Institutional Review Board. Our colleagues from STScI also emphasized the importance of this, and that these people should be compensated. 
 
 Jupyter notebook format, style, and code standards
 ==================================================
@@ -496,6 +446,35 @@ Ensure that any Astronomical Data Query Language (ADQL) is put into code boxes i
 It is very common, but not mandatory, to end all portal tutorials with a section called ``Exercises for the learner`` with suggestions of
 how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
 
+Alternate-Text (alt-text) for figures in portal tutorials
+---------------------------------------------------------
+
+Alt-text is added to figures, images, and graphics in CST portal tutorials to ensure visually impaired 
+individuals, who use screen readers, are given sufficient information to understand what is displayed. 
+In other web applications, alt-text descriptions can be written as either a literal description of the figure or image, 
+or a more general, creative description. CST portal tutorials generally display screen shots of the RSP portal interface and should 
+describe the information in a practical way versus a creative way (e.g. JWST images for the general public).
+
+Guidelines for writing alt-text:
+
+- Be brief, if possible
+- Spell out acronyms (e.g. Right Ascension versus RA)
+- Symbols and equations should be expressed in words (e.g. use "equals" rather than "=")
+- Write for the text to be read aloud, written visual cues (e.g. quotation marks or dashes) are not necessary
+- Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center)
+- Screenshot image alt-text should describe the actions the user should take and the expected results 
+- Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see")
+- If color is a useful attribute to distinguish items in a figure, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star)
+
+
+To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
+
+
+::
+
+     .. figure:: /_static/figure_filename.png
+       :name: name_of_figure
+       :alt: Descriptive text of image 
 
 Git branch, merge, and review policy for portal tutorials
 =========================================================
@@ -550,7 +529,7 @@ Adopt a best practice for narrative instructions (e.g., use terms like "you" or 
 Accessibility
 -------------
 
-Improve tutorials' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages.
+Improve tutorials' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages, other screen reader capabilities, and jupyter notebook accessibility techniques.
 
 Translations
 ------------
