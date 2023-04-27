@@ -98,7 +98,7 @@ Guidelines for writing alt-text:
 - Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center)
 - Figures demonstrating computer interfaces (such as the Portal input area) should describe the actions the user should take and the results expected
 - Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see")
-- If color is useful attribute to distinguish items in a figure or image, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star)
+- If color is a useful attribute to distinguish items in a figure or image, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star)
 
 
 To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
