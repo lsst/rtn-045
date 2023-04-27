@@ -80,16 +80,28 @@ Universal Design Principles for Tutorials
 
 Add paragraph on the principles CST will use in tutorials: alt-text, sonification, other screen reader capabilities, any jupyter notebook functions, other functionality?
 
-Alternate-Text for Images, Figures, and Graphics
-------------------------------------------------
+Alternate-Text (alt-text) for images, figures, and graphics
+-----------------------------------------------------------
 
-The goal of adding alt-text to figures/images is to ensure our documentation is accessible to visually impaired 
-individuals who use screen readers to assist them in their daily work. The alt-text description can be written as either a literal description of the figure/image, 
-or a more general, creative description.  The length of the alt-text description also depends on the message of the figure/image and how easy or difficult 
+Alternate-text (alt-text) is added to figures or images, in CST documents and tutorials, to ensure visually impaired 
+individuals, who use screen readers, are given sufficient information to understand what is displayed. 
+Alt-text descriptions can be written as either a literal description of the figure or image, 
+or a more general, creative description.  The length of the alt-text description also depends on the message of the figure or image and how easy or difficult 
 it is to properly describe the information.
 
+Guidelines for writing alt-text:
 
-Use the ``:alt:`` command to add alt-text to an image.  Coding example:
+- Be brief, if possible
+- Spell out acronyms (e.g. Right Ascension versus RA)
+- Symbols and equations should be expressed in words (e.g. use "equals" rather than "=")
+- Write for the words to be read outloud, visual cues with quotation marks or dashes are not necessary
+- Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center)
+- Figures demonstrating computer interfaces (such as the Portal input area) should describe the actions the user should take and the results expected
+- Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see")
+- If color is useful attribute to distinguish items in a figure or image, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star)
+
+
+To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
 
 
 ::
