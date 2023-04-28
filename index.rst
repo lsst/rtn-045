@@ -457,14 +457,17 @@ describe the information in a practical way versus a creative way (e.g. JWST ima
 
 Guidelines for writing alt-text:
 
-- Be brief, if possible
-- Spell out acronyms (e.g. Right Ascension versus RA)
-- Symbols and equations should be expressed in words (e.g. use "equals" rather than "=")
-- Write for the text to be read aloud, written visual cues (e.g. quotation marks or dashes) are not necessary
-- Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center)
-- Screenshot image alt-text should describe the actions the user should take and the expected results 
-- Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see")
-- If color is a useful attribute to distinguish items in a figure, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star)
+* Be brief, if possible. Write in short, succinct sentences.
+* Spell out acronyms (e.g. Right Ascension versus RA).
+* Avoid jargon or undefined terms.
+* Symbols and equations should be expressed in words (e.g. use "equals" rather than "=").
+* Write for the text to be read aloud. Written visual cues (e.g. quotation marks or dashes) are not necessary.
+* Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center).
+* For RSP screenshots, state which interface is being shown and describe the actions the user should take and the expected results, or the main functionality of the interface (as appropriate).
+* Where possible, use consistent terms such as the `JupyterLab User Interface Naming Conventions <https://jupyterlab.readthedocs.io/en/stable/developer/contributing.html#user-interface-naming-conventions>`_.
+* Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see").
+* If color is a useful attribute to distinguish items in a figure, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star).
+* For plots, include type type of plot (e.g., bar, scatter), titles and labels, and a general explanation of the data and what it means.
 
 
 To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
@@ -475,6 +478,7 @@ To add alt-text to an image in the reStructured text environment, use the ``:alt
      .. figure:: /_static/figure_filename.png
        :name: name_of_figure
        :alt: Descriptive text of image 
+
 
 Git branch, merge, and review policy for portal tutorials
 =========================================================
