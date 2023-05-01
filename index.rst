@@ -446,6 +446,39 @@ Ensure that any Astronomical Data Query Language (ADQL) is put into code boxes i
 It is very common, but not mandatory, to end all portal tutorials with a section called ``Exercises for the learner`` with suggestions of
 how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
 
+Alternate-Text (alt-text) for figures in portal tutorials
+---------------------------------------------------------
+
+Alt-text is added to figures, images, and graphics in CST portal tutorials to ensure visually impaired 
+individuals, who use screen readers, are given sufficient information to understand what is displayed. 
+In other web applications, alt-text descriptions can be written as either a literal description of the figure or image, 
+or a more general, creative description. CST portal tutorials generally display screen shots of the RSP portal interface and should 
+describe the information in a practical way versus a creative way (e.g. JWST images for the general public).
+
+Guidelines for writing alt-text:
+
+* Be brief, if possible. Write in short, succinct sentences.
+* Spell out acronyms (e.g. Right Ascension versus RA).
+* Avoid jargon or undefined terms.
+* Symbols and equations should be expressed in words (e.g. use "equals" rather than "=").
+* Write for the text to be read aloud. Written visual cues (e.g. quotation marks or dashes) are not necessary.
+* Pictures should be described in terms of what the listener needs to know (e.g. large galaxy in the center).
+* For RSP screenshots, state which interface is being shown and describe the actions the user should take and the expected results, or the main functionality of the interface (as appropriate).
+* Where possible, use consistent terms such as the `JupyterLab User Interface Naming Conventions <https://jupyterlab.readthedocs.io/en/stable/developer/contributing.html#user-interface-naming-conventions>`_.
+* Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see").
+* If color is a useful attribute to distinguish items in a figure, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star).
+* For plots, include type type of plot (e.g., bar, scatter), titles and labels, and a general explanation of the data and what it means.
+
+
+To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
+
+
+::
+
+     .. figure:: /_static/figure_filename.png
+       :name: name_of_figure
+       :alt: Descriptive text of image 
+
 
 Git branch, merge, and review policy for portal tutorials
 =========================================================
@@ -500,7 +533,7 @@ Adopt a best practice for narrative instructions (e.g., use terms like "you" or 
 Accessibility
 -------------
 
-Improve tutorials' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages.
+Improve tutorials' accessibility to people with visual disabilities by finding and implementing, e.g., screen reader compatibility software, data sonification packages, other screen reader capabilities, and jupyter notebook accessibility techniques.
 
 Translations
 ------------
