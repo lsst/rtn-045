@@ -467,7 +467,7 @@ Guidelines for writing alt-text:
 * Where possible, use consistent terms such as the `JupyterLab User Interface Naming Conventions <https://jupyterlab.readthedocs.io/en/stable/developer/contributing.html#user-interface-naming-conventions>`_.
 * Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g. "as you can see").
 * If color is a useful attribute to distinguish items in a figure, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star).
-* For plots, include type type of plot (e.g., bar, scatter), titles and labels, and a general explanation of the data and what it means.
+* For plots, include type of plot (e.g., bar, scatter), titles and labels, and a general explanation of the data and what it means.
 
 
 To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.  Coding example:
