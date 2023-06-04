@@ -417,6 +417,10 @@ Ensure that all notebooks are cleared before committing new versions.
 When the updates are complete, use a new pull request to merge the branch into ``main``.
 A review is not typically needed at this stage.
 
+Create a version tag using the new ``main`` branch of the ``tutorial_notebooks`` repo. 
+For example, for the update to ``Weekly 2023_21``, we did: ``git tag -a w.2023.21``,
+then added a link to the ticket and a note to the comment, and then ``git push --tags``.
+
 During the Patch Thursday window, after the recommended image has been bumped, release to ``prod`` following the instructions of `Release to prod branch`_.
 
 Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
