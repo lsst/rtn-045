@@ -483,7 +483,7 @@ To add alt-text to an image in the reStructured text environment, use the ``:alt
 
      .. figure:: /_static/figure_filename.png
        :name: name_of_figure
-       :alt: Descriptive text of image 
+       :alt: Descriptive text of image (use tab to indent second line of text)
 
 
 Git branch, merge, and review policy for portal tutorials
