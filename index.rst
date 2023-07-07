@@ -114,6 +114,7 @@ All package imports must be done in the first code cell.
 
 The second subsection should always be ``1.2 Define Functions and Parameters``.
 Globally defined utility functions, classes, plotting defaults, or constants should be here.
+(Single-use functions or classes can be defined immediately before they are used; see the section on functions and classes below).
 
 If a notebook has no functions or parameters to define, it is preferred to leave this subsection header in the document
 and state that no additional functions and parameters are used.
@@ -208,7 +209,8 @@ appears to the left of a selected cell.
 Hidden cells should be described in the preceding markdown cell with text like 
 "the following hidden cell contains code that defines the ``make_cmd_plot`` function".
 The first hidden cell in a notebook should include instructions for displaying the cell, such as
-"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code".
+"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
+or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
 
 
 Clearing memory
