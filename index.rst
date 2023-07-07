@@ -114,9 +114,13 @@ All package imports must be done in the first code cell.
 
 The second subsection should always be ``1.2 Define Functions and Parameters``.
 Globally defined utility functions, classes, plotting defaults, or constants should be here.
-It is acceptable to rename the subsection to be more specific to the notebook, and/or to use sub-subsections like
-``1.2.1 Define global cosmological parameter values`` or ``1.2.2 Define a function to make an image cutout``.
-If applicable, it is preferred to leave this subsection header in the document and state that no additional functions and parameters are used.
+
+If a notebook has no functions or parameters to define, it is preferred to leave this subsection header in the document
+and state that no additional functions and parameters are used.
+
+If a notebook has many such things to define, it is acceptable to rename the subsection to be more specific to the notebook,
+and/or to use sub-subsections like ``1.2.1 Define global cosmological parameter values`` or ``1.2.2 Define a function to make an image cutout``.
+
 
 
 Section structure
@@ -195,15 +199,15 @@ Functions and classes
 ---------------------
 
 While globally defined functions or classes which are used more than once in a notebook should be
-defined in section ``1.2 Define Functions and Parameters``, single-use functions or classes for,
-e.g., plotting, can be defined immediately before they are used.
+defined in section ``1.2 Define Functions and Parameters``, single-use functions or classes 
+can be defined immediately before they are used.
 
-Functions or classes that are particularly long blocks of code (>20 lines) can be hidden by going to
+Functions or classes that are particularly long blocks of code (e.g., >20 lines) can be hidden by going to
 the "View" menu item and choosing "Collapse Selected Code", or by clicking on the blue bar that
 appears to the left of a selected cell.
-Hidden cells should be described in the preceding markdown cell, e.g.,
+Hidden cells should be described in the preceding markdown cell with text like 
 "the following hidden cell contains code that defines the ``make_cmd_plot`` function".
-The first hidden cell in a notebook should include instructions for displaying the cell, e.g.,
+The first hidden cell in a notebook should include instructions for displaying the cell, such as
 "to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code".
 
 
