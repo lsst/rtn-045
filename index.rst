@@ -108,7 +108,7 @@ The structure of the first section is mandatory, and all of the following is alr
 Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
 Cite or link to any external information or documentation, and cross-reference to other notebooks.
 
-The first subsection should always be ``1.1 Package Imports``.
+The first subsection should always be ``1.1 Import packages``.
 It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
 All package imports must be done in the first code cell.
 
