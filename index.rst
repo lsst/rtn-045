@@ -34,7 +34,7 @@ Members of the Rubin Observatory staff, as well as the broad community, are enco
 Pedagogical principles
 ======================
 
-All tutorial developers should adhere to the following principles.
+All tutorials should have the following attributes.
 
 
 Inclusive
@@ -74,20 +74,6 @@ High-quality documentation should be provided with the tutorial, including narra
 and external links to, e.g., package documentation.
 
 
-Cross-referenced
-----------------
-
-Tutorials should reference any precursor or advanced tutorials that users should consider as prerequisites or follow-up resources.
-
-
-Properly credited
------------------
-
-Appropriate acknowledgments should be provided to credit individuals whose notebooks were used as examples,
-and to set a precedent of prioritizing credits in an openly collaborative environment.
-Authors should cite other scientists or papers within the text of the tutorial where appropriate.
-
-
 Clearly-written
 ---------------
 
@@ -96,6 +82,20 @@ and the expected results.
 Aside from introductory or background information, 
 instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_,
 as is commonly adopted for technical writing.
+
+
+Cross-referenced
+----------------
+
+Tutorials should reference any precursor or advanced tutorials that users should consider as prerequisites or follow-up resources.
+
+
+Proper credits
+--------------
+
+Appropriate acknowledgments should be provided to credit individuals whose notebooks were used as examples,
+and to set a precedent of prioritizing credits in an openly collaborative environment.
+Authors should cite other scientists or papers within the text of the tutorial where appropriate.
 
 
 .. _format-style-notebooks:
@@ -372,10 +372,11 @@ This will catch things that can be missed line-by-line, such as packages that ar
 
 .. _git-policy-notebooks:
 
-Git branch, merge, and review policy for tutorial-notebooks repository
-======================================================================
+Git branch, merge, and review policy for the tutorial-notebooks repository
+==========================================================================
 
-The following applies when creating or updating notebooks in the `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_,
+The following applies when creating or updating notebooks in the 
+`tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_,
 which is part of the ``rubin-dp0`` GitHub Organization.
 The ``main`` branch is where changes are collected before pushing ``prod`` branch.
 The ``prod`` branch is the version available in the RSP.
@@ -388,10 +389,10 @@ Develop new notebooks, or update existing ones, in a new branch.
 This branch should be named for the corresponding Jira ticket (e.g., "tickets/PREOPS-12345").
 The new branch should be created from ``main``, *not* from ``prod``.
 
-Unless the ticket is to make similar updates to all notebooks, only update one notebook per ticket branch
+Only update one notebook per ticket branch, unless the ticket is to make similar updates to all notebooks
 (e.g., when bumping the RSP's recommended image).
 
-Update the repository's ``README.md`` file in the branch, when appropriate.
+Update the repository's ``README.md`` file in the branch when appropriate.
 
 
 Commit and push
@@ -403,7 +404,7 @@ Always restart the Jupyter Notebook kernel and clear all outputs before saving, 
 Pull request
 ------------
 
-When the notebook is complete open a pull request to merge the ticket branch into the ``main`` branch (again, *not* to ``prod``).
+When the notebook is complete open a pull request (PR) to merge the ticket branch into the ``main`` branch (again, *not* to ``prod``).
 
 
 Review
@@ -414,10 +415,9 @@ Reviewers do not need to be members of the CST.
 If they agree, assign them as a reviewer on the pull request.
 If there is uncertainty about whom to assign as a reviewer, ask the Lead Community Scientist to help identify someone.
 
-Ensure that all of the reviewers' comments are addressed.
+If the reviewer requests changes, ensure that all of the reviewers' comments are addressed.
 Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
 or an explanation of why the request was not implemented.
-
 Contact the reviewers to let them know the pull request now awaits their approval.
 
 
@@ -445,7 +445,10 @@ the ``main`` branch, and then do a single "release" to ``prod``.
 Jira tickets
 ------------
 
-Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
+Remember to make comments in the associated Jira tickets about the major updates as work progresses.
+
+After the PR is merged, request a review on the ticket (usually from the CST team lead).
+After the ticket has been reviewed, the ticket status can be set as done.
 
 
 Updates to the RSP's recommended version
@@ -470,10 +473,8 @@ When the updates are complete, use a new pull request to merge the branch into `
 A review is not typically needed at this stage.
 
 Create a version tag using the new ``main`` branch of the ``tutorial_notebooks`` repo. 
-For example, for the update to ``Weekly 2023_21``, we did: ``git tag -a w.2023.21``,
-and then ``git push --tags``.
-In the comment document that pops up, add a link to the Jira ticket and a note describing the reason for the tag -- for example,
-"https://jira.lsstcorp.org/browse/PREOPS-3457 -- bump recommended pipelines version to w_2023_21."
+For example, for the update to ``Weekly 2023_27``, it would be ``git tag -a w.2023.27 -m "Weekly 2023_37"``
+followed by ``git push --tags``.
 
 During the Patch Thursday window, after the recommended image has been bumped, release to ``prod`` following the instructions of `Release to prod branch`_.
 
@@ -485,7 +486,7 @@ Major updates log
 
 All new tutorials or significant changes should be documented for users in the logs of
 major tutorial updates for `DP0.2 <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`_
-amd `DP0.3 <https://dp0-3.lsst.io/tutorials-examples/major-updates-log.html>`_.
+and `DP0.3 <https://dp0-3.lsst.io/tutorials-examples/major-updates-log.html>`_.
 
 
 .. _format-style-portal:
@@ -517,6 +518,7 @@ In RST, this is done as in the following example.
 ::
 
      .. code-block:: SQL
+
        SELECT e, q, incl 
        FROM dp03_catalogs_10yr.MPCORB 
        WHERE ssObjectId > 9000000000000000000
@@ -551,7 +553,7 @@ In RST, this is done as in the following example.
        :name: name_of_figure
        :alt: Descriptive text of image (use tab to indent second line of text)
 
-       The caption goes here, indented the same way but with one space between code and caption text.
+       The caption goes here, indented the same way, but with an empty line between code and caption text.
 
 
 .. _git-policy-portal:
@@ -572,20 +574,23 @@ Contact one or more Rubin Observatory staff members with the appropriate experti
 At least one reviewer should be a member of the CST.
 If they agree, assign them as a reviewer on the pull request.
 
-Ensure that all of the reviewers' comments are addressed.
+If the reviewer requests changes, ensure that all of the reviewers' comments are addressed.
 Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
 or an explanation of why the request was not implemented.
-
 Contact the reviewers to let them know the pull request now awaits their approval.
 
 After the reviewers have approved the pull request, ``rebase and merge`` the ticket branch into the ``main`` branch.
 Resolve all conflicts, if there are any.
 After the successful merge, delete the ticket branch.
 
-Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
+Remember to make comments in the associated Jira tickets about the major updates as work progresses.
 
-All new tutorials or significant changes should be documented for users in the 
-`Log of Major Tutorial Updates <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`_.
+After the PR is merged, request a review on the ticket (usually from the CST team lead).
+After the ticket has been reviewed, the ticket status can be set as done.
+
+All new tutorials or significant changes should be documented for users in the logs of
+major tutorial updates for `DP0.2 <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`_
+and `DP0.3 <https://dp0-3.lsst.io/tutorials-examples/major-updates-log.html>`_.
 
 
 .. _accessibility-considerations:
@@ -697,10 +702,6 @@ A few useful resources for accessibility include:
 
 Stretch goals
 =============
-
-.. note::
-
-   Listed below are CST future content or capability goals under consideration.
 
 Work is on-going in these areas, and in time they will become part of the guidelines above.
 
