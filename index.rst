@@ -40,7 +40,7 @@ All tutorial developers should adhere to the following principles.
 Inclusive
 ---------
 
-Follow the best practices described under :ref:`accessibility-considerations`.
+Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
 
 Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
 Ensure jargon and acronyms are defined, regardless of target audience.
@@ -194,14 +194,14 @@ A descriptive title is encouraged but not mandatory.
 In general, the default ``matplotlib`` style is sufficient and should be adopted for plot attributes
 such as line thickness, tick labels, fontsize, and so on.
 However, the default ``matplotlib`` color palette is not sufficient, and the recommendations
-under :ref:`accessibility-considerations` should be adopted to create colorblind-friendly plots.
+under :ref:`Accessibility considerations<accessibility-considerations>` should be adopted to create colorblind-friendly plots.
 
 Error bars should be included wherever possible, and especially in cases where analyses such
 as line fitting is being performed on the data in the plot, to help the user understand data quality.
 
 A markdown cell underneath the figure should provide a caption that adequately explains what the main
 attributes of the plot.
-This caption should serve as alt-text (as described under :ref:`accessibility-considerations`)
+This caption should serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
 and also as a way for the user to confirm the plot appears as expected.
 
 
@@ -254,7 +254,7 @@ To reduce the memory footprint of a notebook, remove figures once they're no lon
 See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`_.
 
 Better ways to clear the memory of, for example, large arrays that are not going to be used further on in the notebook
-is in development as mentioned under :ref:`stretch-goals`.
+is in development as mentioned under :ref:`Stretch goals<stretch-goals>`.
 
 
 Assert statements
@@ -533,14 +533,14 @@ Augment screenshots with indicators (e.g., arrows or circles) to guide the users
 Include a caption that describes the figure (see example below, with alt-text and a caption).
 
 For plots made in the Portal results view, the recommendations
-under :ref:`accessibility-considerations` should be adopted to create colorblind-friendly plots.
+under :ref:`Accessibility considerations<accessibility-considerations>` should be adopted to create colorblind-friendly plots.
 
 
 Alternate-Text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 All figures in Portal tutorials should have an alt-text statement.
-The motivation and guidance for writing alt-text is provided under :ref:`accessibility-considerations`.
+The motivation and guidance for writing alt-text is provided under :ref:`Accessibility considerations<accessibility-considerations>`.
 
 To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.
 In RST, this is done as in the following example.
@@ -668,7 +668,7 @@ For offline viewing, create ``html`` versions of executed notebooks and not ``pd
 the latter are typically less compatible with screen readers.
 
 At this time it is not necessary to use, e.g., `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_,
-but a customized application might be considered in the future (and is included under :ref:`stretch-goals`).
+but a customized application might be considered in the future (and is included under :ref:`Stretch goals<stretch-goals>`).
 
 
 Neurodivergent astronomers
