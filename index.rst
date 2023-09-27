@@ -664,7 +664,7 @@ Guidelines for writing alt-text:
 Converted notebooks
 ^^^^^^^^^^^^^^^^^^^
 
-For offline viewing, create ``html`` versions of executed notebooks and not ``pdf` versions, as
+For offline viewing, create ``html`` versions of executed notebooks and not ``pdf`` versions, as
 the latter are typically less compatible with screen readers.
 
 At this time it is not necessary to use, e.g., `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_,
