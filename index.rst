@@ -677,7 +677,7 @@ Neurodivergent astronomers
 Use fonts that work well for people with dyslexia, such as sans serif, monospaced, and roman font types such as 
 Helvetica, Courier, Arial, Verdana and CMU (Computer Modern Unicode), OpenDyslexic. 
 
-_Italic fonts_ decrease readability and should be used sparingly. 
+*Italic fonts* decrease readability and should be used sparingly. 
 
 Avoid text crowding and long paragraphs.
 Use short sentences and, where possible, arrange text in shorter paragraphs.
