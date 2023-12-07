@@ -580,6 +580,7 @@ or an explanation of why the request was not implemented.
 Contact the reviewers to let them know the pull request now awaits their approval.
 
 After the reviewers have approved the pull request, ``rebase and merge`` the ticket branch into the ``main`` branch.
+Do not click the "Update branch" button as that does a merge from main.
 Resolve all conflicts, if there are any.
 After the successful merge, delete the ticket branch.
 
