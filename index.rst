@@ -1,6 +1,12 @@
-:tocdepth: 2
+#############################
+Guidelines for User Tutorials
+#############################
 
-.. sectnum::
+.. abstract::
+
+   Principles, guidelines, conventions, formatting style, and workflow for tutorials developed by the Community Science Team (CST).
+
+
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
 
