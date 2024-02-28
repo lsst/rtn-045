@@ -244,6 +244,18 @@ The first hidden cell in a notebook should include instructions for displaying t
 or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
 
 
+TAP queries
+-----------
+
+TAP queries should always be run as asynchronous as this is the best practice and a good habit for users.
+
+As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
+any estimates for how long the query should take, to avoid confusing or concerning the user.
+The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the 
+execution time, should the user require an estimate.
+
+
+
 Clearing memory
 ---------------
 
