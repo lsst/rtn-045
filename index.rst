@@ -1,6 +1,16 @@
-:tocdepth: 2
+#############################
+Guidelines for User Tutorials
+#############################
 
-.. sectnum::
+.. abstract::
+
+   Guidelines for anyone creating or updating user-facing tutorials for the Rubin Observatory, such
+   as demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey 
+   of Space and Time (LSST) data.
+   Principles, conventions, templates, formats, and styles for code and text are provided.
+   All Rubin staff and the broader science community should use these guidelines if contributing to
+   the set of user-facing tutorials maintained by the Rubin Community Science team (CST).
+
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
 
@@ -12,21 +22,6 @@
 ..
 .. .. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
 ..    :style: lsst_aa
-
-
-.. _abstract:
-
-Abstract
-========
-
-This document provides guidelines for anyone creating or updating the tutorials produced and maintained by the Vera C. Rubin Observatory Community Science Team (CST).
-This includes all community-facing demonstrations made by CST members of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey of Space and Time (LSST) data.
-Formatting, editorial standards, workflow, and review policies are provided.
-
-The CST uses these guidelines in the `Documentation for Data Preview 0.2 (DP0.2) <https://dp0-2.lsst.io>`_,
-the `Documentation for Data Preview 0.3 (DP0.3) <https://dp0-3.lsst.io>`_,
-and GitHub `tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_.
-Members of the Rubin Observatory staff, as well as the broad community, are encouraged to contribute to the tutorial documentation.
 
 
 .. _pedagogical-principles:
@@ -242,6 +237,18 @@ Hidden cells should be described in the preceding markdown cell with text like
 The first hidden cell in a notebook should include instructions for displaying the cell, such as
 "to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
 or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
+
+
+TAP queries
+-----------
+
+TAP queries should always be run as asynchronous as this is the best practice and a good habit for users.
+
+As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
+any estimates for how long the query should take, to avoid confusing or concerning the user.
+The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the 
+execution time, should the user require an estimate.
+
 
 
 Clearing memory
