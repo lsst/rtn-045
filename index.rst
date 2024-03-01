@@ -498,28 +498,30 @@ and `DP0.3 <https://dp0-3.lsst.io/tutorials-examples/major-updates-log.html>`_.
 
 .. _format-style-portal:
 
-Portal tutorial format and style
-================================
+Portal, API, and command-line tutorial format and style
+=======================================================
 
-The portal tutorials are written in reStructuredText (RST) format and are kept within the data release documentation at
-`DP0.2 Tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html#portal-tutorials>`_ and
-`DP0.3 Tutorials <https://dp0-3.lsst.io/tutorials-examples/index.html#portal-tutorials>`_.
+Tutorials for the Portal and API Aspects, or for copy-pasting into a command line interface in
+the Notebook Aspect, are written in reStructuredText (RST) format and are kept within the data release documentation at
+`DP0.2 Tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html>`_ and
+`DP0.3 Tutorials <https://dp0-3.lsst.io/tutorials-examples/index.html>`_.
 
-All portal tutorials should have a descriptive title, list the contact authors, 
+All such tutorials should have a descriptive title, list the contact authors, 
 the date last verified to run, and the targeted learning level.
 A brief narrative introduction to the tutorial should be provided at the top of the page.
 
-The rest of the portal tutorial should be divided into sequentially numbered steps and substeps.
+The rest of the tutorial should be divided into sequentially numbered steps and substeps.
 
-It is very common, but not mandatory, to end all portal tutorials with a section called 
-``Exercises for the learner`` with suggestions of
+It is very common, but not mandatory, to end all tutorials with a section called 
+"Exercises for the learner" with suggestions of
 how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
 
 
 Code blocks
 -----------
 
-Ensure that any Astronomical Data Query Language (ADQL) is put into code boxes in RST so that users may copy-paste whenever possible.
+Ensure that all code and any Astronomical Data Query Language (ADQL) statements are 
+put into code boxes in RST so that users may copy-paste whenever possible.
 In RST, this is done as in the following example.
 
 ::
@@ -541,14 +543,14 @@ Augment screenshots with indicators (e.g., arrows or circles) to guide the users
 
 Include a caption that describes the figure (see example below, with alt-text and a caption).
 
-For plots made in the Portal results view, the recommendations
-under :ref:`Accessibility considerations<accessibility-considerations>` should be adopted to create colorblind-friendly plots.
+The recommendations under :ref:`Accessibility considerations<accessibility-considerations>` 
+should be adopted to create colorblind-friendly plots.
 
 
 Alternate-Text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All figures in Portal tutorials should have an alt-text statement.
+All figures should have an alt-text statement.
 The motivation and guidance for writing alt-text is provided under :ref:`Accessibility considerations<accessibility-considerations>`.
 
 To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.
