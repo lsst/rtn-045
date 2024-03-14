@@ -67,19 +67,16 @@ Find further guidelines in Rubin's `User documentation style guide <https://deve
 
 .. _format-style-notebooks:
 
-Jupyter notebook format, style, and code standards
-==================================================
+Jupyter Notebooks
+=================
 
-
-Template
---------
+Template and overall structure
+------------------------------
 
 As a starting point, use the `template Jupyter notebook in the cet-dev repository <https://github.com/rubin-dp0/cet-dev/blob/main/template.ipynb>`_, which is part of the ``rubin-dp0`` GitHub Organization.
 The template contains an example of the header and the mandatory first section described below.
 
-
-Header
-^^^^^^
+**Header**
 
 The structure of the header is mandatory, and all of the following is already set up in the template.
 
@@ -95,9 +92,7 @@ The contents of cells two through five are used to automatically generate a tabl
 
 The sixth and seventh markdown cells should contain the credits and acknowledgments, and information about where users should go to get support.
 
-
-First section
-^^^^^^^^^^^^^
+**First section**
 
 The structure of the first section is mandatory, and all of the following is already set up in the template.
 
@@ -118,9 +113,7 @@ and state that no additional functions and parameters are used.
 If a notebook has many such things to define, it is acceptable to rename the subsection to be more specific to the notebook,
 and/or to use sub-subsections like ``1.2.1 Define global cosmological parameter values`` or ``1.2.2 Define a function to make an image cutout``.
 
-
-Section structure
-^^^^^^^^^^^^^^^^^
+**Section structure**
 
 For all sections after the first, use numbers for sections, subsections, and sub-subsections to enable referencing in support requests,
 e.g., "I'm having trouble with the second code cell in Section 2.3."
@@ -128,17 +121,43 @@ e.g., "I'm having trouble with the second code cell in Section 2.3."
 Use section titles that actively describe what is being done, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``, so that the auto-generated table of contents is easy to navigate.
 
 Do not use title case for section headings; use sentence case.
+(This Is Title Case. This is sentence case.)
 
 It is very common, but not mandatory, to end all notebook tutorials with a section called ``Exercises for the learner`` with suggestions of
 how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
 
+Markdown
+--------
 
-Tables and plots
-----------------
+Any references to variables used in code cells or any code commands should be in ``monospaced font``.
+
+Use of indented text should be limited to warnings and notices, e.g., ``> **Warning:** the following cell...``.
+
+Code
+----
+
+**Comments: **
+Avoid using comments within a code cell as documentation.
+Markdown cells are the preferred way to provide descriptive text.
 
 
-Table data format
-^^^^^^^^^^^^^^^^^
+**Functions and classes: **
+While globally defined functions or classes which are used more than once in a notebook should be
+defined in section ``1.2 Define Functions and Parameters``, single-use functions or classes 
+can be defined immediately before they are used.
+
+Functions or classes that are particularly long blocks of code (e.g., >20 lines) can be hidden by going to
+the "View" menu item and choosing "Collapse Selected Code", or by clicking on the blue bar that
+appears to the left of a selected cell.
+Hidden cells should be described in the preceding markdown cell with text like 
+"the following hidden cell contains code that defines the ``make_cmd_plot`` function".
+The first hidden cell in a notebook should include instructions for displaying the cell, such as
+"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
+or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
+
+
+Tables
+------
 
 Results from a Table Access Protocol (TAP) service search are best displayed as an ``astropy`` table using ``.to_table()``,
 or as a pandas dataframe using ``.to_table().to_pandas()``.
@@ -146,9 +165,10 @@ or as a pandas dataframe using ``.to_table().to_pandas()``.
 Do not use the ``.to_table().show_in_notebook()`` method.
 This can cause issues in the RSP JupyterLab environment that cause the notebook to hang indefinitely.
 
+Plots
+-----
 
-Plot format and style
-^^^^^^^^^^^^^^^^^^^^^
+**Plot format and style**
 
 Plots should be large enough such that the details in the data are easily discerned,
 but small enough to fit within a small browser window (e.g., a laptop screen).
@@ -172,8 +192,7 @@ This caption should serve as alt-text (as described under :ref:`Accessibility co
 and also as a way for the user to confirm the plot appears as expected.
 
 
-Image orientation
-^^^^^^^^^^^^^^^^^
+**Image orientation**
 
 When using a World Coordinate System (WCS), display East left, North up.
 If only using pixels, ``(0,0)`` should be the lower-left, which is the default for ``awfDisplay``.
@@ -194,21 +213,7 @@ Since use of "extent" is necessary for displaying a WCS overlay for ``deepCoadds
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
 
 
-Functions and classes
----------------------
 
-While globally defined functions or classes which are used more than once in a notebook should be
-defined in section ``1.2 Define Functions and Parameters``, single-use functions or classes 
-can be defined immediately before they are used.
-
-Functions or classes that are particularly long blocks of code (e.g., >20 lines) can be hidden by going to
-the "View" menu item and choosing "Collapse Selected Code", or by clicking on the blue bar that
-appears to the left of a selected cell.
-Hidden cells should be described in the preceding markdown cell with text like 
-"the following hidden cell contains code that defines the ``make_cmd_plot`` function".
-The first hidden cell in a notebook should include instructions for displaying the cell, such as
-"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
-or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
 
 
 TAP queries
@@ -260,19 +265,7 @@ Until then, use of, e.g., ``warnings.simplefilter("ignore", category=UserWarning
 of warnings can allow real issues to go unnoticed.
 
 
-Markdown style
---------------
 
-Any references to variables used in code cells or any code commands should be in ``monospaced font``.
-
-Use of indented text should be limited to warnings and notices, e.g., ``> **Warning:** the following cell...``.
-
-
-Code cell comments
-------------------
-
-Markdown cells are the preferred way to provide descriptive text.
-Avoid using comments within a code cell as documentation.
 
 
 Code cell style standard PEP8
