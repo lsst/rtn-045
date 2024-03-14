@@ -26,71 +26,52 @@ Guidelines for User Tutorials
 
 .. _pedagogical-principles:
 
-Pedagogical principles
-======================
+Principles
+==========
 
-All tutorials should have the following attributes.
+All tutorials should be guided by the following principles,
+and adhere to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
 
+**Inclusive**
 
-Inclusive
----------
+ * Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
+ * Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
+ * Ensure jargon and acronyms are defined, regardless of target audience.
+ * See the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
 
-Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
+**Level-appropriate**
 
-Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
-Ensure jargon and acronyms are defined, regardless of target audience.
+ * Identify and teach to a target audience (e.g., beginner, intermediate, or advanced).
 
-See the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
+**Skill-focused**
 
+ * Teach one to a few skills, techniques, or RSP functionality.
+ * Provide a demonstration of a specific scientific analysis.
 
-Level-appropriate
------------------
+**Consumable**
 
-Tutorials should clearly identify and teach to their target audience:  beginner, intermediate, or advanced.
+ * The tutorial should take about 30 minutes to complete.
+ * Not including any provided "Exercises for the learner".
 
+**Well-referenced**
 
-Skill-focused
--------------
+ * Include citations, references, and external links (e.g., code package documentation).
+ * Reference any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
 
-Tutorials should focus on teaching one or a few new skills or techniques, or providing one scientific demonstration.
+**Properly-credited**
 
+ * Appropriate acknowledgments should be provided to credit individuals whose work was used.
+ * This sets a precedent of prioritizing credits in an openly collaborative environment.
+ * Cite other scientists or papers within the text of the tutorial where appropriate.
 
-Consumable
-----------
+**Clearly-written**
 
-The user should be able to work through the core contents of a tutorial within about 30 minutes
-(i.e., not including any additional suggested "Exercises for the learner").
-
-
-Well-documented
----------------
-
-High-quality documentation should be provided with the tutorial, including narrative descriptions, citations, references,
-and external links to, e.g., package documentation.
-
-
-Clearly-written
----------------
-
-Tutorials should write in short, clear statements describing the actions a user should take
-and the expected results.
-Aside from introductory or background information, 
-instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_,
+ * Write in short, clear, instructional statements.
+ * Describe the actions a user should take and the expected results.
+ * Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_,
 as is commonly adopted for technical writing.
-
-
-Cross-referenced
-----------------
-
-Tutorials should reference any precursor or advanced tutorials that users should consider as prerequisites or follow-up resources.
-
-
-Proper credits
---------------
-
-Appropriate acknowledgments should be provided to credit individuals whose notebooks were used as examples,
-and to set a precedent of prioritizing credits in an openly collaborative environment.
-Authors should cite other scientists or papers within the text of the tutorial where appropriate.
+ 
+Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`__
 
 
 .. _format-style-notebooks:
