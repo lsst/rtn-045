@@ -68,9 +68,8 @@ and adhere to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
 
  * Write in short, clear, instructional statements.
  * Describe the actions a user should take and the expected results.
- * Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_,
-as is commonly adopted for technical writing.
- 
+ * Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_, as is commonly adopted for technical writing.
+
 Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`__
 
 
