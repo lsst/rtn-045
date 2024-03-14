@@ -32,45 +32,37 @@ Principles
 All tutorials should be guided by the following principles,
 and adhere to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
 
-**Inclusive**
+**Inclusive:**
+Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
+Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
+Ensure jargon and acronyms are defined, regardless of target audience.
+See the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
 
- * Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
- * Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
- * Ensure jargon and acronyms are defined, regardless of target audience.
- * See the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
+**Level-appropriate:**
+Identify and teach to a target audience (e.g., beginner, intermediate, or advanced).
 
-**Level-appropriate**
+**Skill-focused:**
+Teach one to a few skills, techniques, or RSP functionality, and/or
+provide a demonstration of a scientific analysis with LSST data.
 
- * Identify and teach to a target audience (e.g., beginner, intermediate, or advanced).
+**Consumable:**
+The tutorial should take about 30 minutes to complete
+(not including any provided "Exercises for the learner").
 
-**Skill-focused**
+**Well-referenced:**
+Include citations, references, and external links (e.g., code package documentation).
+Reference any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
 
- * Teach one to a few skills, techniques, or RSP functionality.
- * Provide a demonstration of a specific scientific analysis.
+**Properly-credited:**
+Appropriate acknowledgments should be provided to credit individuals whose work was used.
+This sets a precedent of prioritizing credits in an openly collaborative environment.
+Cite other scientists or papers within the text of the tutorial where appropriate.
 
-**Consumable**
-
- * The tutorial should take about 30 minutes to complete.
- * Not including any provided "Exercises for the learner".
-
-**Well-referenced**
-
- * Include citations, references, and external links (e.g., code package documentation).
- * Reference any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
-
-**Properly-credited**
-
- * Appropriate acknowledgments should be provided to credit individuals whose work was used.
- * This sets a precedent of prioritizing credits in an openly collaborative environment.
- * Cite other scientists or papers within the text of the tutorial where appropriate.
-
-**Clearly-written**
-
- * Write in short, clear, instructional statements.
- * Describe the actions a user should take and the expected results.
- * Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_, as is commonly adopted for technical writing.
-
-Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`__
+**Clearly-written:**
+Write in short, clear, instructional statements.
+Describe the actions a user should take and the expected results.
+Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_, as is commonly adopted for technical writing.
+Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_.
 
 
 .. _format-style-notebooks:
