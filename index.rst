@@ -65,6 +65,17 @@ Instructional text should be written in the `imperative mood <https://en.wikiped
 Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_.
 
 
+.. _how-to-contribute:
+
+How to contribute
+=================
+
+Anyone is welcome to create a tutorial and then work with the Rubin Community Science team (CST)
+to have it ingested and made available alongside the rest of the tutorials.
+CST members will help with the review process and GitHub workflows.
+Contact any co-author of this document to get started.
+
+
 .. _format-style-notebooks:
 
 Jupyter Notebooks
@@ -192,8 +203,7 @@ see the guidelines for functions and classes in the `Code cells`_ section below.
 It is ok to have sub-subsections, such as ``#### 1.2.1. Define global cosmological parameter values``
 or ``#### 1.2.2. Define a function to make an image cutout``.
 
-**Additional sections:**
-All sections must be numbered to enable referencing in support requests,
+**Additional sections** must be numbered to enable referencing in support requests,
 e.g., "I'm having trouble with the second code cell in Section 2.3."
 Use descriptive section titles, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``,
 so that the auto-generated table of contents is more useful.
@@ -355,25 +365,33 @@ Since use of "extent" is necessary for displaying a WCS overlay for ``deepCoadds
 
 
 
-.. _format-style-portal:
+.. _format-style-docs:
 
-Portal, API, and command-line tutorial format and style
-=======================================================
+Documentation-based tutorials
+=============================
 
-Tutorials for the Portal and API Aspects, or for copy-pasting into a command line interface in
-the Notebook Aspect, are written in reStructuredText (RST) format and are kept within the data release documentation at
+Tutorials for the Portal and API Aspects, or tutorials written as scripts that can be
+copy-pasted into the command line interface in the Notebook Aspect,
+are written in reStructuredText (RST) format and are kept within the data release documentation at
 `DP0.2 Tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html>`_ and
 `DP0.3 Tutorials <https://dp0-3.lsst.io/tutorials-examples/index.html>`_.
 
-All such tutorials should have a descriptive title, list the contact authors, 
-the date last verified to run, and the targeted learning level.
-A brief narrative introduction to the tutorial should be provided at the top of the page.
 
-The rest of the tutorial should be divided into sequentially numbered steps and substeps.
+Header and section structure
+----------------------------
+
+All tutorials should have a descriptive title.
+At the top of the page, the tutorial should list the contact authors,
+the date last verified to run, and the targeted learning level, before
+providing a brief narrative introduction.
+
+The rest of the tutorial should be divided into sequentially numbered steps.
+Steps should be short (one to a few sentences) and provide a single action item for the user.
 
 It is very common, but not mandatory, to end all tutorials with a section called 
 "Exercises for the learner" with suggestions of
-how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
+how the user can make changes to the tutorial test options and examples,
+or guide them on the next step forward on their own.
 
 
 Code blocks
@@ -392,28 +410,22 @@ In RST, this is done as in the following example.
        WHERE ssObjectId > 9000000000000000000
 
 
-Figures
--------
+Screenshots
+-----------
 
-Use descriptive text and screenshots to demonstrate the steps of the tutorial, to show the user what to do,
+Use screenshots to demonstrate the steps of the tutorial, to show the user what to do,
 and to show the expected results for comparison.
-
 Augment screenshots with indicators (e.g., arrows or circles) to guide the users attention as needed.
 
-Include a caption that describes the figure (see example below, with alt-text and a caption).
+Data visualization should `Colorblind-friendly plots`_.
 
-The recommendations under :ref:`Accessibility considerations<accessibility-considerations>` 
-should be adopted to create colorblind-friendly plots.
+**Caption and alt-text:** 
+All figures should have a caption and an `Alternative-text (alt-text)`_ statement.
+The motivation and guidance for writing alt-text is provided under
+:ref:`Accessibility considerations<accessibility-considerations>`.
 
-
-Alternate-Text (alt-text)
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-All figures should have an alt-text statement.
-The motivation and guidance for writing alt-text is provided under :ref:`Accessibility considerations<accessibility-considerations>`.
-
-To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.
-In RST, this is done as in the following example.
+To add a caption and alt-text to an image in rST, use the ``:alt:`` command
+as in the following example.
 
 ::
 
@@ -430,7 +442,6 @@ Accessibility considerations
 ============================
 
 The following set of best practices to be implemented for Rubin tutorials is a work in progress.
-Individual components have been incorporated into the sections above, but are collected here for reference.
 
 
 Vision-impaired astronomers
@@ -470,7 +481,7 @@ The following python code can be used to create a dictionary that assigns colors
   plot_filter_colors = {'u': '#56b4e9', 'g': '#008060', 'r': '#ff4000', 'i': '#850000', 'z': '#6600cc', 'y': '#000000'}
 
 
-Alternative-Text (alt-text)
+Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Alt-text is added to figures, images, and graphics in the documentation and documentation-based tutorials
@@ -536,45 +547,26 @@ Stretch goals
 
 Work is on-going in these areas, and in time they will become part of the guidelines above.
 
-
-Notebook metadata
------------------
-
+**Notebook metadata:**
 Embed notebook metadata (e.g., version, skills, packages) in a way that can be scraped and used to auto-generate the ``README.md`` file or a Table of Contents, to enable users to browse notebook contents.
 
-
-Accessibility
--------------
-
+**Accessibility:**
 Continue to improve tutorials' accessibility to people with disabilities by finding and implementing, 
 e.g., screen reader compatibility software, data sonification packages, 
 customized use of `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_, 
-additional policies for supporting neurodivergent users,
-and other jupyter notebook accessibility techniques.
+additional policies for supporting neurodivergent users, and other jupyter notebook accessibility techniques.
 
-
-Translations
-------------
-
+**Translations:**
 At minimum, translate any undergraduate-level tutorials into Spanish.
-
 Additionally, improve tutorials' accessibility to non-English speakers by finding and implementing automatic translation and localization software.
 
-
-Clearing memory
----------------
-
+**Clearing memory:**
 Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures.
 E.g., whether or not the ``del`` command is sufficient for this.
 
-
-Package of commonly-used functions
-----------------------------------
-
+**Package of commonly-used functions:**
 Create recipes for common user activities.
-These could be, e.g., ADQL searches for the portal, code snippets for the command line, or python modules that can be imported.
-
-When these are used in the advanced notebooks, also demonstrate use of the ``inspect.getsource`` functionality for users to display function code.
-
-
-
+These could be, e.g., ADQL searches for the portal, code snippets for the command line,
+or python modules that can be imported.
+When these are used in the advanced notebooks, also demonstrate use of the ``inspect.getsource``
+functionality for users to display function code.
