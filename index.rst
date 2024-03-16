@@ -212,7 +212,7 @@ Code cells
 All python code in Jupyter Notebooks should adhere to the
 `Code Style Guidelines <https://developer.lsst.io/coding/intro.html>`_
 in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
-Follow the guidelines above for the `Use of PEP8 and flake8_.
+Follow the guidelines above for the `Use of PEP8 and flake8`_.
 
 **Comments:**
 Avoid using comments within a code cell as documentation (i.e., with ``#``).
