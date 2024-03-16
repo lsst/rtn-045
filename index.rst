@@ -70,13 +70,93 @@ Find further guidelines in Rubin's `User documentation style guide <https://deve
 Jupyter Notebooks
 =================
 
+Template
+--------
+
 Use the `template <https://github.com/rubin-dp0/cst-dev/blob/main/template.ipynb>`_
 Jupyter notebook in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
-The template contains an example of the header and the mandatory first section, which are described below.
+The template contains an example of the header and the mandatory first section, which are described
+in `Section structure`_.
+
+
+Use of PEP8 and flake8
+----------------------
+
+``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
+and ``flake8`` is a tool to ensure compliance with these standards.
+
+Use ``flake8`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
+
+Notebook tutorial developers must install the following packages locally in their home directory:
+
+::
+
+  pip install --user flake8-nb
+  pip install --user pycodestyle_magic
+
+It is known that the most up-to-date version of ``flake8`` has some issues.
+If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
+force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
+
+
+**Create the flake8 config file:**
+These instructions use ``emacs``, but it doesn’t matter so long as the end result is a
+correctly-named file with the right contents.
+Start in the home directory and execute the following.
+
+::
+
+  touch .config/flake8
+  emacs .config/flake8
+
+
+Then copy-paste the following into the opened config file.
+
+::
+
+  [flake8]
+  max-line-length = 99
+  ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
+
+Use ``x-s`` then ``x-c`` to save and exit emacs.
+
+
+**While developing a notebook** have the following "magic" commands as the first code cell:
+
+::
+
+  %load_ext pycodestyle_magic
+  %flake8_on
+  import logging
+  logging.getLogger("flake8").setLevel(logging.FATAL)
+
+Whenever a cell is executed, it will use ``flake8`` to check for adherence to the ``PEP8`` coding style guide, 
+and report violations which can be fixed immediately.
+When the notebook is ready to be merged, the cell with the magic commands must be removed.
+
+**When the notebook is complete** execute the following from the command line in the notebook's directory:
+
+::
+
+  flake8-nb notebook_name.ipynb
+
+This will do a final check of any violations with ``PEP8``.
+This will catch things that can be missed line-by-line, such as packages that are imported but never used.
 
 
 Markdown cells
 --------------
+
+**Monospace font:**
+Any references to variables used in code cells or any code commands should be in ``monospaced font``.
+
+**Warnings:**
+Use of indented text should be limited to warnings, e.g., 
+``> **Warning:** the following cell produces a warning which is ok to ignore because...``.
+
+
+Section structure
+^^^^^^^^^^^^^^^^^
 
 **First markdown cell:**
 Set the title using heading level 1 (single ``#``).
@@ -95,9 +175,7 @@ The contents of cells two through five are used to generate the table of noteboo
 README.md file for the repository.
 It is a stretch goal to be able to auto-generate the table by scraping these notebook metadata.
 
-**Section 1**
-
-Set the title for the first section using heading level 2: ``## 1. Introduction``.
+**The first section** should be named "Introduction" using heading level 2: ``## 1. Introduction``.
 Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
 Cite or link to any external information or documentation, and cross-reference to other notebooks.
 
@@ -114,8 +192,7 @@ see the guidelines for functions and classes in the `Code cells`_ section below.
 It is ok to have sub-subsections, such as ``#### 1.2.1. Define global cosmological parameter values``
 or ``#### 1.2.2. Define a function to make an image cutout``.
 
-**Section structure**
-
+**Additional sections:**
 All sections must be numbered to enable referencing in support requests,
 e.g., "I'm having trouble with the second code cell in Section 2.3."
 Use descriptive section titles, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``,
@@ -123,16 +200,10 @@ so that the auto-generated table of contents is more useful.
 Do not use title case for section headings; use sentence case.
 (This Is Title Case. This is sentence case.)
 
+**Exercises for the learner:**
 It is very common, but not mandatory, to end all notebook tutorials with a section called
 ``Exercises for the learner`` with suggestions of how the user can make changes to the
 tutorial test options and examples, or guide them on the next step forward on their own.
-
-**Monospace font:**
-Any references to variables used in code cells or any code commands should be in ``monospaced font``.
-
-**Warnings:**
-Use of indented text should be limited to warnings, e.g., 
-``> **Warning:** the following cell produces a warning which is ok to ignore because...``.
 
 
 Code cells
@@ -141,6 +212,7 @@ Code cells
 All python code in Jupyter Notebooks should adhere to the
 `Code Style Guidelines <https://developer.lsst.io/coding/intro.html>`_
 in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
+Follow the guidelines above for the `Use of PEP8 and flake8_.
 
 **Comments:**
 Avoid using comments within a code cell as documentation (i.e., with ``#``).
@@ -213,71 +285,6 @@ If a code cell produces a warning which is known and it should be ignored, the p
 *before* the code cell which produces the warning, to tell the user it is acceptable to ignore.
 It is not preferred to use, e.g., ``warnings.simplefilter("ignore", category=UserWarning)``, because
 ignoring categories of warnings can allow real issues to go unnoticed.
-
-
-Use of PEP8 and flake8
-^^^^^^^^^^^^^^^^^^^^^^
-
-``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
-and ``flake8`` is a tool to ensure compliance with these standards.
-
-Use ``flake8`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
-
-Notebook tutorial developers must install the following packages locally in their home directory:
-
-::
-
-  pip install --user flake8-nb
-  pip install --user pycodestyle_magic
-
-It is known that the most up-to-date version of ``flake8`` has some issues.
-If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
-force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
-
-
-**Create the flake8 config file:**
-These instructions use ``emacs``, but it doesn’t matter so long as the end result is a
-correctly-named file with the right contents.
-Start in the home directory and execute the following.
-
-::
-
-  touch .config/flake8
-  emacs .config/flake8
-
-
-Then copy-paste the following into the opened config file.
-
-::
-
-  [flake8]
-  max-line-length = 99
-  ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
-
-Use ``x-s`` then ``x-c`` to save and exit emacs.
-
-
-**While developing a notebook** have the following "magic" commands as the first code cell:
-
-::
-
-  %load_ext pycodestyle_magic
-  %flake8_on
-  import logging
-  logging.getLogger("flake8").setLevel(logging.FATAL)
-
-Whenever a cell is executed, it will use ``flake8`` to check for adherence to the ``PEP8`` coding style guide, 
-and report violations which can be fixed immediately.
-When the notebook is ready to be merged, the cell with the magic commands must be removed.
-
-**When the notebook is complete** execute the following from the command line in the notebook's directory:
-
-::
-
-  flake8-nb notebook_name.ipynb
-
-This will do a final check of any violations with ``PEP8``.
-This will catch things that can be missed line-by-line, such as packages that are imported but never used.
 
 
 Output
