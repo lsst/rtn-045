@@ -110,7 +110,7 @@ Globally defined utility functions, classes, plotting defaults, or constants sho
 Instantiations of the TAP or butler services should also be done here.
 
 Single-use functions or classes can be defined immediately before they are used, for pedagogical purposes;
-see the guidelines for functions and classes in the `Code`_ section below.
+see the guidelines for functions and classes in the `Code cells`_ section below.
 It is ok to have sub-subsections, such as ``#### 1.2.1. Define global cosmological parameter values``
 or ``#### 1.2.2. Define a function to make an image cutout``.
 
