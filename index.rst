@@ -26,183 +26,325 @@ Guidelines for User Tutorials
 
 .. _pedagogical-principles:
 
-Pedagogical principles
-======================
+Principles
+==========
 
-All tutorials should have the following attributes.
+All tutorials should be guided by the following principles,
+and adhere to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
 
-
-Inclusive
----------
-
+**Inclusive:**
 Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
-
 Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
 Ensure jargon and acronyms are defined, regardless of target audience.
-
 See the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
 
+**Level-appropriate:**
+Identify and teach to a target audience (e.g., beginner, intermediate, or advanced).
 
-Level-appropriate
------------------
+**Skill-focused:**
+Teach one to a few skills, techniques, or RSP functionality, and/or
+provide a demonstration of a scientific analysis with LSST data.
 
-Tutorials should clearly identify and teach to their target audience:  beginner, intermediate, or advanced.
+**Consumable:**
+The tutorial should take about 30 minutes to complete
+(not including any provided "Exercises for the learner").
 
+**Well-referenced:**
+Include citations, references, and external links (e.g., code package documentation).
+Reference any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
 
-Skill-focused
--------------
+**Properly-credited:**
+Appropriate acknowledgments should be provided to credit individuals whose work was used.
+This sets a precedent of prioritizing credits in an openly collaborative environment.
+Cite other scientists or papers within the text of the tutorial where appropriate.
 
-Tutorials should focus on teaching one or a few new skills or techniques, or providing one scientific demonstration.
-
-
-Consumable
-----------
-
-The user should be able to work through the core contents of a tutorial within about 30 minutes
-(i.e., not including any additional suggested "Exercises for the learner").
-
-
-Well-documented
----------------
-
-High-quality documentation should be provided with the tutorial, including narrative descriptions, citations, references,
-and external links to, e.g., package documentation.
-
-
-Clearly-written
----------------
-
-Tutorials should write in short, clear statements describing the actions a user should take
-and the expected results.
-Aside from introductory or background information, 
-instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_,
-as is commonly adopted for technical writing.
+**Clearly-written:**
+Write in short, clear, instructional statements.
+Describe the actions a user should take and the expected results.
+Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_, as is commonly adopted for technical writing.
+Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_.
 
 
-Cross-referenced
-----------------
+.. _how-to-contribute:
 
-Tutorials should reference any precursor or advanced tutorials that users should consider as prerequisites or follow-up resources.
+How to contribute
+=================
 
-
-Proper credits
---------------
-
-Appropriate acknowledgments should be provided to credit individuals whose notebooks were used as examples,
-and to set a precedent of prioritizing credits in an openly collaborative environment.
-Authors should cite other scientists or papers within the text of the tutorial where appropriate.
+Anyone is welcome to create a tutorial and then work with the Rubin Community Science team (CST)
+to have it ingested and made available alongside the rest of the tutorials.
+CST members will help with the review process and GitHub workflows.
+Contact any co-author of this document to get started.
 
 
 .. _format-style-notebooks:
 
-Jupyter notebook format, style, and code standards
-==================================================
-
+Jupyter Notebooks
+=================
 
 Template
 --------
 
-As a starting point, use the `template Jupyter notebook in the cet-dev repository <https://github.com/rubin-dp0/cet-dev/blob/main/template.ipynb>`_, which is part of the ``rubin-dp0`` GitHub Organization.
-The template contains an example of the header and the mandatory first section described below.
+Use the `template <https://github.com/rubin-dp0/cst-dev/blob/main/template.ipynb>`_
+Jupyter notebook in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
+The template contains an example of the header and the mandatory first section, which are described
+in `Section structure`_.
 
 
-Header
-^^^^^^
+Use of PEP8 and flake8
+----------------------
 
-The structure of the header is mandatory, and all of the following is already set up in the template.
+``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
+and ``flake8`` is a tool to ensure compliance with these standards.
 
-In the first markdown cell, display the Rubin Observatory logo at upper left.
-To the right of the logo list the contact author, date last verified, version, container size, and targeted learning level.
+Use ``flake8`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
 
-The second, third, fourth, and fifth markdown cells should contain a very brief description,
-a list of core skills, a list of the LSST data products, and a list of the python packages used by the notebook.
-List the packages being taught first (e.g., ``afwDisplay`` for a notebook about displaying images), and then supporting packages
-(e.g., ``lsst.daf.butler`` for a notebook about displaying images).
-It is acceptable to omit basic support packages (e.g., ``os``, ``glob``, ``numpy``, ``matplotlib``).
-The contents of cells two through five are used to automatically generate a table of notebook metadata in the README.md file for the repository.
+Notebook tutorial developers must install the following packages locally in their home directory:
 
-The sixth and seventh markdown cells should contain the credits and acknowledgments, and information about where users should go to get support.
+::
+
+  pip install --user flake8-nb
+  pip install --user pycodestyle_magic
+
+It is known that the most up-to-date version of ``flake8`` has some issues.
+If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
+force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
 
 
-First section
-^^^^^^^^^^^^^
+**Create the flake8 config file:**
+These instructions use ``emacs``, but it doesn’t matter so long as the end result is a
+correctly-named file with the right contents.
+Start in the home directory and execute the following.
 
-The structure of the first section is mandatory, and all of the following is already set up in the template.
+::
 
-Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
-Cite or link to any external information or documentation, and cross-reference to other notebooks.
+  touch .config/flake8
+  emacs .config/flake8
 
-The first subsection should always be ``1.1 Import packages``.
-It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
-All package imports must be done in the first code cell.
 
-The second subsection should always be ``1.2 Define functions and parameters``.
-Globally defined utility functions, classes, plotting defaults, or constants should be here.
-(Single-use functions or classes can be defined immediately before they are used; see the section on functions and classes below).
+Then copy-paste the following into the opened config file.
 
-If a notebook has no functions or parameters to define, it is preferred to leave this subsection header in the document
-and state that no additional functions and parameters are used.
+::
 
-If a notebook has many such things to define, it is acceptable to rename the subsection to be more specific to the notebook,
-and/or to use sub-subsections like ``1.2.1 Define global cosmological parameter values`` or ``1.2.2 Define a function to make an image cutout``.
+  [flake8]
+  max-line-length = 99
+  ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
+
+Use ``x-s`` then ``x-c`` to save and exit emacs.
+
+
+**While developing a notebook** have the following "magic" commands as the first code cell:
+
+::
+
+  %load_ext pycodestyle_magic
+  %flake8_on
+  import logging
+  logging.getLogger("flake8").setLevel(logging.FATAL)
+
+Whenever a cell is executed, it will use ``flake8`` to check for adherence to the ``PEP8`` coding style guide, 
+and report violations which can be fixed immediately.
+When the notebook is ready to be merged, the cell with the magic commands must be removed.
+
+**When the notebook is complete** execute the following from the command line in the notebook's directory:
+
+::
+
+  flake8-nb notebook_name.ipynb
+
+This will do a final check of any violations with ``PEP8``.
+This will catch things that can be missed line-by-line, such as packages that are imported but never used.
+
+
+Markdown cells
+--------------
+
+**Monospace font:**
+Any references to variables used in code cells or any code commands should be in ``monospaced font``.
+
+**Warnings:**
+Use of indented text should be limited to warnings, e.g., 
+``> **Warning:** the following cell produces a warning which is ok to ignore because...``.
 
 
 Section structure
 ^^^^^^^^^^^^^^^^^
 
-For all sections after the first, use numbers for sections, subsections, and sub-subsections to enable referencing in support requests,
+**First markdown cell:**
+Set the title using heading level 1 (single ``#``).
+Display the Rubin Observatory logo at upper left.
+To the right of the logo list the contact author, date last verified, LSST Science Pipelines version,
+container size, and targeted learning level, in that order.
+
+**Second to seventh markdown cells:**
+A very brief description, a list of core skills, a list of the LSST data products,
+a list of the python packages used by the notebook, the credits and acknowledgements,
+and information about where users should go to get support, in that order.
+It is ok to limit the lists to include only the main data products and packages that the tutorial
+is focused on teaching.
+It is ok to omit basic support packages (e.g., ``os``, ``glob``, ``numpy``, ``matplotlib``).
+The contents of cells two through five are used to generate the table of notebook metadata in the
+README.md file for the repository.
+It is a stretch goal to be able to auto-generate the table by scraping these notebook metadata.
+
+**The first section** should be named "Introduction" using heading level 2: ``## 1. Introduction``.
+Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
+Cite or link to any external information or documentation, and cross-reference to other notebooks.
+
+The first subsection should always be ``### 1.1. Import packages``.
+It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
+All package imports must be done in the first code cell.
+
+The second subsection should always be ``### 1.2. Define functions and parameters``.
+Globally defined utility functions, classes, plotting defaults, or constants should be here.
+Instantiations of the TAP or butler services should also be done here.
+
+Single-use functions or classes can be defined immediately before they are used, for pedagogical purposes;
+see the guidelines for functions and classes in the `Code cells`_ section below.
+It is ok to have sub-subsections, such as ``#### 1.2.1. Define global cosmological parameter values``
+or ``#### 1.2.2. Define a function to make an image cutout``.
+
+**Additional sections** must be numbered to enable referencing in support requests,
 e.g., "I'm having trouble with the second code cell in Section 2.3."
-
-Use section titles that actively describe what is being done, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``, so that the auto-generated table of contents is easy to navigate.
-
+Use descriptive section titles, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``,
+so that the auto-generated table of contents is more useful.
 Do not use title case for section headings; use sentence case.
+(This Is Title Case. This is sentence case.)
 
-It is very common, but not mandatory, to end all notebook tutorials with a section called ``Exercises for the learner`` with suggestions of
-how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
+**Exercises for the learner:**
+It is very common, but not mandatory, to end all notebook tutorials with a section called
+``Exercises for the learner`` with suggestions of how the user can make changes to the
+tutorial test options and examples, or guide them on the next step forward on their own.
 
 
-Tables and plots
-----------------
+Code cells
+----------
+
+All python code in Jupyter Notebooks should adhere to the
+`Code Style Guidelines <https://developer.lsst.io/coding/intro.html>`_
+in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
+Follow the guidelines above for the `Use of PEP8 and flake8`_.
+
+**Comments:**
+Avoid using comments within a code cell as documentation (i.e., with ``#``).
+Markdown cells are the preferred way to provide descriptive text.
 
 
-Table data format
+Functions and classes
+^^^^^^^^^^^^^^^^^^^^^
+
+Functions and classes should be named following the
+`Naming Conventions <https://developer.lsst.io/python/style.html#naming-conventions>`_
+defined in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
+
+Globally defined functions or classes which are used more than once in a notebook should be
+defined in Section 1.2, but single-use functions or classes can be defined immediately before they are used.
+
+**Hiding long functions.**
+Functions or classes that are particularly long blocks of code (e.g., >20 lines) can be hidden by going to
+the "View" menu item and choosing "Collapse Selected Code", or by clicking on the blue bar that
+appears to the left of a selected cell.
+Hidden cells should be described in the preceding markdown cell with text like 
+"the following hidden cell contains code that defines the ``make_cmd_plot`` function".
+The first hidden cell in a notebook should include instructions for displaying the cell, such as
+"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
+or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
+
+It is a stretch goal to create a package of commonly-used functions in order
+to avoid users encountering long blocks of code, and help keep notebooks readable.
+
+
+TAP queries
+^^^^^^^^^^^
+
+TAP queries should always be run as asynchronous as this is the best practice and a good habit for users.
+
+As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
+any estimates for how long the query should take, to avoid confusing or concerning the user.
+The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the 
+execution time, should the user require an estimate.
+
+
+Clearing memory
+^^^^^^^^^^^^^^^
+
+To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
+See the ``remove_figure`` function defined in the DP0 notebook
+`03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`_.
+This is only necessary in notebooks that demonstrate data visualization with large datasets.
+Better ways to clear the memory are under consideration (see `Stretch goals`_). 
+
+
+Assert statements
 ^^^^^^^^^^^^^^^^^
 
-Results from a Table Access Protocol (TAP) service search are best displayed as an ``astropy`` table using ``.to_table()``,
-or as a pandas dataframe using ``.to_table().to_pandas()``.
+Where essential, or where a very specific value is expected, the ``assert`` command can be used to
+demonstrate to users that a condition is true.
+For example, ``assert`` statements can be used to confirm that service objects like TAP are not
+``None`` or ``null`` before moving on and using that instance,
+or to check that values meet expectations (e.g., total rows returned from a query).
+Do not use ``assert`` statements when, e.g., querying dynamic (prompt) datasets, which could return
+different results and cause the assert statement to fail.
+Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if
+the TAP service was not instantiated).
+
+
+Known warnings
+^^^^^^^^^^^^^^
+
+If a code cell produces a warning which is known and it should be ignored, the preferred method is to add a markdown cell
+*before* the code cell which produces the warning, to tell the user it is acceptable to ignore.
+It is not preferred to use, e.g., ``warnings.simplefilter("ignore", category=UserWarning)``, because
+ignoring categories of warnings can allow real issues to go unnoticed.
+
+
+Output
+------
+
+Tables
+^^^^^^
+
+Results from a Table Access Protocol (TAP) service search are best displayed as an
+``astropy`` table using ``.to_table()``, or as a pandas dataframe using ``.to_table().to_pandas()``.
 
 Do not use the ``.to_table().show_in_notebook()`` method.
 This can cause issues in the RSP JupyterLab environment that cause the notebook to hang indefinitely.
 
 
-Plot format and style
-^^^^^^^^^^^^^^^^^^^^^
+Plots
+^^^^^
 
+**Size:**
 Plots should be large enough such that the details in the data are easily discerned,
 but small enough to fit within a small browser window (e.g., a laptop screen).
 Typically, a statement such as ``fig = plt.figure(figsize=(6, 4))`` is sufficient (or ``(6, 6)`` for square plots).
 
+**Labels:**
 Axes labels with units are mandatory.
 A legend must be included if multiple types of data are co-plotted.
 A descriptive title is encouraged but not mandatory.
 
+**Style:**
 In general, the default ``matplotlib`` style is sufficient and should be adopted for plot attributes
 such as line thickness, tick labels, fontsize, and so on.
 However, the default ``matplotlib`` color palette is not sufficient, and the recommendations
-under :ref:`Accessibility considerations<accessibility-considerations>` should be adopted to create colorblind-friendly plots.
+under :ref:`Accessibility considerations<accessibility-considerations>` should be used to
+create colorblind-friendly plots.
 
+**Error bars:**
 Error bars should be included wherever possible, and especially in cases where analyses such
 as line fitting is being performed on the data in the plot, to help the user understand data quality.
 
-A markdown cell underneath the figure should provide a caption that adequately explains what the main
-attributes of the plot.
+**Captions:**
+A markdown cell underneath the figure should provide a figure number and a caption that explains
+the main attributes of the plot.
 This caption should serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
 and also as a way for the user to confirm the plot appears as expected.
 
 
-Image orientation
-^^^^^^^^^^^^^^^^^
+Image display
+^^^^^^^^^^^^^
 
+**Image orientation:**
 When using a World Coordinate System (WCS), display East left, North up.
 If only using pixels, ``(0,0)`` should be the lower-left, which is the default for ``awfDisplay``.
 
@@ -222,299 +364,34 @@ Since use of "extent" is necessary for displaying a WCS overlay for ``deepCoadds
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
 
 
-Functions and classes
----------------------
 
-While globally defined functions or classes which are used more than once in a notebook should be
-defined in section ``1.2 Define Functions and Parameters``, single-use functions or classes 
-can be defined immediately before they are used.
+.. _format-style-docs:
 
-Functions or classes that are particularly long blocks of code (e.g., >20 lines) can be hidden by going to
-the "View" menu item and choosing "Collapse Selected Code", or by clicking on the blue bar that
-appears to the left of a selected cell.
-Hidden cells should be described in the preceding markdown cell with text like 
-"the following hidden cell contains code that defines the ``make_cmd_plot`` function".
-The first hidden cell in a notebook should include instructions for displaying the cell, such as
-"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
-or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
+Documentation-based tutorials
+=============================
 
-
-TAP queries
------------
-
-TAP queries should always be run as asynchronous as this is the best practice and a good habit for users.
-
-As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
-any estimates for how long the query should take, to avoid confusing or concerning the user.
-The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the 
-execution time, should the user require an estimate.
-
-
-
-Clearing memory
----------------
-
-These are optional methods for keeping memory use manageable in notebooks which may be computationally restrictive,
-e.g., demonstrating data visualization techniques with big datasets.
-
-To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
-See the ``remove_figure`` function defined in the DP0 notebook `03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`_.
-
-Better ways to clear the memory of, for example, large arrays that are not going to be used further on in the notebook
-is in development as mentioned under :ref:`Stretch goals<stretch-goals>`.
-
-
-Assert statements
------------------
-
-It is not mandatory nor expected for assert statements to be included in python scripts or notebooks, but tutorial developers should consider the following guidance.
-
-Where essential, or where a very specific value is expected, the ``assert`` command can be used to demonstrate to users that a condition is true.
-For example, ``assert`` statements can be used to confirm that service objects like TAP are not ``None`` or ``null`` before moving on and using that instance,
-or to check that values meet expectations (e.g., total rows returned from a query).
-
-However, take care not to use ``assert`` statements when, e.g., querying dynamic (prompt) datasets, which could return different results and cause the assert statement to fail.
-Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if the TAP service was not instantiated).
-
-
-Known warnings
---------------
-
-If a code cell produces a warning which is known and it should be ignored, the preferred method is to add a markdown cell
-*before* the code cell which produces the warning, to tell the user it is acceptable to ignore.
-
-Guidelines about the options to ignore categories of warnings are under consideration, and will be added here in the future.
-Until then, use of, e.g., ``warnings.simplefilter("ignore", category=UserWarning)`` is not preferred because ignoring categories
-of warnings can allow real issues to go unnoticed.
-
-
-Markdown style
---------------
-
-Any references to variables used in code cells or any code commands should be in ``monospaced font``.
-
-Use of indented text should be limited to warnings and notices, e.g., ``> **Warning:** the following cell...``.
-
-
-Code cell comments
-------------------
-
-Markdown cells are the preferred way to provide descriptive text.
-Avoid using comments within a code cell as documentation.
-
-
-Code cell style standard PEP8
------------------------------
-
-``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
-and ``flake8`` is a tool to ensure compliance with these standards.
-
-Use ``flake8`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
-
-Notebook tutorial developers must install the following packages locally in their home directory:
-
-::
-
-  pip install --user flake8-nb
-  pip install --user pycodestyle_magic
-
-It is known that the most up-to-date version of ``flake8`` has some issues.
-If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
-force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
-
-
-The flake8 config file
-^^^^^^^^^^^^^^^^^^^^^^
-
-Create a configuration file for ``flake8``.
-For example, from the command line in the home directory, execute the following.
-These instructions use ``emacs``, but it doesn’t matter so long as the end result is a correctly-named file with the right contents.
-
-::
-
-  touch .config/flake8
-  emacs .config/flake8
-
-
-Then copy-paste the following into the opened config file.
-
-::
-
-  [flake8]
-  max-line-length = 99
-  ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
-
-Use ``x-s`` then ``x-c`` to save and exit emacs.
-
-
-While developing a notebook
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-While developing a notebook, have the following "magic" commands as the first code cell:
-
-::
-
-  %load_ext pycodestyle_magic
-  %flake8_on
-  import logging
-  logging.getLogger("flake8").setLevel(logging.FATAL)
-
-Whenever a cell is executed, it will use ``flake8`` to check for adherence to the ``PEP8`` coding style guide, 
-and report violations which can be fixed immediately.
-When the notebook is ready to be merged, the cell with the magic commands must be removed.
-
-
-When the notebook is complete
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When the notebook is complete, execute the following from the command line in the notebook's directory:
-
-::
-
-  flake8-nb notebook_name.ipynb
-
-This will do a final check of any violations with ``PEP8``.
-This will catch things that can be missed line-by-line, such as packages that are imported but never used.
-
-
-.. _git-policy-notebooks:
-
-Git branch, merge, and review policy for the tutorial-notebooks repository
-==========================================================================
-
-The following applies when creating or updating notebooks in the 
-`tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks>`_,
-which is part of the ``rubin-dp0`` GitHub Organization.
-The ``main`` branch is where changes are collected before pushing ``prod`` branch.
-The ``prod`` branch is the version available in the RSP.
-
-
-Branch
-------
-
-Develop new notebooks, or update existing ones, in a new branch.
-This branch should be named for the corresponding Jira ticket (e.g., "tickets/PREOPS-12345").
-The new branch should be created from ``main``, *not* from ``prod``.
-
-Only update one notebook per ticket branch, unless the ticket is to make similar updates to all notebooks
-(e.g., when bumping the RSP's recommended image).
-
-Update the repository's ``README.md`` file in the branch when appropriate.
-
-
-Commit and push
----------------
-
-Always restart the Jupyter Notebook kernel and clear all outputs before saving, committing, and pushing changes to the branch.
-
-
-Pull request
-------------
-
-When the notebook is complete open a pull request (PR) to merge the ticket branch into the ``main`` branch (again, *not* to ``prod``).
-
-
-Review
-------
-
-Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
-Reviewers do not need to be members of the CST.
-If they agree, assign them as a reviewer on the pull request.
-If there is uncertainty about whom to assign as a reviewer, ask the Lead Community Scientist to help identify someone.
-
-If the reviewer requests changes, ensure that all of the reviewers' comments are addressed.
-Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
-or an explanation of why the request was not implemented.
-Contact the reviewers to let them know the pull request now awaits their approval.
-
-
-Merge
------
-
-After the reviewers have approved the pull request, ``rebase and merge`` the ticket branch into the ``main`` branch (again, *not* to ``prod``).
-Resolve all conflicts, if there are any.
-After the successful merge, delete the ticket branch.
-
-
-Release to prod branch
-----------------------
-
-To "release" the new version of ``main`` to ``prod`` branch (i.e., to update all RSP users' tutorial notebooks),
-delete the current ``prod-prior-to-rebranch`` branch, rename ``prod`` as ``prod-prior-to-rebranch``, then create a new ``prod`` branch from ``main``.
-Doing this way avoids weird history-based git issues that cause conflicts in ``main`` to ``prod`` merges.
-There is no need to track the history between ``main`` and ``prod``.
-
-The number of pushes to the ``prod`` branch should be minimized.
-For example, if there are a few tickets being completed within a week, coordinate with other notebook developers to collect all changes in
-the ``main`` branch, and then do a single "release" to ``prod``.
-
-
-Jira tickets
-------------
-
-Remember to make comments in the associated Jira tickets about the major updates as work progresses.
-
-After the PR is merged, request a review on the ticket (usually from the CST team lead).
-After the ticket has been reviewed, the ticket status can be set as done.
-
-
-Updates to the RSP's recommended version
-----------------------------------------
-
-Decisions on whether to update (or, "bump") the recommended image for the RSP are made jointly between the CST and the RSP teams.
-Once the decision has been made, a PREOPS Jira ticket will be created and assigned to a CST member.
-
-Bumping the recommended image always occurs during the regularly scheduled maintenance periods, "Patch Thursday."
-The notebook updates should be merged to the ``main`` branch by the day before.
-
-The workflow is to create a new branch of the ``tutorial-notebooks`` repository from the ``main`` branch,
-test all of the notebooks with the new version, and make updates as needed.
-
-Do not suppress warnings while testing.
-It is not necessary to use the ``flake8`` "magic" commands while testing, unless significant changes to the code are required.
-
-At minimum, the header will have to be updated with a new date and verified version.
-Ensure that all notebooks are cleared before committing new versions.
-
-When the updates are complete, use a new pull request to merge the branch into ``main``.
-A review is not typically needed at this stage.
-
-Create a version tag using the new ``main`` branch of the ``tutorial_notebooks`` repo. 
-For example, for the update to ``Weekly 2023_27``, it would be ``git tag -a w.2023.27 -m "Weekly 2023_37"``
-followed by ``git push --tags``.
-
-During the Patch Thursday window, after the recommended image has been bumped, release to ``prod`` following the instructions of `Release to prod branch`_.
-
-Remember to make comments in the associated Jira tickets about the major updates and mark the ticket as done.
-
-
-Major updates log
------------------
-
-All new tutorials or significant changes should be documented for users in the logs of
-major tutorial updates for `DP0.2 <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`_
-and `DP0.3 <https://dp0-3.lsst.io/tutorials-examples/major-updates-log.html>`_.
-
-
-.. _format-style-portal:
-
-Portal, API, and command-line tutorial format and style
-=======================================================
-
-Tutorials for the Portal and API Aspects, or for copy-pasting into a command line interface in
-the Notebook Aspect, are written in reStructuredText (RST) format and are kept within the data release documentation at
+Tutorials for the Portal and API Aspects, or tutorials written as scripts that can be
+copy-pasted into the command line interface in the Notebook Aspect,
+are written in reStructuredText (RST) format and are kept within the data release documentation at
 `DP0.2 Tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html>`_ and
 `DP0.3 Tutorials <https://dp0-3.lsst.io/tutorials-examples/index.html>`_.
 
-All such tutorials should have a descriptive title, list the contact authors, 
-the date last verified to run, and the targeted learning level.
-A brief narrative introduction to the tutorial should be provided at the top of the page.
 
-The rest of the tutorial should be divided into sequentially numbered steps and substeps.
+Header and section structure
+----------------------------
+
+All tutorials should have a descriptive title.
+At the top of the page, the tutorial should list the contact authors,
+the date last verified to run, and the targeted learning level, before
+providing a brief narrative introduction.
+
+The rest of the tutorial should be divided into sequentially numbered steps.
+Steps should be short (one to a few sentences) and provide a single action item for the user.
 
 It is very common, but not mandatory, to end all tutorials with a section called 
 "Exercises for the learner" with suggestions of
-how the user can make changes to the tutorial test options and examples, or guide them on the next step forward on their own.
+how the user can make changes to the tutorial test options and examples,
+or guide them on the next step forward on their own.
 
 
 Code blocks
@@ -533,28 +410,22 @@ In RST, this is done as in the following example.
        WHERE ssObjectId > 9000000000000000000
 
 
-Figures
--------
+Screenshots
+-----------
 
-Use descriptive text and screenshots to demonstrate the steps of the tutorial, to show the user what to do,
+Use screenshots to demonstrate the steps of the tutorial, to show the user what to do,
 and to show the expected results for comparison.
-
 Augment screenshots with indicators (e.g., arrows or circles) to guide the users attention as needed.
 
-Include a caption that describes the figure (see example below, with alt-text and a caption).
+Data visualization should `Colorblind-friendly plots`_.
 
-The recommendations under :ref:`Accessibility considerations<accessibility-considerations>` 
-should be adopted to create colorblind-friendly plots.
+**Caption and alt-text:** 
+All figures should have a caption and an `Alternative-text (alt-text)`_ statement.
+The motivation and guidance for writing alt-text is provided under
+:ref:`Accessibility considerations<accessibility-considerations>`.
 
-
-Alternate-Text (alt-text)
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-All figures should have an alt-text statement.
-The motivation and guidance for writing alt-text is provided under :ref:`Accessibility considerations<accessibility-considerations>`.
-
-To add alt-text to an image in the reStructured text environment, use the ``:alt:`` command.
-In RST, this is done as in the following example.
+To add a caption and alt-text to an image in rST, use the ``:alt:`` command
+as in the following example.
 
 ::
 
@@ -565,51 +436,12 @@ In RST, this is done as in the following example.
        The caption goes here, indented the same way, but with an empty line between code and caption text.
 
 
-.. _git-policy-portal:
-
-Git branch, merge, and review policy for portal tutorials
-=========================================================
-
-The following applies when creating or updating tutorials in the `dp0-2_lsst_io repository <https://github.com/lsst/dp0-2_lsst_io>`_, which is part of the ``lsst`` GitHub Organization.
-
-Develop new tutorials, or update existing ones, in a new branch.
-This branch should be named for the corresponding Jira ticket (e.g., "tickets/PREOPS-12345").
-The new branch should be created from ``main``.
-Typically, only one tutorial is updated per ticket branch.
-
-Make commits and push changes to the branch in the ``dp0-2_lsst_io`` (or ``dp0-3_lsst_io``) repository until work is complete, then open a pull request to ``main``.
-
-Contact one or more Rubin Observatory staff members with the appropriate expertise and ask them to review the tutorial.
-At least one reviewer should be a member of the CST.
-If they agree, assign them as a reviewer on the pull request.
-
-If the reviewer requests changes, ensure that all of the reviewers' comments are addressed.
-Make changes and new commits to the branch, and respond to all of their comments with either a confirmation a change was made,
-or an explanation of why the request was not implemented.
-Contact the reviewers to let them know the pull request now awaits their approval.
-
-After the reviewers have approved the pull request, ``rebase and merge`` the ticket branch into the ``main`` branch.
-Do not click the "Update branch" button as that does a merge from main.
-Resolve all conflicts, if there are any.
-After the successful merge, delete the ticket branch.
-
-Remember to make comments in the associated Jira tickets about the major updates as work progresses.
-
-After the PR is merged, request a review on the ticket (usually from the CST team lead).
-After the ticket has been reviewed, the ticket status can be set as done.
-
-All new tutorials or significant changes should be documented for users in the logs of
-major tutorial updates for `DP0.2 <https://dp0-2.lsst.io/tutorials-examples/major-updates-log.html>`_
-and `DP0.3 <https://dp0-3.lsst.io/tutorials-examples/major-updates-log.html>`_.
-
-
 .. _accessibility-considerations:
 
 Accessibility considerations
 ============================
 
 The following set of best practices to be implemented for Rubin tutorials is a work in progress.
-Individual components have been incorporated into the sections above, but are collected here for reference.
 
 
 Vision-impaired astronomers
@@ -649,7 +481,7 @@ The following python code can be used to create a dictionary that assigns colors
   plot_filter_colors = {'u': '#56b4e9', 'g': '#008060', 'r': '#ff4000', 'i': '#850000', 'z': '#6600cc', 'y': '#000000'}
 
 
-Alternative-Text (alt-text)
+Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Alt-text is added to figures, images, and graphics in the documentation and documentation-based tutorials
@@ -715,42 +547,26 @@ Stretch goals
 
 Work is on-going in these areas, and in time they will become part of the guidelines above.
 
-
-Notebook metadata
------------------
-
+**Notebook metadata:**
 Embed notebook metadata (e.g., version, skills, packages) in a way that can be scraped and used to auto-generate the ``README.md`` file or a Table of Contents, to enable users to browse notebook contents.
 
-
-Accessibility
--------------
-
+**Accessibility:**
 Continue to improve tutorials' accessibility to people with disabilities by finding and implementing, 
 e.g., screen reader compatibility software, data sonification packages, 
 customized use of `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_, 
-additional policies for supporting neurodivergent users,
-and other jupyter notebook accessibility techniques.
+additional policies for supporting neurodivergent users, and other jupyter notebook accessibility techniques.
 
-
-Translations
-------------
-
+**Translations:**
 At minimum, translate any undergraduate-level tutorials into Spanish.
-
 Additionally, improve tutorials' accessibility to non-English speakers by finding and implementing automatic translation and localization software.
 
-
-Purge extraneous items in notebooks
------------------------------------
-
+**Clearing memory:**
 Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures.
 E.g., whether or not the ``del`` command is sufficient for this.
 
-
-Recipe functions
-----------------
-
+**Package of commonly-used functions:**
 Create recipes for common user activities.
-These could be, e.g., ADQL searches for the portal, code snippets for the command line, or python modules that can be imported.
-
-When these are used in the advanced notebooks, also demonstrate use of the ``inspect.getsource`` functionality for users to display function code.
+These could be, e.g., ADQL searches for the portal, code snippets for the command line,
+or python modules that can be imported.
+When these are used in the advanced notebooks, also demonstrate use of the ``inspect.getsource``
+functionality for users to display function code.
