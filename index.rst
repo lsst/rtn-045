@@ -433,7 +433,7 @@ as in the following example.
        :name: name_of_figure
        :alt: Descriptive text of image (use tab to indent second line of text)
 
-       The caption goes here, indented the same way, but with an empty line between code and caption text.
+       Figure 1: The caption goes here, indented the same way, but with an empty line between code and caption text.
 
 
 .. _accessibility-considerations:
