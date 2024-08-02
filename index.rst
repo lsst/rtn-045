@@ -456,7 +456,7 @@ Guidelines for colorblind-friendly plots includes the following.
 
 * Do not use red and green together.
 * Use color combinations that are high contrast.
-* Do not use color alone, but with different symbol and line styles.
+* **Do not use color alone, but with different symbol and line styles.**
 
 In Jupyter Notebooks, in order to be accessible to those with Color Vision Deficiency (CVD or colorblind), 
 plots color tables with ``matplotlib`` should be either a greyscale,
