@@ -472,17 +472,33 @@ The ``tableau-colorblind10`` color table can be loaded with the following python
   plt.style.use('tableau-colorblind10')
 
 
-For the LSST filter set ``ugrizy``, always use symbol and line styles to represent the filters, in adition to color.
-Use the following color cycles for each filter, for use on white and black background.
+For the LSST filter set ``ugrizy``, always use symbols and line styles to represent the filters in addition to color.
+
+Use the following color cycles for each filter on both white and black backgrounds:
+
+White background:
 
 ::
 
-  plot_filter_colors_white_background = {'u': '#0c71ff', 'g': '#49be61', 'r': '#c61c00', 'i': '#ffc200', 'z': '#ffc200', 'y': '#5d0000'}
+  plot_filter_colors_white_background = {'u': '#0c71ff', 'g': '#49be61', 'r': '#c61c00', 'i': '#ffc200', 'z': '#f341a2', 'y': '#5d0000'}
+
+Black background:
 
 ::
 
-  plot_filter_colors_black_background = {'u': '#3eb7ff', 'g': '#30c39f', 'r': '#ff7300', 'i': '#2af5ff', 'z': '#a7f9c1', 'y': '#fdc900'}
+  plot_filter_colors_black_background = {'u': '#3eb7ff', 'g': '#30c39f', 'r': '#ff73e00', 'i': '#2af5ff', 'z': '#a7f9c1', 'y': '#fdc900'}
 
+Use the following symbols:
+
+::
+
+  plot_symbols = {'u': 'o', 'g': '^', 'r': 'v', 'i': 's', 'z': '*', 'y': 'p'}
+
+Use the following line styles:
+
+::
+
+  plot_line_styles = {'u': '--', 'g': ':', 'r': '-', 'i': '-.', 'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))}
 
 Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
