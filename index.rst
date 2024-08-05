@@ -456,7 +456,7 @@ Guidelines for colorblind-friendly plots includes the following.
 
 * Do not use red and green together.
 * Use color combinations that are high contrast.
-* Do not use color alone, but with different symbol and line styles.
+* **Do not use color alone, but with different symbol and line styles.**
 
 In Jupyter Notebooks, in order to be accessible to those with Color Vision Deficiency (CVD or colorblind), 
 plots color tables with ``matplotlib`` should be either a greyscale,
@@ -472,14 +472,33 @@ The ``tableau-colorblind10`` color table can be loaded with the following python
   plt.style.use('tableau-colorblind10')
 
 
-For the LSST filter set ``ugrizy``, adopt the same colors as Dark Energy Survey (DES), 
-which were chosen to be colorblind-friendly.
-The following python code can be used to create a dictionary that assigns colors by filter name.
+For the LSST filter set ``ugrizy``, always use symbols and line styles to represent the filters in addition to color.
+
+Use the following color cycles for each filter on both white and black backgrounds:
+
+White background:
 
 ::
 
-  plot_filter_colors = {'u': '#56b4e9', 'g': '#008060', 'r': '#ff4000', 'i': '#850000', 'z': '#6600cc', 'y': '#000000'}
+  plot_filter_colors_white_background = {'u': '#0c71ff', 'g': '#49be61', 'r': '#c61c00', 'i': '#ffc200', 'z': '#f341a2', 'y': '#5d0000'}
 
+Black background:
+
+::
+
+  plot_filter_colors_black_background = {'u': '#3eb7ff', 'g': '#30c39f', 'r': '#ff73e00', 'i': '#2af5ff', 'z': '#a7f9c1', 'y': '#fdc900'}
+
+Use the following symbols:
+
+::
+
+  plot_symbols = {'u': 'o', 'g': '^', 'r': 'v', 'i': 's', 'z': '*', 'y': 'p'}
+
+Use the following line styles:
+
+::
+
+  plot_line_styles = {'u': '--', 'g': ':', 'r': '-', 'i': '-.', 'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))}
 
 Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
