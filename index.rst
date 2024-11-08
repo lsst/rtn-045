@@ -570,10 +570,11 @@ Instructional text should be written in the `imperative mood <https://en.wikiped
 Sentences should be kept short and unambiguous, only describing the actions the user needs to take to achieve the expected results.
 When the user action is executing code, the instructional text should describe what the code does in simple terms.
 
-The imperative mood uses the infinitive or second-person present tense (often this is the same), but typically omits the "you" when possible.
-It is OK to include "you" or "your", especially when it clarifies the instruction.
-The passive voice should be avoided, as should use of "we", "our", and "let's".
-Below are a few examples to help guide instructional statements in narrative text.
+To implement the imperative mood in tutorials, use the infinitive or second-person present tense (often this is the same).
+Omit the "you" whenever possible, but it is OK to include "you" or "your", especially when it clarifies the instruction.
+The passive voice should be avoided, as should use of "we", "our", and "let's" or "let us".
+
+Below are a few examples to help with writing instructional statements in narrative text.
 
 Best:
  * Run the query.
@@ -584,7 +585,7 @@ Also ok:
 Do not use:
  * The query is run.
  * Now let's run the query.
- * Here we execute our query.
+ * Here we run our query.
 
 Additional writing resources are found in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_.
 
