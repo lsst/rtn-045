@@ -557,7 +557,7 @@ A few useful resources for accessibility include:
  * The `Notebooks for All <https://iota-school.github.io/notebooks-for-all/>`_ initiative by STScI.
 
 
-.. _narrative_text:
+.. _narrative-text:
 
 Narrative text
 ==============
