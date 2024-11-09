@@ -587,7 +587,7 @@ Do not use:
  * Now let's run the query.
  * Here we run our query.
 
-Additional writing resources are found in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_.
+Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_ contains additional writing resources.
 
 
 .. _stretch-goals:
