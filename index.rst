@@ -60,7 +60,7 @@ Cite other scientists or papers within the text of the tutorial where appropriat
 
 **Clearly-written:**
 Follow the best practices described under :ref:`Narrative text<narrative-text>`.
-Write short clear instructional statements in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_.
+Write short, clear, instructional statements in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_.
 
 
 .. _how-to-contribute:
