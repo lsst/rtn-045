@@ -59,10 +59,8 @@ This sets a precedent of prioritizing credits in an openly collaborative environ
 Cite other scientists or papers within the text of the tutorial where appropriate.
 
 **Clearly-written:**
-Write in short, clear, instructional statements.
-Describe the actions a user should take and the expected results.
-Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_, as is commonly adopted for technical writing.
-Find further guidelines in Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_.
+Follow the best practices described under :ref:`Narrative text<narrative-text>`.
+Write short, clear, instructional statements in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_.
 
 
 .. _how-to-contribute:
@@ -557,6 +555,39 @@ A few useful resources for accessibility include:
  * The document on `Improving Accessibility of Astronomical Publications <https://aas.org/sites/default/files/2019-09/Recommendations_WGAD_2016.pdf>`_ by the `AAS Working Group on Accessibility and and Disability <https://aas.org/comms/wgad>`_.
  * The `Web Content Accessibility Guidelines (WCAG) <https://www.w3.org/WAI/standards-guidelines/wcag/>`_.
  * The `Notebooks for All <https://iota-school.github.io/notebooks-for-all/>`_ initiative by STScI.
+
+
+.. _narrative-text:
+
+Narrative text
+==============
+
+Introductory text should be written in present, impersonal tense, similar to the introduction of a journal article.
+Paragraphs may be used, but should be kept short.
+Content should be limited to only background information that is relevant to the tutorial.
+
+Instructional text should be written in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_, as is commonly adopted for technical writing.
+Sentences should be kept short and unambiguous, only describing the actions the user needs to take to achieve the expected results.
+When the user action is executing code, the instructional text should describe what the code does in simple terms.
+
+To implement the imperative mood in tutorials, use the infinitive or second-person present tense (often this is the same).
+Omit the "you" whenever possible, but it is OK to include "you" or "your", especially when it clarifies the instruction.
+The passive voice should be avoided, as should use of "we", "our", and "let's" or "let us".
+
+Below are a few examples to help with writing instructional statements in narrative text.
+
+Best:
+ * Run the query.
+
+Also ok:
+ * Run your query.
+
+Do not use:
+ * The query is run.
+ * Now let's run the query.
+ * Here we run our query.
+
+Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_ contains additional writing resources.
 
 
 .. _stretch-goals:
