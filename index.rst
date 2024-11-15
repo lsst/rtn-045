@@ -256,6 +256,20 @@ TAP queries
 
 TAP queries should always be run as asynchronous as this is the best practice and a good habit for users.
 
+Asynchronous TAP queries should be followed up with an assert statement to confirm the job completed.
+Including this assert statement will ensure notebooks that are run in full, either by users or mobu,
+stop and return an appropriate error related to the job phase.
+
+::
+
+  rsp_tap = get_tap_service("tap")
+  job = rsp_tap.submit_job(query)
+  job.run()
+  job.wait(phases=['COMPLETED', 'ERROR'])
+  print('Job phase is', job.phase)
+  assert job.phase == 'COMPLETED'
+
+
 As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
 any estimates for how long the query should take, to avoid confusing or concerning the user.
 The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the 
