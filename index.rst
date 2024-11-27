@@ -498,7 +498,7 @@ Black background:
 
 ::
 
-  plot_filter_colors_black_background = {'u': '#3eb7ff', 'g': '#30c39f', 'r': '#ff73e00', 'i': '#2af5ff', 'z': '#a7f9c1', 'y': '#fdc900'}
+  plot_filter_colors_black_background = {'u': '#3eb7ff', 'g': '#30c39f', 'r': '#ff7e00', 'i': '#2af5ff', 'z': '#a7f9c1', 'y': '#fdc900'}
 
 Use the following symbols:
 
