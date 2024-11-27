@@ -512,6 +512,17 @@ Use the following line styles:
 
   plot_line_styles = {'u': '--', 'g': ':', 'r': '-', 'i': '-.', 'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))}
 
+Example:
+
+.. image:: _static/plot-colors-example.png
+   :alt: Example multi-band plot with a white and a black background.
+   :width: 800px
+   :height: 300px
+   :align: center
+
+You can view the example code here: 
+`plot-colors-example.py <_static/plot-colors-example.py>`_.
+
 Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
