@@ -2,3 +2,4 @@
 # https://documenteer.lsst.io/technotes/
 
 from documenteer.conf.technote import *  # noqa F401 F403
+html_static_path = ['_static']
