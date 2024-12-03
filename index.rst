@@ -436,7 +436,7 @@ All figures should have a caption and an `Alternative-text (alt-text)`_ statemen
 The motivation and guidance for writing alt-text is provided under
 :ref:`Accessibility considerations<accessibility-considerations>`.
 
-To add a caption and alt-text to an image in rst, use the ``:alt:`` command
+To add a caption and alt-text to an image in RST, use the ``:alt:`` command
 as in the following example.
 
 ::
