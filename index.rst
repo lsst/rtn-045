@@ -436,7 +436,7 @@ All figures should have a caption and an `Alternative-text (alt-text)`_ statemen
 The motivation and guidance for writing alt-text is provided under
 :ref:`Accessibility considerations<accessibility-considerations>`.
 
-To add a caption and alt-text to an image in rST, use the ``:alt:`` command
+To add a caption and alt-text to an image in RST, use the ``:alt:`` command
 as in the following example.
 
 ::
@@ -511,6 +511,17 @@ Use the following line styles:
 ::
 
   plot_line_styles = {'u': '--', 'g': ':', 'r': '-', 'i': '-.', 'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))}
+
+Example:
+
+.. image:: _static/plot-colors-example.png
+   :alt: Example multi-band plot with a white and a black background.
+   :width: 800px
+   :height: 300px
+   :align: center
+
+You can view the example code here: 
+`plot-colors-example.py <_static/plot-colors-example.py>`_.
 
 Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
