@@ -281,7 +281,7 @@ Clearing memory
 
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
 See the ``remove_figure`` function defined in the DP0 notebook
-`03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/03a_Image_Display_and_Manipulation.ipynb>`_.
+`03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP02_03a_Image_Display_and_Manipulation.ipynb>`_.
 This is only necessary in notebooks that demonstrate data visualization with large datasets.
 Better ways to clear the memory are under consideration (see `Stretch goals`_). 
 
