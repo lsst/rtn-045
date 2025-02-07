@@ -4,12 +4,13 @@ Guidelines for User Tutorials
 
 .. abstract::
 
-   Guidelines for anyone creating or updating user-facing tutorials for the Rubin Observatory, such
-   as demonstrations of how to use the Rubin Science Platform (RSP) or how to analyze Legacy Survey 
-   of Space and Time (LSST) data.
-   Principles, conventions, templates, formats, and styles for code and text are provided.
+   Guidelines for user-facing tutorials produced by the Rubin Observatory and maintained by
+   the Rubin Community Science team (CST).
+   This document defines the principles and formatting for Jupyter Notebook and documentation-based
+   tutorials that demonstrate how to use the Rubin Science Platform (RSP) to analyze data from the
+   Legacy Survey of Space and Time (LSST).
    All Rubin staff and the broader science community should use these guidelines if contributing to
-   the set of user-facing tutorials maintained by the Rubin Community Science team (CST).
+   the set of user-facing tutorials maintained by the CST.
 
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
@@ -29,38 +30,32 @@ Guidelines for User Tutorials
 Principles
 ==========
 
-All tutorials should be guided by the following principles,
-and adhere to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
+All tutorials should adhere to the following principles and to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
 
-**Inclusive:**
-Follow the best practices described under :ref:`Accessibility considerations<accessibility-considerations>`.
+**Inclusive.**
+Follow the best practices described under :ref:`Accessibility considerations <accessibility-considerations>`.
 Offensive or exclusionary language is never permitted (e.g., violent or ableist terms).
-Ensure jargon and acronyms are defined, regardless of target audience.
 See the `Rubin Observatory Communications Code of Conduct <https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-24920/>`_ for additional guidance.
 
-**Level-appropriate:**
-Identify and teach to a target audience (e.g., beginner, intermediate, or advanced).
+**Clear.**
+Write short, simple, unambiguous instructional statements in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_
+by following the best practices described under :ref:`Narrative text <narrative-text>`.
+Avoid jargon and define acronyms when they are first used.
 
-**Skill-focused:**
-Teach one to a few skills, techniques, or RSP functionality, and/or
-provide a demonstration of a scientific analysis with LSST data.
+**Focused.**
+Limit the tutorial's content to only what is appropriate for chosen tutorial type and what is necessary to meet the learning objective.
+Tutorials should not take more than 30 minutes to complete.
 
-**Consumable:**
-The tutorial should take about 30 minutes to complete
-(not including any provided "Exercises for the learner").
+**Consistent.**
+Follow the formatting guidelines and use the templates for :ref:`Jupyter Notebooks <format-style-notebooks>`_ and :ref:`Documentation-based tutorials <>`_.
 
-**Well-referenced:**
-Include citations, references, and external links (e.g., code package documentation).
-Reference any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
+**Referenced.**
+Provide the user with links to external resources (e.g., code package documentation, papers).
+Mention any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
 
-**Properly-credited:**
-Appropriate acknowledgments should be provided to credit individuals whose work was used.
-This sets a precedent of prioritizing credits in an openly collaborative environment.
-Cite other scientists or papers within the text of the tutorial where appropriate.
-
-**Clearly-written:**
-Follow the best practices described under :ref:`Narrative text<narrative-text>`.
-Write short, clear, instructional statements in the `imperative mood <https://en.wikipedia.org/wiki/Imperative_mood>`_.
+**Credited.**
+Individuals who contributed to the tutorial, or whose work was used as a basis or inspiration for the tutorial, must be acknowledged by name.
+Include paper citations where possible.
 
 
 .. _how-to-contribute:
@@ -70,7 +65,7 @@ How to contribute
 
 Anyone is welcome to create a tutorial and then work with the Rubin Community Science team (CST)
 to have it ingested and made available alongside the rest of the tutorials.
-CST members will help with the review process and GitHub workflows.
+CST members will help with the review process and GitHub workflow.
 Contact any co-author of this document to get started.
 
 
@@ -168,10 +163,10 @@ Section structure
 ^^^^^^^^^^^^^^^^^
 
 **First markdown cell:**
-Set the title using heading level 1 (single ``#``).
+Set the title using heading level 1 (use a single ``#``).
 Display the Rubin Observatory logo at upper left.
-To the right of the logo list the contact author, date last verified, LSST Science Pipelines version,
-container size, and targeted learning level, in that order.
+To the right of the logo list the date last verified, LSST Science Pipelines version,
+and container size, in that order.
 
 **Second to seventh markdown cells:**
 A very brief description, a list of core skills, a list of the LSST data products,
