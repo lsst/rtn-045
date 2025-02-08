@@ -43,11 +43,11 @@ by following the best practices described under :ref:`Narrative text <narrative-
 Avoid jargon and define acronyms when they are first used.
 
 **Focused.**
-Limit the tutorial's content to only what is appropriate for chosen tutorial type and what is necessary to meet the learning objective.
+Limit the tutorial's content to only what is appropriate for the chosen `tutorial type <tutorial-types>`_ and what is necessary to meet the learning objective.
 Tutorials should not take more than 30 minutes to complete.
 
 **Consistent.**
-Follow the formatting guidelines and use the templates for :ref:`Jupyter Notebooks <format-style-notebooks>`_ and :ref:`Documentation-based tutorials <>`_.
+Follow the formatting guidelines and use the templates for :ref:`Jupyter Notebooks <format-style-notebooks>`_ and :ref:`Documentation-based tutorials <format-style-docs>`_.
 
 **Referenced.**
 Provide the user with links to external resources (e.g., code package documentation, papers).
@@ -58,15 +58,77 @@ Individuals who contributed to the tutorial, or whose work was used as a basis o
 Include paper citations where possible.
 
 
-.. _how-to-contribute:
+.. _tutorial-types:
 
-How to contribute
-=================
+Tutorial types
+==============
 
-Anyone is welcome to create a tutorial and then work with the Rubin Community Science team (CST)
-to have it ingested and made available alongside the rest of the tutorials.
-CST members will help with the review process and GitHub workflow.
-Contact any co-author of this document to get started.
+Every tutorial must choose a single type from the three options below.
+
+
+How-to: RSP functionality
+-------------------------
+
+Short tutorials with a learning objective of how to use a single RSP function or tool.
+
+These tutorials are typically written without scientific context or motivation - just simple examples for quick reference.
+
+They should take about 10 minutes to work through.
+
+
+Data product definitions
+------------------------
+
+Tutorials with a learning objective of understanding one of the data products for a given release.
+
+These tutorials each focus on one data product, e.g., one image type, one map type, or one catalog table.
+They provide a description of the data and metadata, and demonstrate how to access the data product -- via multiple methods (e.g., TAP and butler) where applicable.
+
+Descriptions of the data and metadata can be mainly qualitative (i.e., primary columns, recommended flags) but should include key quantities such as counts, sizes, volumes, coverage, etc.
+These tutorials should link to the appropriate section of the data release documentation.
+
+
+Science demonstrations
+----------------------
+
+Longer tutorials with a learning objective of executing an end-to-end scientific workflow.
+
+These tutorials demonstrate data visualization techniques and scientific analyses that use multiple RSP tools and data products in sequence.
+They should describe key scientific concepts and include scientific context and motivation for why the data and tools are used.
+
+
+Organizational hierarchy
+------------------------
+
+In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
+This was not useful for two main reasons.
+One, there was no consistency in the application of the user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
+and two, the learning levels were only in the header or in the readme file and probably missed.
+
+The better approach is to set up tutorials in a hierarchical system where they are listed to the user
+in order from beginner to more advanced.
+
+The "100 level" are the `How-to: RSP functionality`_ tutorials.
+
+ * The "101 series" are how-to tutorials on a given RSP functionality, such as Jupyter Notebooks or the Portal UI.
+ * The "101.1 tutorial" would be a very simple, beginner-level how-to tutorial on Jupyter Notebooks or the Portal UI.
+ * Subsequent "101.x tutorials" would illustrate more advanced use of the functionality.
+ * Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
+
+The "200 level" are the `Data products definitions`_ tutorials.
+
+ * The "201 series" would be for a data product type, such as catalog tables. 
+ * The "201.1 tutorial" would be for the ``Object`` catalog.
+ * Subsequent "201.x tutorials" would be for other tables, ``Source``, ``ForcedSource``, and so on.
+ * Subsequent "20x series" would be for other data product types, like images and survey property maps.
+
+The "300 level" are the `Science demonstration`_ tutorials.
+
+ * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
+ * The "301.1 tutorial" would be a beginner-level introduction to the astronomical field.
+ * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
+ * Subsequent "30x series" would be for other astronomical fields.
+
 
 
 .. _format-style-notebooks:
@@ -83,8 +145,84 @@ The template contains an example of the header and the mandatory first section, 
 in `Section structure`_.
 
 
-Use of PEP8 and flake8
-----------------------
+Section structure
+-----------------
+
+Header
+^^^^^^
+
+In the first markdown cell, set the title using heading level 1 (use a single ``#``).
+
+Display the Rubin Observatory logo at upper left.
+To the right of the logo list the RSP deployment,
+the LSST Science Pipelines version,
+the container size, the data release,
+and the date last verified to run.
+
+In the second markdown cell, write five short statements in the same cell, each on a new line.
+
+ * **Learning objective:** A very brief description of notebook's learning objective.
+ * **LSST data products:** List the catalogs and images used.
+ * **Packages:** List the python packages that are relevant to the learning objective.
+For exmaple, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images,
+but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
+* **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, asappropriate.
+Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
+* **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the Support Category of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
+
+`Future work`_ includes being able to auto-generate a table of tutorial contents from notebook metadata and markdown cells, so it is important to follow the template.
+
+
+Introduction
+^^^^^^^^^^^^
+
+In the third markdown cell, name the first section "Introduction" using heading level 2: ``## 1. Introduction``.
+Provide a brief narrative about this notebook's learning objective, e.g., "This notebook demonstrates...".
+Cite or link to any external information or documentation.
+Embed plots or images to help present key concepts.
+Mention other tutorials that could be considered prerequisite or next steps, but do not hotlink.
+
+The first subsection should always be ``### 1.1. Import packages``.
+It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
+All package imports must be done in the first code cell.
+
+The second subsection should be ``### 1.2. Define parameters and functions``, if needed.
+Globally defined utility functions, classes, plotting defaults, or constants should be here.
+Instantiations of the TAP or butler services should also be done here.
+
+Single-use functions or classes should instead be defined immediately before they are used
+(it is more helpful for users to see code in context).
+See the guidelines for functions and classes in the `Code cells`_ section below.
+
+It is ok to rename (or remove) this section if no functions or parameters (or neither) need to be defined.
+It is also ok to have sub-subsections, such as ``#### 1.2.1. Define global cosmological parameter values``
+or ``#### 1.2.2. Define a function to make an image cutout``, if there are many to be defined.
+
+
+Additional sections
+^^^^^^^^^^^^^^^^^^^
+
+Do not use title case for section headings; use sentence case.
+(This Is Title Case. This is sentence case.)
+
+All sections must be numbered to enable referencing in support requests, so that users can say,
+e.g., "I'm having trouble with the second code cell in Section 2.3."
+
+Use descriptive section titles, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``,
+so that the auto-generated table of contents is more useful.
+
+
+Exercises for the learner
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is very common, but not mandatory, to end all notebook tutorials with a section called
+"Exercises for the learner".
+This section should have specific tasks for users that will help them engage with the material.
+For example, a task might suggest changing a parameter and re-running some code.
+
+
+Use PEP8 and flake8
+-------------------
 
 ``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
 and ``flake8`` is a tool to ensure compliance with these standards.
@@ -159,67 +297,23 @@ Use of indented text should be limited to warnings, e.g.,
 ``> **Warning:** the following cell produces a warning which is ok to ignore because...``.
 
 
-Section structure
-^^^^^^^^^^^^^^^^^
-
-**First markdown cell:**
-Set the title using heading level 1 (use a single ``#``).
-Display the Rubin Observatory logo at upper left.
-To the right of the logo list the date last verified, LSST Science Pipelines version,
-and container size, in that order.
-
-**Second to seventh markdown cells:**
-A very brief description, a list of core skills, a list of the LSST data products,
-a list of the python packages used by the notebook, the credits and acknowledgements,
-and information about where users should go to get support, in that order.
-It is ok to limit the lists to include only the main data products and packages that the tutorial
-is focused on teaching.
-It is ok to omit basic support packages (e.g., ``os``, ``glob``, ``numpy``, ``matplotlib``).
-The contents of cells two through five are used to generate the table of notebook metadata in the
-README.md file for the repository.
-It is a stretch goal to be able to auto-generate the table by scraping these notebook metadata.
-
-**The first section** should be named "Introduction" using heading level 2: ``## 1. Introduction``.
-Provide a brief narrative about this notebook, e.g., "This notebook will teach the user...".
-Cite or link to any external information or documentation, and cross-reference to other notebooks.
-
-The first subsection should always be ``### 1.1. Import packages``.
-It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
-All package imports must be done in the first code cell.
-
-The second subsection should always be ``### 1.2. Define functions and parameters``.
-Globally defined utility functions, classes, plotting defaults, or constants should be here.
-Instantiations of the TAP or butler services should also be done here.
-
-Single-use functions or classes can be defined immediately before they are used, for pedagogical purposes;
-see the guidelines for functions and classes in the `Code cells`_ section below.
-It is ok to have sub-subsections, such as ``#### 1.2.1. Define global cosmological parameter values``
-or ``#### 1.2.2. Define a function to make an image cutout``.
-
-**Additional sections** must be numbered to enable referencing in support requests,
-e.g., "I'm having trouble with the second code cell in Section 2.3."
-Use descriptive section titles, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``,
-so that the auto-generated table of contents is more useful.
-Do not use title case for section headings; use sentence case.
-(This Is Title Case. This is sentence case.)
-
-**Exercises for the learner:**
-It is very common, but not mandatory, to end all notebook tutorials with a section called
-``Exercises for the learner`` with suggestions of how the user can make changes to the
-tutorial test options and examples, or guide them on the next step forward on their own.
-
-
 Code cells
 ----------
 
 All python code in Jupyter Notebooks should adhere to the
 `Code Style Guidelines <https://developer.lsst.io/coding/intro.html>`_
-in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
-Follow the guidelines above for the `Use of PEP8 and flake8`_.
+in the `Rubin Developer's Guide <https://developer.lsst.io/>`_,
+and should `Use PEP8 and flake8`_.
 
-**Comments:**
-Avoid using comments within a code cell as documentation (i.e., with ``#``).
+Comments
+^^^^^^^^
+
+Do not use comments (``#``) within a code cell as explanatory documentation.
+
 Markdown cells are the preferred way to provide descriptive text.
+Keep code cells short and interspersed with markdown cells describing the code functionality.
+
+Only use comments within code cells to comment-out optional code.
 
 
 Functions and classes
@@ -230,20 +324,21 @@ Functions and classes should be named following the
 defined in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
 
 Globally defined functions or classes which are used more than once in a notebook should be
-defined in Section 1.2, but single-use functions or classes can be defined immediately before they are used.
+defined in the `Introduction`_, but single-use functions or classes can be defined immediately before they are used.
 
-**Hiding long functions.**
-Functions or classes that are particularly long blocks of code (e.g., >20 lines) can be hidden by going to
-the "View" menu item and choosing "Collapse Selected Code", or by clicking on the blue bar that
-appears to the left of a selected cell.
-Hidden cells should be described in the preceding markdown cell with text like 
-"the following hidden cell contains code that defines the ``make_cmd_plot`` function".
-The first hidden cell in a notebook should include instructions for displaying the cell, such as
-"to see the contents of the hidden cell, select View from the menu bar and then Expand Selected Code
-or click on the vertical next to the cell or on the three dots that denote that the cell is hidden".
-
-It is a stretch goal to create a package of commonly-used functions in order
+`Future work`_ includes creating a package of commonly-used functions in order
 to avoid users encountering long blocks of code, and help keep notebooks readable.
+
+
+Hidden cells
+^^^^^^^^^^^^
+
+No code cells should be hidden from the user.
+
+In other words, do not use the "View" menu item and choose "Collapse Selected Code",
+or click blue bar that appears to the left of a selected cell, to hide long blocks of code.
+The whole of the notebook should be visible to the user and the functionality of all
+code cells should be described in preceding markdown cells.
 
 
 TAP queries
@@ -275,10 +370,32 @@ Clearing memory
 ^^^^^^^^^^^^^^^
 
 To reduce the memory footprint of a notebook, remove figures once they're no longer needed.
-See the ``remove_figure`` function defined in the DP0 notebook
-`03_Image_Display_and_Manipulation.ipynb in the tutorial-notebooks repository <https://github.com/rubin-dp0/tutorial-notebooks/blob/main/DP02_03a_Image_Display_and_Manipulation.ipynb>`_.
 This is only necessary in notebooks that demonstrate data visualization with large datasets.
-Better ways to clear the memory are under consideration (see `Stretch goals`_). 
+
+::
+
+  def remove_figure(fig):
+      """
+      Remove a figure to reduce memory footprint.
+
+      Parameters
+      ----------
+      fig: matplotlib.figure.Figure
+          Figure to be removed.
+        Returns
+
+      -------
+      None
+      """
+      for ax in fig.get_axes():
+          for im in ax.get_images():
+              im.remove()
+      fig.clf()
+      plt.close(fig)
+      gc.collect()
+
+
+Better ways to clear the memory are under consideration (see `Future work`_). 
 
 
 Assert statements
@@ -286,11 +403,14 @@ Assert statements
 
 Where essential, or where a very specific value is expected, the ``assert`` command can be used to
 demonstrate to users that a condition is true.
+
 For example, ``assert`` statements can be used to confirm that service objects like TAP are not
 ``None`` or ``null`` before moving on and using that instance,
 or to check that values meet expectations (e.g., total rows returned from a query).
+
 Do not use ``assert`` statements when, e.g., querying dynamic (prompt) datasets, which could return
 different results and cause the assert statement to fail.
+
 Consider more pedagogical alternatives when possible (e.g., printing schema columns would also fail if
 the TAP service was not instantiated).
 
@@ -298,9 +418,10 @@ the TAP service was not instantiated).
 Known warnings
 ^^^^^^^^^^^^^^
 
-If a code cell produces a warning which is known and it should be ignored, the preferred method is to add a markdown cell
-*before* the code cell which produces the warning, to tell the user it is acceptable to ignore.
-It is not preferred to use, e.g., ``warnings.simplefilter("ignore", category=UserWarning)``, because
+If a code cell produces a warning which is known and is safe to ignore, add an indented statement
+(see `Markdown cells`_) about the warning before the code cell which produces the warning.
+
+Do not use, e.g., ``warnings.simplefilter("ignore", category=UserWarning)``, because
 ignoring categories of warnings can allow real issues to go unnoticed.
 
 
@@ -552,7 +673,7 @@ For offline viewing, create ``html`` versions of executed notebooks and not ``pd
 the latter are typically less compatible with screen readers.
 
 At this time it is not necessary to use, e.g., `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_,
-but a customized application might be considered in the future (and is included under :ref:`Stretch goals<stretch-goals>`).
+but a customized application might be considered in the future (see `Future work`_).
 
 
 Neurodivergent astronomers
@@ -610,10 +731,19 @@ Do not use:
 Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/index.html>`_ contains additional writing resources.
 
 
-.. _stretch-goals:
+.. _how-to-contribute:
 
-Stretch goals
-=============
+How to contribute
+=================
+
+Contact any co-author of this document if you are interested in contributing to
+the set of tutorials.
+
+
+.. _future-work:
+
+Future work
+===========
 
 Work is on-going in these areas, and in time they will become part of the guidelines above.
 
