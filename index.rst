@@ -112,26 +112,22 @@ Tutorials do not have defined learning levels or target audiences, but are arran
 where they appear to the user in order from introductory-level to more advanced.
 
 The "100 level" are the `How-to: RSP functionality`_ tutorials.
-
  * The "101 series" are how-to tutorials on a given RSP functionality, such as Jupyter Notebooks or the Portal UI.
  * The "101.1 tutorial" would be a very simple, beginner-level how-to tutorial on Jupyter Notebooks or the Portal UI.
  * Subsequent "101.x tutorials" would illustrate more advanced use of the functionality.
  * Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
 
 The "200 level" are the `Data product definitions`_ tutorials.
-
  * The "201 series" would be for a data product type, such as catalog tables. 
  * The "201.1 tutorial" would be for the ``Object`` catalog.
  * Subsequent "201.x tutorials" would be for other tables, ``Source``, ``ForcedSource``, and so on.
  * Subsequent "20x series" would be for other data product types, like images and survey property maps.
 
 The "300 level" are the `Science demonstrations`_ tutorials.
-
  * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
  * The "301.1 tutorial" would be a beginner-level introduction to the astronomical field.
  * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
  * Subsequent "30x series" would be for other astronomical fields.
-
 
 **Why a "learning level" is not part of a tutorial's metadata:**
 In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
@@ -196,7 +192,6 @@ the container size, the data release,
 and the date last verified to run.
 
 In the second markdown cell, write five short statements in the same cell, each on a new line.
-
  * **Learning objective:** A very brief description of notebook's learning objective.
  * **LSST data products:** List the catalogs and images used.
  * **Packages:** List the python packages that are relevant to the learning objective. For exmaple, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
@@ -216,15 +211,19 @@ Cite or link to any external information or documentation.
 Embed plots or images to help present key concepts.
 
 **Related tutorials:** 
-At the end of the Introduction, if applicable, mention other relevant tutorials by name but do not link to them.
-Tutorials evolve continuously, there is no linkchecker for the notebook repo, and tutorial hotlinks go stale quick.
+At the end of Introduction and before Section 1.1, if applicable,
+mention any other relevant tutorials by name.
+Do not link to them, because tutorials evolve continuously, there is no linkchecker for the notebook repo,
+and tutorial hotlinks go stale quickly.
 It is not necessary to mention the preceeding/subsequent tutorials in the same series as this one - those are trivial for the user to find.
-But do use this section to mention related tutorials in other series.
+But do use the "related tutorials" paragraph to mention tutorials in other series, or of other types.
 
+**Import packages:**
 The first subsection of the Introduction should always be ``### 1.1. Import packages``.
 It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
 All package imports must be done in the first code cell.
 
+**Define parameters and functions:**
 The second subsection should be ``### 1.2. Define parameters and functions``, if needed.
 Globally defined utility functions, classes, plotting defaults, or constants should be here.
 Instantiations of the TAP or butler services should also be done here.
@@ -249,6 +248,10 @@ e.g., "I'm having trouble with the second code cell in Section 2.3."
 
 Use descriptive section titles, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot",
 so that the auto-generated table of contents is more useful.
+
+Additional sections should alternate between :ref:`markdown cells <format-style-notebooks-markdown>`
+with instructional statements written in the imperative mood (see the section on :ref:`narrative text <narrative-text>`),
+and :ref:`code cells <format-style-notebooks-code>` to be executed by the user.
 
 
 Exercises for the learner
@@ -339,6 +342,9 @@ This will catch things that can be missed line-by-line, such as packages that ar
 Markdown cells
 --------------
 
+Every code cell should be preceded with a markdown cell that contains instructional statements
+written in the imperative mood (see the section on :ref:`narrative text <narrative-text>`).
+
 
 Monospace font
 ^^^^^^^^^^^^^^
@@ -403,7 +409,11 @@ Comments
 ^^^^^^^^
 
 Do not use comments (``#``) within a code cell as explanatory documentation.
-Markdown cells are the preferred way to provide descriptive text.
+
+Every code cell should be preceded by a :ref:`markdown cell <format-style-notebooks-markdown>`
+that provides instruction and describes what the code does.
+Code cells should be kept short enough that intra-cell comments are not necessary.
+
 Only use comments within code cells to comment-out optional code.
 
 
