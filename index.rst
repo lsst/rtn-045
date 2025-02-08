@@ -75,7 +75,7 @@ Short tutorials with a learning objective of how to use a single RSP function or
 
 These tutorials are typically written without scientific context or motivation - just simple examples for quick reference.
 
-They should take about 10 minutes to work through.
+Each "How-to" tutorial should take about 10 minutes to work through.
 
 
 .. _tutorial-types-prod:
@@ -112,10 +112,9 @@ In the past (DP0-era), tutorials defined their learning level (target audience) 
 This was not useful for two main reasons.
 One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
 and two, the learning levels were only in the header or in the readme file and not easily seen by users.
+For these reasons, the tutorials no longer have defined learning levels or target audiences.
 
-Thus, the tutorials do not have defined learning levels or target audeinces.
-
-Instead, tutorials are arranged in a hierarchical system where they appear to the user
+Instead, tutorials are arranged in a numbered, hierarchical system where they appear to the user
 in order from introductory to more advanced.
 
 The "100 level" are the `How-to: RSP functionality`_ tutorials.
@@ -139,6 +138,24 @@ The "300 level" are the `Science demonstrations`_ tutorials.
  * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
  * Subsequent "30x series" would be for other astronomical fields.
 
+
+.. _tutorial-types-names:
+
+Naming conventions
+------------------
+
+Tutorial names (filenames / titles) are the main way that users navigate the tutorial set.
+While there will be a readme file with descriptions, it's best to assume no one will read it.
+
+Thus, tutorials should have descriptive names that are as short as possible.
+Yes, this seems like an oxymoron, and long names might be necessary at times.
+A longer descriptive title is preferable to a shorter ambiguous title.
+
+The names of tutorials in the 100 level should start with "How to", and
+tutorials in the 200 level should be named simply by their data product.
+Tutorials in the 300 level will be in sub-folders by astronomical field,
+and so the names can focus on the analysis being demonstrated without
+repeating the field.
 
 
 .. _format-style-notebooks:
@@ -175,7 +192,7 @@ In the second markdown cell, write five short statements in the same cell, each 
  * **LSST data products:** List the catalogs and images used.
  * **Packages:** List the python packages that are relevant to the learning objective. For exmaple, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
  * **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, asappropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
- * **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the Support Category of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
+ * **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
 
 
 `Future work`_ includes being able to auto-generate a table of tutorial contents from notebook metadata and markdown cells, so it is important to follow the template.
@@ -188,9 +205,14 @@ In the third markdown cell, name the first section "Introduction" using heading 
 Provide a brief narrative about this notebook's learning objective, e.g., "This notebook demonstrates...".
 Cite or link to any external information or documentation.
 Embed plots or images to help present key concepts.
-Mention other tutorials that could be considered prerequisite or next steps, but do not hotlink.
 
-The first subsection should always be ``### 1.1. Import packages``.
+**Related tutorials:** 
+At the end of the Introduction, if applicable, mention other relevant tutorials by name but do not link to them.
+Tutorials evolve continuously, there is no linkchecker for the notebook repo, and tutorial hotlinks go stale quick.
+It is not necessary to mention the preceeding/subsequent tutorials in the same series as this one - those are trivial for the user to find.
+But do use this section to mention related tutorials in other series.
+
+The first subsection of the Introduction should always be ``### 1.1. Import packages``.
 It should have a markdown cell that provides explanations and/or links to external package documentation, as appropriate.
 All package imports must be done in the first code cell.
 
@@ -216,7 +238,7 @@ Do not use title case for section headings; use sentence case.
 All sections must be numbered to enable referencing in support requests, so that users can say,
 e.g., "I'm having trouble with the second code cell in Section 2.3."
 
-Use descriptive section titles, e.g., ``2.2 Create a color-magnitude diagram`` instead of ``2.2 Plot``,
+Use descriptive section titles, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot",
 so that the auto-generated table of contents is more useful.
 
 
@@ -227,6 +249,13 @@ It is very common, but not mandatory, to end all notebook tutorials with a secti
 "Exercises for the learner".
 This section should have specific tasks for users that will help them engage with the material.
 For example, a task might suggest changing a parameter and re-running some code.
+
+Do not include untested exercises.
+
+Do not use rhetorical questions in the exercises.
+
+It is best if at least the first exercise includes a hint for the user to know if they've done it correctly.
+For example, "try changing parameter X to be Y, rerunning the notebook up to Section 3.2, and notice that Z is now 5".
 
 
 Use PEP8 and flake8
@@ -317,10 +346,7 @@ Comments
 ^^^^^^^^
 
 Do not use comments (``#``) within a code cell as explanatory documentation.
-
 Markdown cells are the preferred way to provide descriptive text.
-Keep code cells short and interspersed with markdown cells describing the code functionality.
-
 Only use comments within code cells to comment-out optional code.
 
 
@@ -463,6 +489,7 @@ A descriptive title is encouraged but not mandatory.
 In general, the default ``matplotlib`` style is sufficient and should be adopted for plot attributes
 such as line thickness, tick labels, fontsize, and so on.
 
+**Colors:**
 The default ``matplotlib`` color palette is not sufficient, and the recommendations
 under :ref:`Accessibility considerations<accessibility-considerations>` should be used to
 create colorblind-friendly plots.
@@ -474,21 +501,25 @@ as line fitting is being performed on the data in the plot, to help the user und
 **Captions:**
 A markdown cell underneath the figure should provide a figure number and a caption that explains
 the main attributes of the plot.
-This caption should serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
+This caption should also serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
 and be descriptive enough for the user to confirm the plot appears as expected.
 
 
 Image display
 ^^^^^^^^^^^^^
 
+The preferred modes of image display are, in order: Firefly, ``afwDisplay``, and then ``matplotlib``.
+
 **Image orientation:**
 When using a World Coordinate System (WCS), display East left, North up.
 If only using pixels, ``(0,0)`` should be the lower-left, which is the default for ``awfDisplay``.
 
-When using other plotting packages, transformations might be needed in order to match the afwDisplay default.
+When using other plotting packages, transformations might be needed in order to match the ``afwDisplay`` default.
 See the LSST Science Pipelines documentation about `Image Indexing <https://pipelines.lsst.io/modules/lsst.afw.image/indexing-conventions.html>`_.
 
-Since use of "extent" is necessary for displaying a WCS overlay for ``deepCoadds``, use it all the time:
+For example, with ``matplotlib``, use of ``extent`` is necessary for displaying a WCS overlay for
+``deepCoadds`` when using ``imshow``.
+For consistency, ``extent`` should be used for all image types as in the following example.
 
 ::
 
