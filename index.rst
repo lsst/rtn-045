@@ -62,8 +62,8 @@ Tutorial types
 
 Every tutorial, whether a Jupyter Notebook or a documentation-based tutorial,
 must choose a single type from the three options below,
-be designed to fit into the tutorials' :ref:`organizational hierarchy <tutorial-types-org>`_,
-and follow the :ref:`naming convention <tutorial-types-names>`_.
+be designed to fit into the tutorials' :ref:`organizational hierarchy <tutorial-types-org>`,
+and follow the :ref:`naming convention <tutorial-types-names>`.
 
 
 .. _tutorial-types-howto:
@@ -354,7 +354,7 @@ Indented text
 Use indented text only for warnings (see `Known warnings`_) and figure captions. 
 
 Indented text is created as in the following examples, which can also be found
-in the :ref:`template notebook <format-style-notebooks-template>`_ 
+in the :ref:`template notebook <format-style-notebooks-template>`.
 
 ::
 
@@ -382,11 +382,11 @@ A link of markdown code similar to what is shown will automatically appear.
 
 
 Include a figure caption immediately after the embedded image, using `Indented text`_.
-The figure should be numbered in the same series as generated :ref:`plots <format-style-notebooks-output-plots>`_, and
+The figure should be numbered in the same series as generated :ref:`plots <format-style-notebooks-output-plots>`, and
 the caption should include the citation to the source of the image.
 
 Execute the markdown cell to see the image displayed.
-An example embedded image is provided in the :ref:`template notebook <format-style-notebooks-template>`_.
+An example embedded image is provided in the :ref:`template notebook <format-style-notebooks-template>`.
 
 
 .. _format-style-notebooks-code:
@@ -561,7 +561,7 @@ as line fitting is being performed on the data in the plot, to help the user und
 
 **Captions:**
 A markdown cell underneath the figure should provide a figure number and a caption
-in :ref:`indented text <format-style-notebooks-markdown-indented>`_
+in :ref:`indented text <format-style-notebooks-markdown-indented>`
 that explains the main attributes of the plot.
 This caption should also serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
 and be descriptive enough for the user to confirm the plot was generated as expected.
