@@ -112,20 +112,23 @@ Tutorials do not have defined learning levels or target audiences, but are arran
 where they appear to the user in order from introductory-level to more advanced.
 
 The "100 level" are the `How-to: RSP functionality`_ tutorials.
+
  * The "101 series" are how-to tutorials on a given RSP functionality, such as Jupyter Notebooks or the Portal UI.
- * The "101.1 tutorial" would be a very simple, beginner-level how-to tutorial on Jupyter Notebooks or the Portal UI.
+ * The "101.1 tutorial" would be a very simple, introductory-level how-to tutorial on Jupyter Notebooks or the Portal UI.
  * Subsequent "101.x tutorials" would illustrate more advanced use of the functionality.
  * Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
 
 The "200 level" are the `Data product definitions`_ tutorials.
+
  * The "201 series" would be for a data product type, such as catalog tables. 
  * The "201.1 tutorial" would be for the ``Object`` catalog.
  * Subsequent "201.x tutorials" would be for other tables, ``Source``, ``ForcedSource``, and so on.
  * Subsequent "20x series" would be for other data product types, like images and survey property maps.
 
 The "300 level" are the `Science demonstrations`_ tutorials.
+
  * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
- * The "301.1 tutorial" would be a beginner-level introduction to the astronomical field.
+ * The "301.1 tutorial" would be a introductory-level introduction to the astronomical field.
  * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
  * Subsequent "30x series" would be for other astronomical fields.
 
@@ -169,16 +172,15 @@ Jupyter Notebooks
 Template
 --------
 
-Use the `template <https://github.com/rubin-dp0/cst-dev/blob/main/template.ipynb>`_
-Jupyter notebook in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
-The template contains an example of the header and the mandatory first section, which are described
-in `Section structure`_.
+Use the ``template.ipynb`` file in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
 
 
 .. _format-style-notebooks-sections:
 
 Section structure
 -----------------
+
+.. _format-style-notebooks-sections-header:
 
 Header
 ^^^^^^
@@ -192,6 +194,7 @@ the container size, the data release,
 and the date last verified to run.
 
 In the second markdown cell, write five short statements in the same cell, each on a new line.
+
  * **Learning objective:** A very brief description of notebook's learning objective.
  * **LSST data products:** List the catalogs and images used.
  * **Packages:** List the python packages that are relevant to the learning objective. For exmaple, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
@@ -201,6 +204,8 @@ In the second markdown cell, write five short statements in the same cell, each 
 
 `Future work`_ includes being able to auto-generate a table of tutorial contents from notebook metadata and markdown cells, so it is important to follow the template.
 
+
+.. _format-style-notebooks-sections-intro:
 
 Introduction
 ^^^^^^^^^^^^
@@ -249,10 +254,12 @@ e.g., "I'm having trouble with the second code cell in Section 2.3."
 Use descriptive section titles, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot",
 so that the auto-generated table of contents is more useful.
 
-Additional sections should alternate between :ref:`markdown cells <format-style-notebooks-markdown>`
+The contents of the additional sections should alternate between :ref:`markdown cells <format-style-notebooks-markdown>`
 with instructional statements written in the imperative mood (see the section on :ref:`narrative text <narrative-text>`),
 and :ref:`code cells <format-style-notebooks-code>` to be executed by the user.
 
+
+.. _format-style-notebooks-sections-exercises:
 
 Exercises for the learner
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -264,10 +271,10 @@ For example, a task might suggest changing a parameter and re-running some code.
 
 Do not include untested exercises.
 
-Do not use rhetorical questions in the exercises.
+Do not word the exercises as questions, but rather as instructions or tasks.
 
 It is best if at least the first exercise includes a hint for the user to know if they've done it correctly.
-For example, "try changing parameter X to be Y, rerunning the notebook up to Section 3.2, and notice that Z is now 5".
+For example, "try changing parameter X to be Y, then rerunning the notebook up to Section 3.2, and notice that Z is now 5".
 
 
 .. _format-style-notebooks-pep8:
@@ -615,21 +622,78 @@ copy-pasted into the command line interface in the Notebook Aspect,
 are written in reStructuredText (RST) format and are kept within the data release documentation.
 
 
-Header and section structure
-----------------------------
+.. _format-style-docs-template:
 
-All tutorials should have a descriptive title.
-At the top of the page, the tutorial should list the contact authors,
-the date last verified to run, and the targeted learning level, before
-providing a brief narrative introduction.
+Template
+--------
 
-The rest of the tutorial should be divided into sequentially numbered steps.
-Steps should be short (one to a few sentences) and provide a single action item for the user.
+Use the ``template.rst`` file in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
+
+
+.. _format-style-docs-sections:
+
+Section structure
+-----------------
+
+
+.. _format-style-docs-sections-header:
+
+Header
+^^^^^^
+
+The RST file should start with a header, as in the example below.
+
+::
+
+  For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
+
+  **Data Release:** _DPX_ or _DRX_
+
+  **Last verified to run:** _yyyy-mm-dd_
+
+  **Learning objective:** _Very brief description of tutorials's learning objective._
+
+  **LSST data products:** _List the catalogs and images used._
+
+  **Credit:** _E.g., "Originally developed by" or "Based on tutorials developed by" and then people's names, including journal article or software release citations if appropriate._ Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+
+  **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
+
+
+Introduction
+^^^^^^^^^^^^
+
+Provide a brief narrative about this tutorials’s learning objective, e.g., “This tutorial demonstrates…”.
+Cite or link to any external information or documentation.
+Include plots or images to help present key concepts.
+
+Include a paragraph on **related tutorials**, as in the
+:ref:`introduction for Jupyter Notebooks <format-style-notebooks-sections-intro>`.
+
+
+Additional sections
+^^^^^^^^^^^^^^^^^^^
+
+The rest of the tutorial should be divided into sequentially numbered steps, 1, 2, 3, etc.
+
+If the tutorial is long, numbered sections can be included and then the step
+numbering can be 1.1., 1.2, ... 2.1, 2.2, etc.
+
+Steps should be short, one to a few sentences, and provide a single instruction or action item for the user.
+All `Narrative text`_ should be written in the imperative mood.
+
+In some cases, the action might not be interactive with the RSP, and that is OK.
+For example, after a query is executed, the next step might be simply for the user to 
+confirm that X rows were retrieved, and compare their results view to a screenshot.
+
+
+Exercises for the learner
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is very common, but not mandatory, to end all tutorials with a section called 
-"Exercises for the learner" with suggestions of
-how the user can make changes to the tutorial test options and examples,
-or guide them on the next step forward on their own.
+"Exercises for the learner".
+
+See the guidance for :ref:`exercises in notebooks <format-style-notebooks-sections-exercises>`.
 
 
 Code blocks
@@ -655,10 +719,14 @@ Use screenshots to demonstrate the steps of the tutorial, to show the user what 
 and to show the expected results for comparison.
 Augment screenshots with indicators (e.g., arrows or circles) to guide the users attention as needed.
 
-Data visualization should `Colorblind-friendly plots`_.
+All figures should be stored in the ``_static`` folder of the documentation repository.
+Filenames for figures should follow the convention of using the base of the RST filename
+(e.g., "portal-howto-01") and adding the figure number (e.g., "portal-howto-01-fig1.png").
+
+Data visualizations should use the guidance for `Colorblind-friendly plots`_.
 
 **Caption and alt-text:** 
-All figures should have a caption and an `Alternative-text (alt-text)`_ statement.
+All figures should be numbered have both a caption and an `Alternative-text (alt-text)`_ statement.
 The motivation and guidance for writing alt-text is provided under
 :ref:`Accessibility considerations<accessibility-considerations>`.
 
@@ -831,12 +899,15 @@ The passive voice should be avoided, as should use of "we", "our", and "let's" o
 Below are a few examples to help with writing instructional statements in narrative text.
 
 Best:
+
  * Run the query.
 
 Also ok:
+
  * Run your query.
 
 Do not use:
+
  * The query is run.
  * Now let's run the query.
  * Here we run our query.
@@ -861,7 +932,7 @@ Future work
 Work is on-going in these areas, and in time they will become part of the guidelines above.
 
 **Notebook metadata:**
-Embed notebook metadata (e.g., version, skills, packages) in a way that can be scraped and used to auto-generate the ``README.md`` file or a Table of Contents, to enable users to browse notebook contents.
+Embed notebook metadata (the header contents) in a way that can be scraped and used to auto-generate the ``README.md`` file or a Table of Contents for all notebooks, to enable users to browse notebook contents.
 
 **Accessibility:**
 Continue to improve tutorials' accessibility to people with disabilities by finding and implementing, 
@@ -870,8 +941,8 @@ customized use of `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_,
 additional policies for supporting neurodivergent users, and other jupyter notebook accessibility techniques.
 
 **Translations:**
-At minimum, translate any undergraduate-level tutorials into Spanish.
-Additionally, improve tutorials' accessibility to non-English speakers by finding and implementing automatic translation and localization software.
+Translate at least the first-in-series (introductory-level) tutorials into Spanish.
+Additionally, improve tutorials' accessibility to non-English speakers by finding and implementing automatic translation software.
 
 **Clearing memory:**
 Develop a best practice for how to keep notebook memory usage in check, in addition to deleting figures.
