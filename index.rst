@@ -432,7 +432,8 @@ Functions and classes should be named following the
 defined in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
 
 Globally defined functions or classes which are used more than once in a notebook should be
-defined in the `Introduction`_, but single-use functions or classes can be defined immediately before they are used.
+defined in the :ref:`introduction <format-style-notebooks-sections-intro>`,
+but single-use functions or classes can be defined immediately before they are used.
 
 `Future work`_ includes creating a package of commonly-used functions in order
 to avoid users encountering long blocks of code, and help keep notebooks readable.
