@@ -174,8 +174,9 @@ In the second markdown cell, write five short statements in the same cell, each 
  * **Learning objective:** A very brief description of notebook's learning objective.
  * **LSST data products:** List the catalogs and images used.
  * **Packages:** List the python packages that are relevant to the learning objective. For exmaple, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
-* **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, asappropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
-* **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the Support Category of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
+ * **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, asappropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
+ * **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the Support Category of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
+
 
 `Future work`_ includes being able to auto-generate a table of tutorial contents from notebook metadata and markdown cells, so it is important to follow the template.
 
