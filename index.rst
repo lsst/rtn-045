@@ -110,11 +110,13 @@ Organizational hierarchy
 
 In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
 This was not useful for two main reasons.
-One, there was no consistency in the application of the user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
-and two, the learning levels were only in the header or in the readme file and probably missed.
+One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
+and two, the learning levels were only in the header or in the readme file and not easily seen by users.
 
-The better approach is to set up tutorials in a hierarchical system where they are listed to the user
-in order from beginner to more advanced.
+Thus, the tutorials do not have defined learning levels or target audeinces.
+
+Instead, tutorials are arranged in a hierarchical system where they appear to the user
+in order from introductory to more advanced.
 
 The "100 level" are the `How-to: RSP functionality`_ tutorials.
 
@@ -462,7 +464,8 @@ A descriptive title is encouraged but not mandatory.
 **Style:**
 In general, the default ``matplotlib`` style is sufficient and should be adopted for plot attributes
 such as line thickness, tick labels, fontsize, and so on.
-However, the default ``matplotlib`` color palette is not sufficient, and the recommendations
+
+The default ``matplotlib`` color palette is not sufficient, and the recommendations
 under :ref:`Accessibility considerations<accessibility-considerations>` should be used to
 create colorblind-friendly plots.
 
@@ -474,7 +477,7 @@ as line fitting is being performed on the data in the plot, to help the user und
 A markdown cell underneath the figure should provide a figure number and a caption that explains
 the main attributes of the plot.
 This caption should serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
-and also as a way for the user to confirm the plot appears as expected.
+and be descriptive enough for the user to confirm the plot appears as expected.
 
 
 Image display
