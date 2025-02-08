@@ -172,7 +172,7 @@ Jupyter Notebooks
 Template
 --------
 
-Use the ``template.ipynb`` file in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
+Use the ``template.ipynb`` file in the ``rtn-045`` GitHub repository in the ``lsst`` GitHub Organization.
 
 
 .. _format-style-notebooks-sections:
@@ -628,7 +628,7 @@ are written in reStructuredText (RST) format and are kept within the data releas
 Template
 --------
 
-Use the ``template.rst`` file in the ``cst-dev`` GitHub repository, which is part of the ``rubin-dp0`` GitHub Organization.
+Use the ``template.rst`` file in the ``rtn-045`` GitHub repository in the ``lsst`` GitHub Organization.
 
 
 .. _format-style-docs-sections:
