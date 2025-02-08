@@ -66,6 +66,8 @@ Tutorial types
 Every tutorial must choose a single type from the three options below.
 
 
+.. _tutorial-types-howto:
+
 How-to: RSP functionality
 -------------------------
 
@@ -75,6 +77,8 @@ These tutorials are typically written without scientific context or motivation -
 
 They should take about 10 minutes to work through.
 
+
+.. _tutorial-types-prod:
 
 Data product definitions
 ------------------------
@@ -88,6 +92,8 @@ Descriptions of the data and metadata can be mainly qualitative (i.e., primary c
 These tutorials should link to the appropriate section of the data release documentation.
 
 
+.. _tutorial-types-sci:
+
 Science demonstrations
 ----------------------
 
@@ -96,6 +102,8 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 These tutorials demonstrate data visualization techniques and scientific analyses that use multiple RSP tools and data products in sequence.
 They should describe key scientific concepts and include scientific context and motivation for why the data and tools are used.
 
+
+.. _tutorial-types-org:
 
 Organizational hierarchy
 ------------------------
@@ -115,14 +123,14 @@ The "100 level" are the `How-to: RSP functionality`_ tutorials.
  * Subsequent "101.x tutorials" would illustrate more advanced use of the functionality.
  * Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
 
-The "200 level" are the `Data products definitions`_ tutorials.
+The "200 level" are the `Data product definitions`_ tutorials.
 
  * The "201 series" would be for a data product type, such as catalog tables. 
  * The "201.1 tutorial" would be for the ``Object`` catalog.
  * Subsequent "201.x tutorials" would be for other tables, ``Source``, ``ForcedSource``, and so on.
  * Subsequent "20x series" would be for other data product types, like images and survey property maps.
 
-The "300 level" are the `Science demonstration`_ tutorials.
+The "300 level" are the `Science demonstrations`_ tutorials.
 
  * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
  * The "301.1 tutorial" would be a beginner-level introduction to the astronomical field.
