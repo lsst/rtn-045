@@ -4,13 +4,10 @@ Guidelines for User Tutorials
 
 .. abstract::
 
-   Guidelines for user-facing tutorials produced by the Rubin Observatory and maintained by
-   the Rubin Community Science team (CST).
-   This document defines the principles and formatting for Jupyter Notebook and documentation-based
-   tutorials that demonstrate how to use the Rubin Science Platform (RSP) to analyze data from the
-   Legacy Survey of Space and Time (LSST).
-   All Rubin staff and the broader science community should use these guidelines if contributing to
-   the set of user-facing tutorials maintained by the CST.
+   This document defines the guidelines, principles, and formats for user-facing tutorials that demonstrate how to use
+   the Rubin Science Platform (RSP) to analyze data from the Legacy Survey of Space and Time (LSST).
+   All Rubin staff and the broader science community should use these guidelines when contributing to
+   the sets of Jupyter Notebook or documentation-based tutorials maintained by the Rubin Community Science team (CST).
 
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
@@ -63,7 +60,10 @@ Include paper citations where possible.
 Tutorial types
 ==============
 
-Every tutorial must choose a single type from the three options below.
+Every tutorial, whether a Jupyter Notebook or a documentation-based tutorial,
+must choose a single type from the three options below,
+be designed to fit into the tutorials' :ref:`organizational hierarchy <tutorial-types-org>`_,
+and follow the :ref:`naming convention <tutorial-types-names>`_.
 
 
 .. _tutorial-types-howto:
@@ -108,14 +108,8 @@ They should describe key scientific concepts and include scientific context and 
 Organizational hierarchy
 ------------------------
 
-In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
-This was not useful for two main reasons.
-One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
-and two, the learning levels were only in the header or in the readme file and not easily seen by users.
-For these reasons, the tutorials no longer have defined learning levels or target audiences.
-
-Instead, tutorials are arranged in a numbered, hierarchical system where they appear to the user
-in order from introductory to more advanced.
+Tutorials do not have defined learning levels or target audiences, but are arranged in a numbered, hierarchical system
+where they appear to the user in order from introductory-level to more advanced.
 
 The "100 level" are the `How-to: RSP functionality`_ tutorials.
 
@@ -139,6 +133,15 @@ The "300 level" are the `Science demonstrations`_ tutorials.
  * Subsequent "30x series" would be for other astronomical fields.
 
 
+**Why a "learning level" is not part of a tutorial's metadata:**
+In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
+This was not useful for two main reasons.
+One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
+and two, the learning levels were only in the header or in the readme file and not easily seen by users.
+For these reasons, the tutorials no longer have defined learning levels or target audiences,
+and the ordering system described above has been adopted instead.
+
+
 .. _tutorial-types-names:
 
 Naming conventions
@@ -158,10 +161,14 @@ and so the names can focus on the analysis being demonstrated without
 repeating the field.
 
 
+
 .. _format-style-notebooks:
 
 Jupyter Notebooks
 =================
+
+
+.. _format-style-notebooks-template:
 
 Template
 --------
@@ -171,6 +178,8 @@ Jupyter notebook in the ``cst-dev`` GitHub repository, which is part of the ``ru
 The template contains an example of the header and the mandatory first section, which are described
 in `Section structure`_.
 
+
+.. _format-style-notebooks-sections:
 
 Section structure
 -----------------
@@ -258,6 +267,8 @@ It is best if at least the first exercise includes a hint for the user to know i
 For example, "try changing parameter X to be Y, rerunning the notebook up to Section 3.2, and notice that Z is now 5".
 
 
+.. _format-style-notebooks-pep8:
+
 Use PEP8 and flake8
 -------------------
 
@@ -323,16 +334,62 @@ This will do a final check of any violations with ``PEP8``.
 This will catch things that can be missed line-by-line, such as packages that are imported but never used.
 
 
+.. _format-style-notebooks-markdown:
+
 Markdown cells
 --------------
 
-**Monospace font:**
-Any references to variables used in code cells or any code commands should be in ``monospaced font``.
 
-**Warnings:**
-Use of indented text should be limited to warnings, e.g., 
-``> **Warning:** the following cell produces a warning which is ok to ignore because...``.
+Monospace font
+^^^^^^^^^^^^^^
 
+Any references to packages, variables used in code cells, or code commands should be in ``monospaced font``.
+
+
+.. _format-style-notebooks-markdown-indented:
+
+Indented text
+^^^^^^^^^^^^^
+
+Use indented text only for warnings (see `Known warnings`_) and figure captions. 
+
+Indented text is created as in the following examples, which can also be found
+in the :ref:`template notebook <format-style-notebooks-template>`_ 
+
+::
+
+  > **Warning:** the following cell produces a warning which is ok to ignore because...
+
+
+::
+
+  > **Figure 1:** Value 2 as a function of Value 1...
+
+
+
+Embedded images
+^^^^^^^^^^^^^^^
+
+Use the drag-and-drop method to embed images in markdown cells.
+
+Double click on the markdown cell and put the cursor at the desired line.
+Drag-and-drop the image into the markdown cell.
+A link of markdown code similar to what is shown will automatically appear.
+
+::
+
+  ![example.png](attachment:b512e6a5-d5f8-4ae3-bde5-1b7177a29663.png)
+
+
+Include a figure caption immediately after the embedded image, using `Indented text`_.
+The figure should be numbered in the same series as generated :ref:`plots <format-style-notebooks-output-plots>`_, and
+the caption should include the citation to the source of the image.
+
+Execute the markdown cell to see the image displayed.
+An example embedded image is provided in the :ref:`template notebook <format-style-notebooks-template>`_.
+
+
+.. _format-style-notebooks-code:
 
 Code cells
 ----------
@@ -453,11 +510,13 @@ Known warnings
 ^^^^^^^^^^^^^^
 
 If a code cell produces a warning which is known and is safe to ignore, add an indented statement
-(see `Markdown cells`_) about the warning before the code cell which produces the warning.
+(see `Markdown cells`_) about the warning _before_ the code cell which produces the warning.
 
 Do not use, e.g., ``warnings.simplefilter("ignore", category=UserWarning)``, because
 ignoring categories of warnings can allow real issues to go unnoticed.
 
+
+.. _format-style-notebooks-output:
 
 Output
 ------
@@ -471,6 +530,8 @@ Results from a Table Access Protocol (TAP) service search are best displayed as 
 Do not use the ``.to_table().show_in_notebook()`` method.
 This can cause issues in the RSP JupyterLab environment that cause the notebook to hang indefinitely.
 
+
+.. _format-style-notebooks-output-plots:
 
 Plots
 ^^^^^
@@ -499,10 +560,11 @@ Error bars should be included wherever possible, and especially in cases where a
 as line fitting is being performed on the data in the plot, to help the user understand data quality.
 
 **Captions:**
-A markdown cell underneath the figure should provide a figure number and a caption that explains
-the main attributes of the plot.
+A markdown cell underneath the figure should provide a figure number and a caption
+in :ref:`indented text <format-style-notebooks-markdown-indented>`_
+that explains the main attributes of the plot.
 This caption should also serve as alt-text (as described under :ref:`Accessibility considerations<accessibility-considerations>`)
-and be descriptive enough for the user to confirm the plot appears as expected.
+and be descriptive enough for the user to confirm the plot was generated as expected.
 
 
 Image display
@@ -540,9 +602,7 @@ Documentation-based tutorials
 
 Tutorials for the Portal and API Aspects, or tutorials written as scripts that can be
 copy-pasted into the command line interface in the Notebook Aspect,
-are written in reStructuredText (RST) format and are kept within the data release documentation at
-`DP0.2 Tutorials <https://dp0-2.lsst.io/tutorials-examples/index.html>`_ and
-`DP0.3 Tutorials <https://dp0-3.lsst.io/tutorials-examples/index.html>`_.
+are written in reStructuredText (RST) format and are kept within the data release documentation.
 
 
 Header and section structure
@@ -609,7 +669,7 @@ as in the following example.
 Accessibility considerations
 ============================
 
-The following set of best practices to be implemented for Rubin tutorials is a work in progress.
+The following set of best practices should be adhered to for all tutorials.
 
 
 Vision-impaired astronomers
@@ -631,6 +691,9 @@ plots color tables with ``matplotlib`` should be either a greyscale,
 a `preceptually uniform sequential colormap <https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential>`_
 like viridis or cividis, or 
 `tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_.
+
+Example code is available in: 
+`plot-colors-example.py <_static/plot-colors-example.py>`_.
 
 The ``tableau-colorblind10`` color table can be loaded with the following python code.
 
@@ -676,8 +739,7 @@ Example:
    :height: 300px
    :align: center
 
-You can view the example code here: 
-`plot-colors-example.py <_static/plot-colors-example.py>`_.
+
 
 Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -693,16 +755,17 @@ describe the information in a practical way versus a creative way.
 
 Guidelines for writing alt-text:
 
-* Be brief, if possible. Write in short, succinct sentences.
-* Spell out acronyms (e.g. Right Ascension versus RA).
-* Avoid jargon or undefined terms.
-* Symbols and equations should be expressed in words (e.g. use "equals" rather than "=").
-* Write for the text to be read aloud. Written visual cues (e.g. quotation marks or dashes) are not necessary.
+* Be brief. Write in short, succinct sentences.
+* Write for the text to be read aloud.
+* Do not include written visual cues (e.g., quotation marks, dashes).
+* Spell out acronyms (e.g., use "Right Ascension", not "RA").
+* Avoid jargon and undefined terms.
+* Symbols and equations should be expressed in words (e.g., use "equals", not "=").
 * Pictures should be described in terms of what the listener needs to know (e.g., a large galaxy in the center).
 * For RSP screenshots, state which interface is being shown and describe the actions the user should take and the expected results, or the main functionality of the interface (as appropriate).
-* Where possible, use consistent terms such as the `JupyterLab User Interface Naming Conventions <https://jupyterlab.readthedocs.io/en/stable/developer/contributing.html#user-interface-naming-conventions>`_.
-* Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g., "as you can see").
-* If color is a useful attribute to distinguish items in a figure, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star).
+* Use consistent terms such as the `JupyterLab User Interface Naming Conventions <https://jupyterlab.readthedocs.io/en/stable/developer/contributing.html#user-interface-naming-conventions>`_.
+* Limit the use of visual cues, such as colors or shapes, or visual-centric language (e.g., do not say, "as you can see").
+* If color distinguishes physical attributes, then describe the attribute rather than the color (e.g. a blue star versus a red star could be described as a hotter star and a cooler star).
 * For plots, include type of plot (e.g., bar, scatter), titles and labels, and a general explanation of the data and what it means.
 
 
