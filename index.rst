@@ -612,6 +612,16 @@ For consistency, ``extent`` should be used for all image types as in the followi
   plt.imshow(deepCoadd.image.array, cmap='gray', vmin=0, vmax=2, extent=deepCoadd_extent, origin='lower')
 
 
+.. _format-style-notebooks-data:
+
+Input data files
+----------------
+
+If a Jupyter Notebook tutorial requires a file of data, use the ``git` large file storage (LFS)
+associated with the repository.
+Details to be added here.
+
+
 
 .. _format-style-docs:
 
@@ -741,6 +751,15 @@ as in the following example.
        :alt: Descriptive text of image (use tab to indent second line of text)
 
        Figure 1: The caption goes here, indented the same way, but with an empty line between code and caption text.
+
+
+Input data files
+----------------
+
+If a tutorial requires a data file (e.g., and example table for upload),
+it should be stored in the ``_static`` folder of the same documentation
+repository as the tutorial.
+
 
 
 .. _accessibility-considerations:
