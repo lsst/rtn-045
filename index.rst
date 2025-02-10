@@ -617,10 +617,9 @@ For consistency, ``extent`` should be used for all image types as in the followi
 Input data files
 ----------------
 
-If a Jupyter Notebook tutorial requires a file of data, use the ``git` large file storage (LFS)
+If a Jupyter Notebook tutorial requires a file of data, use the ``git`` large file storage (LFS)
 associated with the repository.
-Details to be added here.
-
+Do not add data files to the tutorial notebooks repository.
 
 
 .. _format-style-docs:
