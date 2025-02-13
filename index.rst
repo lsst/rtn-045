@@ -197,8 +197,8 @@ In the second markdown cell, write five short statements in the same cell, each 
 
  * **Learning objective:** A very brief description of notebook's learning objective.
  * **LSST data products:** List the catalogs and images used.
- * **Packages:** List the python packages that are relevant to the learning objective. For exmaple, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
- * **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, asappropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
+ * **Packages:** List the python packages that are relevant to the learning objective. For example, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
+ * **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, as appropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
  * **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
 
 
@@ -445,7 +445,7 @@ Hidden cells
 No code cells should be hidden from the user.
 
 In other words, do not use the "View" menu item and choose "Collapse Selected Code",
-or click blue bar that appears to the left of a selected cell, to hide long blocks of code.
+or click the blue bar that appears to the left of a selected cell, to hide long blocks of code.
 The whole of the notebook should be visible to the user and the functionality of all
 code cells should be described in preceding markdown cells.
 
@@ -661,7 +661,7 @@ The RST file should start with a header, as in the example below.
 
   **Last verified to run:** _yyyy-mm-dd_
 
-  **Learning objective:** _Very brief description of tutorials's learning objective._
+  **Learning objective:** _Very brief description of tutorial's learning objective._
 
   **LSST data products:** _List the catalogs and images used._
 
@@ -736,7 +736,7 @@ Filenames for figures should follow the convention of using the base of the RST 
 Data visualizations should use the guidance for `Colorblind-friendly plots`_.
 
 **Caption and alt-text:** 
-All figures should be numbered have both a caption and an `Alternative-text (alt-text)`_ statement.
+All figures should be numbered, and have both a caption and an `Alternative-text (alt-text)`_ statement.
 The motivation and guidance for writing alt-text is provided under
 :ref:`Accessibility considerations<accessibility-considerations>`.
 
@@ -755,7 +755,7 @@ as in the following example.
 Input data files
 ----------------
 
-If a tutorial requires a data file (e.g., and example table for upload),
+If a tutorial requires a data file (e.g., an example table for upload),
 it should be stored in the ``_static`` folder of the same documentation
 repository as the tutorial.
 
