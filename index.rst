@@ -75,7 +75,7 @@ Short tutorials with a learning objective of how to use a single RSP function or
 
 These tutorials are typically written without scientific context or motivation - just simple examples for quick reference.
 
-Each "How-to" tutorial should take about 10 minutes to work through.
+Each "How-to" tutorial should take up to about 10 minutes to work through.
 
 
 .. _tutorial-types-prod:
@@ -101,6 +101,8 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 
 These tutorials demonstrate data visualization techniques and scientific analyses that use multiple RSP tools and data products in sequence.
 They should describe key scientific concepts and include scientific context and motivation for why the data and tools are used.
+
+Each "Science demonstration" tutorial should not take more than about 30 minutes to work through.
 
 
 .. _tutorial-types-org:
@@ -128,7 +130,7 @@ The "200 level" are the `Data product definitions`_ tutorials.
 The "300 level" are the `Science demonstrations`_ tutorials.
 
  * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
- * The "301.1 tutorial" would be a introductory-level introduction to the astronomical field.
+ * The "301.1 tutorial" would be an introductory-level demonstration within the astronomical field.
  * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
  * Subsequent "30x series" would be for other astronomical fields.
 
@@ -251,7 +253,7 @@ Do not use title case for section headings; use sentence case.
 All sections must be numbered to enable referencing in support requests, so that users can say,
 e.g., "I'm having trouble with the second code cell in Section 2.3."
 
-Use descriptive section titles, e.g., "2.2 Create a color-magnitude diagram" instead of "2.2 Plot",
+Use descriptive section titles, e.g., "2.2. Create a color-magnitude diagram" instead of "2.2. Plot",
 so that the auto-generated table of contents is more useful.
 
 The contents of the additional sections should alternate between :ref:`markdown cells <format-style-notebooks-markdown>`
@@ -618,8 +620,10 @@ Input data files
 ----------------
 
 If a Jupyter Notebook tutorial requires a file of data, use the ``git`` large file storage (LFS)
-associated with the repository.
+associated with the tutorial notebooks repository.
 Do not add data files to the tutorial notebooks repository.
+
+*Instructions for use of the ``git`` LFS to be added here.*
 
 
 .. _format-style-docs:
@@ -833,7 +837,6 @@ Example:
 .. image:: _static/plot-colors-example.png
    :alt: Example multi-band plot with a white and a black background.
    :width: 800px
-   :height: 300px
    :align: center
 
 
