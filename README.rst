@@ -10,7 +10,7 @@ Guidelines for User Tutorials
 RTN-045
 =======
 
-Principles, guidelines, conventions, formatting style, and workflow for tutorials developed by the Community Science Team (CST).
+Guidelines, principles, and formatting for user-facing tutorials maintained by the Community Science Team (CST).
 
 **Links:**
 
