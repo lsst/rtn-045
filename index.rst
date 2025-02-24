@@ -281,8 +281,8 @@ For example, "try changing parameter X to be Y, then rerunning the notebook up t
 
 .. _format-style-notebooks-pep8:
 
-Use PEP8 and flake8
--------------------
+Use PEP8, flake8, and jupyterlab-spellchecker
+---------------------------------------------
 
 ``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
 and ``flake8`` is a tool to ensure compliance with these standards.
@@ -416,7 +416,7 @@ Code cells
 All python code in Jupyter Notebooks should adhere to the
 `Code Style Guidelines <https://developer.lsst.io/coding/intro.html>`_
 in the `Rubin Developer's Guide <https://developer.lsst.io/>`_,
-and should `Use PEP8 and flake8`_.
+and should `Use PEP8, flake8, and jupyterlab-spellchecker`_.
 
 Comments
 ^^^^^^^^
