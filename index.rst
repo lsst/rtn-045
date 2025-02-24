@@ -281,8 +281,8 @@ For example, "try changing parameter X to be Y, then rerunning the notebook up t
 
 .. _format-style-notebooks-pep8:
 
-Use PEP8, flake8, and jupyterlab-spellchecker
----------------------------------------------
+Use PEP8 and flake8
+-------------------
 
 ``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
 and ``flake8`` is a tool to ensure compliance with these standards.
@@ -295,11 +295,7 @@ Notebook tutorial developers must install the following packages locally in thei
 
   pip install --user flake8-nb
   pip install --user pycodestyle_magic
-  pip install jupyterlab-spellchecker
 
-
-Install the jupyterlab-spellchecker extension using the command provided above. After installation, log out and log back in to activate the extension.
-When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red.
 
 It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
@@ -351,6 +347,20 @@ This will catch things that can be missed line-by-line, such as packages that ar
 
 
 .. _format-style-notebooks-markdown:
+
+Use jupyterlab-spellchecker
+---------------------------
+
+
+Notebook tutorial developers must install jupyterlab-spellchecker from the terminal in RSP:
+
+::
+
+  pip install jupyterlab-spellchecker
+
+
+Install the jupyterlab-spellchecker extension using the command provided above. After installation, log out and log back in to activate the extension.
+When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red.
 
 Markdown cells
 --------------
@@ -416,7 +426,7 @@ Code cells
 All python code in Jupyter Notebooks should adhere to the
 `Code Style Guidelines <https://developer.lsst.io/coding/intro.html>`_
 in the `Rubin Developer's Guide <https://developer.lsst.io/>`_,
-and should `Use PEP8, flake8, and jupyterlab-spellchecker`_.
+and should `Use PEP8 and flake8`_.
 
 Comments
 ^^^^^^^^
