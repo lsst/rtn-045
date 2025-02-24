@@ -299,7 +299,8 @@ Notebook tutorial developers must install the following packages locally in thei
 
 
 Install the jupyterlab-spellchecker extension using the command provided above. After installation, log out and log back in to activate the extension.
-When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red.
+When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red. 
+
 
 It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
