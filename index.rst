@@ -281,8 +281,8 @@ For example, "try changing parameter X to be Y, then rerunning the notebook up t
 
 .. _format-style-notebooks-pep8:
 
-Use PEP8, flake8, and jupyterlab spellchecker
----------------------------------------------
+Use PEP8 and flake8
+-------------------
 
 ``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
 and ``flake8`` is a tool to ensure compliance with these standards.
