@@ -145,20 +145,20 @@ and the ordering system described above has been adopted instead.
 
 .. _tutorial-types-names:
 
-Naming conventions
-------------------
+Title conventions
+-----------------
 
-Tutorial names (filenames / titles) are the main way that users navigate the tutorial set.
+Tutorial titles (filenames or primary headers) are the main way that users navigate the tutorial set.
 While there will be a readme file with descriptions, it's best to assume no one will read it.
 
-Thus, tutorials should have descriptive names that are as short as possible.
-Yes, this seems like an oxymoron, and long names might be necessary at times.
+Thus, tutorials should have descriptive titles (names) that are as short as possible.
+Yes, this seems like an oxymoron, and long titles might be necessary at times.
 A longer descriptive title is preferable to a shorter ambiguous title.
 
-The names of tutorials in the 100 level should start with "How to", and
+The titles of tutorials in the 100 level should start with "How to", and
 tutorials in the 200 level should be named simply by their data product.
 Tutorials in the 300 level will be in sub-folders by astronomical field,
-and so the names can focus on the analysis being demonstrated without
+and so the titles can focus on the analysis being demonstrated without
 repeating the field.
 
 
@@ -346,11 +346,10 @@ This will do a final check of any violations with ``PEP8``.
 This will catch things that can be missed line-by-line, such as packages that are imported but never used.
 
 
-.. _format-style-notebooks-markdown:
+.. _format-style-notebooks-spellcheck:
 
 Use jupyterlab-spellchecker
 ---------------------------
-
 
 Notebook tutorial developers must install jupyterlab-spellchecker from the terminal in RSP:
 
@@ -361,6 +360,9 @@ Notebook tutorial developers must install jupyterlab-spellchecker from the termi
 
 Install the jupyterlab-spellchecker extension using the command provided above. After installation, log out and log back in to activate the extension.
 When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red.
+
+
+.. _format-style-notebooks-markdown:
 
 Markdown cells
 --------------
@@ -440,16 +442,20 @@ Code cells should be kept short enough that intra-cell comments are not necessar
 Only use comments within code cells to comment-out optional code.
 
 
-Functions and classes
-^^^^^^^^^^^^^^^^^^^^^
+Functions, classes, and variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Functions and classes should be named following the
+Functions, classes, and variables should be named following the
 `Naming Conventions <https://developer.lsst.io/python/style.html#naming-conventions>`_
 defined in the `Rubin Developer's Guide <https://developer.lsst.io/>`_.
 
-Globally defined functions or classes which are used more than once in a notebook should be
+ * Functions should be lowercase, with words separated by underscores as necessary to improve readability (``snake_case``).
+ * Classes should use the CapWords convention with leading uppercase (``CamelCase``).
+ * Variables follow the rule for functions, and single-character variables should be avoided (use descriptive words).
+
+Global functions, classes, and variables which are used more than once in a notebook should be
 defined in the :ref:`introduction <format-style-notebooks-sections-intro>`,
-but single-use functions or classes can be defined immediately before they are used.
+but single-use functions, classes, and variables can be defined immediately before they are used.
 
 `Future work`_ includes creating a package of commonly-used functions in order
 to avoid users encountering long blocks of code, and help keep notebooks readable.
