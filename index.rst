@@ -296,10 +296,10 @@ Notebook tutorial developers must install the following packages locally in thei
   pip install --user flake8-nb
   pip install --user pycodestyle_magic
 
+
 It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
 force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
-
 
 **Create the flake8 config file:**
 These instructions use ``emacs``, but it doesn’t matter so long as the end result is a
@@ -347,6 +347,20 @@ This will catch things that can be missed line-by-line, such as packages that ar
 
 
 .. _format-style-notebooks-markdown:
+
+Use jupyterlab-spellchecker
+---------------------------
+
+
+Notebook tutorial developers must install jupyterlab-spellchecker from the terminal in RSP:
+
+::
+
+  pip install jupyterlab-spellchecker
+
+
+Install the jupyterlab-spellchecker extension using the command provided above. After installation, log out and log back in to activate the extension.
+When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red.
 
 Markdown cells
 --------------
