@@ -19,8 +19,6 @@
 101.1. A template documentation-based tutorial
 ##############################################
 
-.. This section should provide a brief, top-level description of the page.
-
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** *DPX* or *DRX*
@@ -34,6 +32,10 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 **Credit:** *E.g., "Originally developed by" or "Based on tutorials developed by" and then people's names, including journal article or software release citations if appropriate.* Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
+
+*How-to tutorials should NOT need sections, and have a minimal number of very concise steps. How-tos should NOT have an introduction as this is covered by the learning objective above.*
+
+*Like the notebook template, italicized text should be removed or replaced.*
 
 
 .. _DPX-Aspect-Y-Intro:
