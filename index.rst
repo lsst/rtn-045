@@ -852,7 +852,7 @@ The code that generates the example image below is available in:
 `plot-colors-example.py <_static/plot-colors-example.py>`_.
 
 
-.. image:: _static/plot-colors-example.png
+.. figure:: _static/plot-colors-example.png
    :alt: Example multi-band plot with a white and a black background.
    :width: 800px
    :align: center
