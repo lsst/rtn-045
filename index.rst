@@ -857,7 +857,7 @@ The code that generates the example image below is available in:
    :width: 800px
    :align: center
 
-   Figure 1: Example plots demonstrating the symbols, linestyles, and colors to use to represent the six LSST filters on white and black backgrounds.
+   Example plots demonstrating the symbols, linestyles, and colors to use to represent the six LSST filters on white and black backgrounds.
 
 
 
