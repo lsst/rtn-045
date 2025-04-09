@@ -808,33 +808,28 @@ Guidelines for colorblind-friendly plots includes the following.
 * **Do not use color alone, but with different symbol and line styles.**
 
 In Jupyter Notebooks, in order to be accessible to those with Color Vision Deficiency (CVD or colorblind), 
-plots color tables with ``matplotlib`` should be either a greyscale,
+the color tables used for plots with ``matplotlib`` should be either a greyscale,
 a `preceptually uniform sequential colormap <https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential>`_
 like viridis or cividis, or 
-`tableau-colorblind10 <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/tableau-colorblind10.html>`_.
+`seaborn-v0_8-colorblind <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/seaborn-colorblind.html>`_.
 
-Example code is available in: 
-`plot-colors-example.py <_static/plot-colors-example.py>`_.
-
-The ``tableau-colorblind10`` color table can be loaded with the following python code.
+The ``seaborn-v0_8-colorblind`` color table can be loaded with the following python code.
 
 ::
 
   import matplotlib.pyplot as plt
-  plt.style.use('tableau-colorblind10')
+  plt.style.use('seaborn-v0_8-colorblind')
 
 
-For the LSST filter set ``ugrizy``, always use symbols and line styles to represent the filters in addition to color.
+For the LSST filter set ``ugrizy``, use the dictionaries provided below, and always use symbols and line styles to represent the filters in addition to color.
 
-Use the following color cycles for each filter on both white and black backgrounds:
-
-White background:
+Use these colors on a white background:
 
 ::
 
   plot_filter_colors_white_background = {'u': '#0c71ff', 'g': '#49be61', 'r': '#c61c00', 'i': '#ffc200', 'z': '#f341a2', 'y': '#5d0000'}
 
-Black background:
+Use these colors on a black background:
 
 ::
 
@@ -852,12 +847,17 @@ Use the following line styles:
 
   plot_line_styles = {'u': '--', 'g': ':', 'r': '-', 'i': '-.', 'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))}
 
-Example:
 
-.. image:: _static/plot-colors-example.png
+The code that generates the example image below is available in: 
+`plot-colors-example.py <_static/plot-colors-example.py>`_.
+
+
+.. figure:: _static/plot-colors-example.png
    :alt: Example multi-band plot with a white and a black background.
    :width: 800px
    :align: center
+
+   Example plots demonstrating the symbols, linestyles, and colors to use to represent the six LSST filters on white and black backgrounds.
 
 
 
