@@ -643,6 +643,8 @@ If a Jupyter Notebook tutorial requires a file of data, use the ``git`` large fi
 associated with the tutorial notebooks repository.
 Do not add data files to the tutorial notebooks repository.
 
+*Instructions for use of the ``git`` LFS to be added here.*
+
 
 .. _format-style-docs:
 
