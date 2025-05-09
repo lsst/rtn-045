@@ -858,7 +858,7 @@ The symbols, linestyles, and colors recommended above can be retrieved by using 
     colors_white = get_multiband_plot_colors()
     colors_black = get_multiband_plot_colors(dark_background=True)
     symbols = get_multiband_plot_symbols()
-    linestyles = get_multiband_plot_linestyles()
+    line_styles = get_multiband_plot_linestyles()
 
 
 .. figure:: _static/plot-colors-example.png
