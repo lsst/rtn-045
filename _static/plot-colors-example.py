@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define palettes, from RTN-045.
-# Module works with LSST Science Pipelines version >= daily 2024_12_02
+
 try: 
     from lsst.utils.plotting import get_multiband_plot_colors, get_multiband_plot_symbols, get_multiband_plot_linestyles
     colors_white = get_multiband_plot_colors()
@@ -23,9 +23,8 @@ except ImportError:
         'u': 'o', 'g': '^', 'r': 'v', 'i': 's', 
         'z': '*', 'y': 'p'
     }
-    line_styles = {
-        'u': '--', 'g': ':', 'r': '-', 'i': '-.', 
-        'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))
+    line_styles = {'u': '--', 'g': (0, (3, 1, 1, 1)), 'r': '-.', 'i': '-',
+               'z': (0, (3, 1, 1, 1, 1, 1)), 'y': ':'
     }
 
 # Generate data
@@ -88,13 +87,16 @@ axes[0, 1].tick_params(colors='white')
 # White background
 axes[1, 0].set_facecolor('white')
 for filter_name in colors_white.keys():
-    axes[1, 0].hist(
+    _, _, patches = axes[1, 0].hist(
         overlap_hist_data[filter_name], bins=30, density=True,
         histtype='step', linewidth=2,
         color=colors_white[filter_name],
-        linestyle=line_styles[filter_name],
         label=f"{filter_name}"
     )
+    linestyle=line_styles[filter_name]
+    for patch in patches:
+        patch.set_linestyle(linestyle)
+    
 axes[1, 0].set_title("Overlapping Histograms (White Background)", fontsize=font_size)
 axes[1, 0].set_xlabel("Value", fontsize=font_size)
 axes[1, 0].set_ylabel("Density", fontsize=font_size)
@@ -103,13 +105,15 @@ axes[1, 0].legend(title="Filters", loc='upper left', fontsize=legend_font_size, 
 # Black background
 axes[1, 1].set_facecolor('black')
 for filter_name in colors_black.keys():
-    axes[1, 1].hist(
+    _, _, patches = axes[1, 1].hist(
         overlap_hist_data[filter_name], bins=30, density=True,
         histtype='step', linewidth=2,
         color=colors_black[filter_name],
-        linestyle=line_styles[filter_name],
         label=f"{filter_name}"
     )
+    linestyle=line_styles[filter_name]
+    for patch in patches:
+        patch.set_linestyle(linestyle)
 axes[1, 1].set_title("Overlapping Histograms (Black Background)", color='white', fontsize=font_size)
 axes[1, 1].set_xlabel("Value", color='white', fontsize=font_size)
 axes[1, 1].set_ylabel("Density", color='white', fontsize=font_size)
@@ -117,5 +121,5 @@ axes[1, 1].legend(title="Filters", loc='upper left', fontsize=legend_font_size, 
 axes[1, 1].tick_params(colors='white')
 
 plt.tight_layout()
-plt.savefig("example-plots-colors-symbols-lines.png", dpi=300, bbox_inches='tight')
+plt.savefig("plots-colors-example.png", dpi=300, bbox_inches='tight')
 plt.show()
