@@ -843,11 +843,22 @@ Use the following line styles:
 
 ::
 
-  plot_line_styles = {'u': '--', 'g': ':', 'r': '-', 'i': '-.', 'z': (0, (3, 5, 1, 5, 1, 5)), 'y': (0, (3, 1, 1, 1))}
+  plot_linestyles = {'u': '--', 'g': (0, (3, 1, 1, 1)), 'r': '-.', 'i': '-', 'z': (0, (3, 1, 1, 1, 1, 1)), 'y': ':'}
 
 
-The code that generates the example image below is available in: 
+The code that generates the example images below is available in: 
 `plot-colors-example.py <_static/plot-colors-example.py>`_.
+The symbols, linestyles, and colors recommended above can be retrieved by using the `lsst.utils.plotting` package:
+
+::
+
+    from lsst.utils.plotting import (get_multiband_plot_colors,
+                                     get_multiband_plot_symbols,
+                                     get_multiband_plot_linestyles)
+    colors_white = get_multiband_plot_colors()
+    colors_black = get_multiband_plot_colors(dark_background=True)
+    symbols = get_multiband_plot_symbols()
+    linestyles = get_multiband_plot_linestyles()
 
 
 .. figure:: _static/plot-colors-example.png
