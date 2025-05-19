@@ -471,6 +471,45 @@ or click the blue bar that appears to the left of a selected cell, to hide long 
 The whole of the notebook should be visible to the user and the functionality of all
 code cells should be described in preceding markdown cells.
 
+General queries
+^^^^^^^^^^^^^^^
+
+When querying the Butler or the TAP service, always order the results of a query.  Doing so makes
+the results of the query exactly reproducible, which helps when performing the non-interactive 
+"diff-ing" of notebook output in preparation of the entire set of notebooks for a "bump" in 
+the recommended version server image on the RSP.  (This "diff-ing" process makes use of 
+nbdime's nbdiff command.)
+
+For TAP queries, use `ORDER BY`; e.g.,
+
+::
+
+  SELECT * FROM tap_schema.tables 
+  WHERE tap_schema.tables.schema_name = 'dp02_dc2_catalogs'
+  ORDER BY table_index ASC
+
+where the results returned by the query are sorted in ascending order by the `table_index`.
+
+
+For butler queries, use `order_by`; e.g., 
+
+::
+
+  dataset_refs = butler.query_datasets("visit_image",
+                                     where=query,
+                                     bind=bind_params,
+                                     order_by=["visit.timespan.begin"])
+
+
+where this query is ordered by the start time of a `visit`.
+
+It helps to suggest which columns are preferred for ordering for a given query.
+For instance, if a query is seeking bright stars, maybe order by magnitude.
+Otherwise, just order by `objectId` or the equivalent.
+
+Although this practice is most useful for notebooks, it is also good practice for Portal and
+API tutorials, as well.
+
 
 TAP queries
 ^^^^^^^^^^^
