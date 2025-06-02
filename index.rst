@@ -287,63 +287,29 @@ Use PEP8 and flake8
 ``PEP8`` is the style guide for Python code that comprises the standard library of the distribution,
 and ``flake8`` is a tool to ensure compliance with these standards.
 
-Use ``flake8`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
+Use ``flake8-nb`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
 
-Notebook tutorial developers must install the following packages locally in their home directory:
+Notebook tutorial developers should install:
 
 ::
 
   pip install --user flake8-nb
-  pip install --user pycodestyle_magic
 
 
 It is known that the most up-to-date version of ``flake8`` has some issues.
 If errors are encountered such as ``AttributeError: '_io.StringIO' object has no attribute 'buffer'``,
 force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
 
-**Create the flake8 config file:**
-These instructions use ``emacs``, but it doesn’t matter so long as the end result is a
-correctly-named file with the right contents.
-Start in the home directory and execute the following.
+As ``flake8-nb`` no longer takes a configuration file of rule exceptions, either pass the configurations
+as arguments or set the following alias, e.g., in a ``.bashrc`` file.
 
 ::
 
-  touch .config/flake8
-  emacs .config/flake8
+  alias flake8-nb='flake8-nb --max-line-length=99 --ignore=E133,E226,E228,E266,N802,N803,N806,N812,N813,N815,N816,W503'
 
 
-Then copy-paste the following into the opened config file.
-
-::
-
-  [flake8]
-  max-line-length = 99
-  ignore = E133, E226, E228, E266, N802, N803, N806, N812, N813, N815, N816, W503
-
-Use ``x-s`` then ``x-c`` to save and exit emacs.
-
-
-**While developing a notebook** have the following "magic" commands as the first code cell:
-
-::
-
-  %load_ext pycodestyle_magic
-  %flake8_on
-  import logging
-  logging.getLogger("flake8").setLevel(logging.FATAL)
-
-Whenever a cell is executed, it will use ``flake8`` to check for adherence to the ``PEP8`` coding style guide, 
-and report violations which can be fixed immediately.
-When the notebook is ready to be merged, the cell with the magic commands must be removed.
-
-**When the notebook is complete** execute the following from the command line in the notebook's directory:
-
-::
-
-  flake8-nb notebook_name.ipynb
-
-This will do a final check of any violations with ``PEP8``.
-This will catch things that can be missed line-by-line, such as packages that are imported but never used.
+Run ``flake8-nb <notebook.ipynb>`` periodically during notebook development and fix errors.
+Ensure ``flake8-nb`` runs clean before requesting a review.
 
 
 .. _format-style-notebooks-spellcheck:
