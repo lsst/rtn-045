@@ -289,7 +289,7 @@ and ``flake8`` is a tool to ensure compliance with these standards.
 
 Use ``flake8-nb`` to ensure notebook code conforms to  `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_, with a few exceptions.
 
-Notebook tutorial developers should install:
+Install ``flake8-nb`` with ``pip``.
 
 ::
 
@@ -301,14 +301,21 @@ If errors are encountered such as ``AttributeError: '_io.StringIO' object has no
 force-downgrade ``flake8`` from version ``4.0.1`` to ``3.9.2`` with ``pip install flake8==3.9.2``.
 
 As ``flake8-nb`` no longer takes a configuration file of rule exceptions, either pass the configurations
-as arguments or set the following alias, e.g., in a ``.bashrc`` file.
+as arguments every time ``flake8-nb`` is run, or set the following alias, e.g., in a ``.bashrc`` file.
 
 ::
 
   alias flake8-nb='flake8-nb --max-line-length=99 --ignore=E133,E226,E228,E266,N802,N803,N806,N812,N813,N815,N816,W503'
 
 
-Run ``flake8-nb <notebook.ipynb>`` periodically during notebook development and fix errors.
+Run ``flake8-nb`` on a notebook named ``<notebook.ipynb>``.
+
+::
+
+  flake8-nb <notebook.ipynb>
+
+
+Run ``flake8-nb`` periodically during notebook development and fix errors.
 Ensure ``flake8-nb`` runs clean before requesting a review.
 
 
