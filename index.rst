@@ -500,8 +500,10 @@ stop and return an appropriate error related to the job phase.
   job.run()
   job.wait(phases=['COMPLETED', 'ERROR'])
   print('Job phase is', job.phase)
+  if job.phase == 'ERROR':
+      job.raise_if_error()
   assert job.phase == 'COMPLETED'
-
+  results = job.fetch_result()
 
 As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
 any estimates for how long the query should take, to avoid confusing or concerning the user.
