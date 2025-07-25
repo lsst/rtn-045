@@ -839,7 +839,7 @@ Use these colors on a white background:
 
 ::
 
-  plot_filter_colors_white_background = {'u': '#0c71ff', 'g': '#49be61', 'r': '#c61c00', 'i': '#ffc200', 'z': '#f341a2', 'y': '#5d0000'}
+  plot_filter_colors_white_background = {'u': '#1600ea', 'g': '#31de1f', 'r': '#b52626', 'i': '#370201', 'z': '#ba52ff', 'y': '#61a2b3'}
 
 Use these colors on a black background:
 
