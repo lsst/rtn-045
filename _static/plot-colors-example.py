@@ -121,5 +121,5 @@ axes[1, 1].legend(title="Filters", loc='upper left', fontsize=legend_font_size, 
 axes[1, 1].tick_params(colors='white')
 
 plt.tight_layout()
-plt.savefig("plots-colors-example.png", dpi=300, bbox_inches='tight')
+plt.savefig("plot-colors-example.png", dpi=300, bbox_inches='tight')
 plt.show()
