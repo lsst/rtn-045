@@ -2,13 +2,14 @@
 Guidelines for User Tutorials
 #############################
 
+DOI: `10.71929/rubin/2584020 <https://doi.org/10.71929/rubin/2584020>`_
+
 .. abstract::
 
    This document defines the guidelines, principles, and formats for user-facing tutorials that demonstrate how to use
    the Rubin Science Platform (RSP) to analyze data from the Legacy Survey of Space and Time (LSST).
    All Rubin staff and the broader science community should use these guidelines when contributing to
    the sets of Jupyter Notebook or documentation-based tutorials maintained by the Rubin Community Science team (CST).
-
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
 
