@@ -4,6 +4,8 @@ series_id = "RTN"
 canonical_url = "https://rtn-045.lsst.io/"
 github_url = "https://github.com/lsst/rtn-045"
 github_default_branch = "main"
+date_created = "2022-09-12T10:52:35-0700"
+doi = "https://doi.org/10.71929/rubin/2584020"
 organization.name = "Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
 license.id = "CC-BY-4.0"
@@ -11,114 +13,115 @@ license.id = "CC-BY-4.0"
 name = {given = "Melissa L.", family = "Graham"}
 internal_id = "grahamml"
 orcid = "https://orcid.org/0000-0002-9154-3136"
+
 [[technote.authors.affiliations]]
 name = "University of Washington"
 internal_id = "Washington"
-address = "Dept. of Astronomy, Box 351580, Seattle, WA 98195, USA"
+ror = "https://ror.org/00cvxb145"
 
 [[technote.authors.affiliations]]
-name = "Institute for Data-intensive Research in Astrophysics and Cosmology"
-internal_id = "DIRAC"
-address = "University of Washington, Seattle, WA"
-
+name = "University of Washington"
+internal_id = "Washington-DIRAC"
+ror = "https://ror.org/00cvxb145"
 [[technote.authors]]
 name = {given = "Jeffrey L.", family = "Carlin"}
 internal_id = "carlinjl"
 orcid = "https://orcid.org/0000-0002-3936-9628"
-[[technote.authors.affiliations]]
-name = "Rubin Observatory Project Office"
-internal_id = "RubinObs"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
 
+[[technote.authors.affiliations]]
+name = "Vera C. Rubin Observatory Project Office"
+internal_id = "RubinObs"
+ror = "https://ror.org/048g3cy84"
 [[technote.authors]]
 name = {given = "Christina L.", family = "Adair"}
 internal_id = "adaircl"
+orcid = "https://orcid.org/0009-0008-8623-871X"
+
 [[technote.authors.affiliations]]
 name = "SLAC National Accelerator Laboratory"
 internal_id = "SLAC"
-address = "2575 Sand Hill Rd., Menlo Park, CA 94025, USA"
-
+ror = "https://ror.org/05gzmn429"
 [[technote.authors]]
 name = {given = "Yumi", family = "Choi"}
 internal_id = "choiy"
 orcid = "https://orcid.org/0000-0003-1680-1884"
-[[technote.authors.affiliations]]
-name = "NSF's National Optical-Infrared Astronomy Research Laboratory"
-internal_id = "NOIRLab"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
 
+[[technote.authors.affiliations]]
+name = "NSF NOIRLab"
+internal_id = "NOIRLab"
+ror = "https://ror.org/03zmsge54"
 [[technote.authors]]
 name = {given = "Gloria", family = "Fonseca Alvarez"}
 internal_id = "fonsecaalvarezg"
 orcid = "https://orcid.org/0000-0003-0042-6936"
-[[technote.authors.affiliations]]
-name = "NSF's National Optical-Infrared Astronomy Research Laboratory"
-internal_id = "NOIRLab"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
 
+[[technote.authors.affiliations]]
+name = "NSF NOIRLab"
+internal_id = "NOIRLab"
+ror = "https://ror.org/03zmsge54"
 [[technote.authors]]
 name = {given = "Sarah", family = "Greenstreet"}
 internal_id = "greenstreets"
 orcid = "https://orcid.org/0000-0002-4439-1539"
-[[technote.authors.affiliations]]
-name = "NSF's National Optical-Infrared Astronomy Research Laboratory"
-internal_id = "NOIRLab"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
 
+[[technote.authors.affiliations]]
+name = "NSF NOIRLab"
+internal_id = "NOIRLab"
+ror = "https://ror.org/03zmsge54"
 [[technote.authors]]
 name = {given = "Ryan M.", family = "Lau"}
 internal_id = "laur"
 orcid = "https://orcid.org/0000-0003-0778-0321"
-[[technote.authors.affiliations]]
-name = "NSF's National Optical-Infrared Astronomy Research Laboratory"
-internal_id = "NOIRLab"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
 
+[[technote.authors.affiliations]]
+name = "NSF NOIRLab"
+internal_id = "NOIRLab"
+ror = "https://ror.org/03zmsge54"
 [[technote.authors]]
 name = {given = "Greg M.", family = "Madejski"}
 internal_id = "madejskig"
-[[technote.authors.affiliations]]
-name = "Kavli Institute for Particle Astrophysics and Cosmology"
-internal_id = "SLAC-Kavli"
-address = "SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94025, USA"
 
+[[technote.authors.affiliations]]
+name = "SLAC National Accelerator Laboratory"
+internal_id = "SLAC-Kavli"
+ror = "https://ror.org/00pwqz914"
 [[technote.authors]]
 name = {given = "Aaron M.", family = "Meisner"}
 internal_id = "meisnera"
 orcid = "https://orcid.org/0000-0002-1125-7384"
-[[technote.authors.affiliations]]
-name = "NSF's National Optical-Infrared Astronomy Research Laboratory"
-internal_id = "NOIRLab"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
 
+[[technote.authors.affiliations]]
+name = "NSF NOIRLab"
+internal_id = "NOIRLab"
+ror = "https://ror.org/03zmsge54"
 [[technote.authors]]
 name = {given = "Andrés A.", family = "Plazas Malagón"}
 internal_id = "plazasa"
 orcid = "https://orcid.org/0000-0002-2598-0514"
+
 [[technote.authors.affiliations]]
 name = "SLAC National Accelerator Laboratory"
 internal_id = "SLAC"
-address = "2575 Sand Hill Rd., Menlo Park, CA 94025, USA"
+ror = "https://ror.org/05gzmn429"
 
 [[technote.authors.affiliations]]
-name = "Kavli Institute for Particle Astrophysics and Cosmology"
+name = "SLAC National Accelerator Laboratory"
 internal_id = "SLAC-Kavli"
-address = "SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94025, USA"
-
+ror = "https://ror.org/00pwqz914"
 [[technote.authors]]
 name = {given = "Douglas L.", family = "Tucker"}
 internal_id = "tuckerdl"
 orcid = "https://orcid.org/0000-0001-7211-5729"
+
 [[technote.authors.affiliations]]
 name = "Fermi National Accelerator Laboratory"
 internal_id = "Fermilab"
-address = "P. O. Box 500, Batavia, IL 60510, USA"
-
+ror = "https://ror.org/020hgte69"
 [[technote.authors]]
 name = {given = "Christina C.", family = "Williams"}
 internal_id = "williamscc"
 orcid = "https://orcid.org/0000-0003-2919-7495"
 [[technote.authors.affiliations]]
-name = "NSF's National Optical-Infrared Astronomy Research Laboratory"
+name = "NSF NOIRLab"
 internal_id = "NOIRLab"
-address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
+ror = "https://ror.org/03zmsge54"
