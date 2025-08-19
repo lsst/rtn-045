@@ -122,7 +122,7 @@ The "100 level" are the `How-to: RSP functionality`_ tutorials.
 
 The "200 level" are the `Data product definitions`_ tutorials.
 
- * The "201 series" would be for a data product type, such as catalog tables. 
+ * The "201 series" would be for a data product type, such as catalog tables.
  * The "201.1 tutorial" would be for the ``Object`` catalog.
  * Subsequent "201.x tutorials" would be for other tables, ``Source``, ``ForcedSource``, and so on.
  * Subsequent "20x series" would be for other data product types, like images and survey property maps.
@@ -137,7 +137,7 @@ The "300 level" are the `Science demonstrations`_ tutorials.
 **Why a "learning level" is not part of a tutorial's metadata:**
 In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
 This was not useful for two main reasons.
-One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_),
+One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_ :cite:labelpar:`RTN-002`),
 and two, the learning levels were only in the header or in the readme file and not easily seen by users.
 For these reasons, the tutorials no longer have defined learning levels or target audiences,
 and the ordering system described above has been adopted instead.
@@ -217,7 +217,7 @@ Provide a brief narrative about this notebook's learning objective, e.g., "This 
 Cite or link to any external information or documentation.
 Embed plots or images to help present key concepts.
 
-**Related tutorials:** 
+**Related tutorials:**
 At the end of Introduction and before Section 1.1, if applicable,
 mention any other relevant tutorials by name.
 Do not link to them, because tutorials evolve continuously, there is no linkchecker for the notebook repo,
@@ -355,7 +355,7 @@ Any references to packages, variables used in code cells, or code commands shoul
 Indented text
 ^^^^^^^^^^^^^
 
-Use indented text only for warnings (see `Known warnings`_) and figure captions. 
+Use indented text only for warnings (see `Known warnings`_) and figure captions.
 
 Indented text is created as in the following examples, which can also be found
 in the :ref:`template notebook <format-style-notebooks-template>`.
@@ -448,23 +448,23 @@ General queries
 ^^^^^^^^^^^^^^^
 
 When querying the Butler or the TAP service, always order the results of a query.  Doing so makes
-the results of the query exactly reproducible, which helps when performing the non-interactive 
-"diff-ing" of notebook output in preparation of the entire set of notebooks for a "bump" in 
-the recommended version server image on the RSP.  (This "diff-ing" process makes use of 
+the results of the query exactly reproducible, which helps when performing the non-interactive
+"diff-ing" of notebook output in preparation of the entire set of notebooks for a "bump" in
+the recommended version server image on the RSP.  (This "diff-ing" process makes use of
 nbdime's nbdiff command.)
 
 For TAP queries, use `ORDER BY`; e.g.,
 
 ::
 
-  SELECT * FROM tap_schema.tables 
+  SELECT * FROM tap_schema.tables
   WHERE tap_schema.tables.schema_name = 'dp02_dc2_catalogs'
   ORDER BY table_index ASC
 
 where the results returned by the query are sorted in ascending order by the `table_index`.
 
 
-For butler queries, use `order_by`; e.g., 
+For butler queries, use `order_by`; e.g.,
 
 ::
 
@@ -507,7 +507,7 @@ stop and return an appropriate error related to the job phase.
 
 As the execution of TAP queries can be time-variable, the notebook's narrative text should not include
 any estimates for how long the query should take, to avoid confusing or concerning the user.
-The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the 
+The ``html`` files of executed versions of the notebooks (see `Converted notebooks`_) will show the
 execution time, should the user require an estimate.
 
 
@@ -540,7 +540,7 @@ This is only necessary in notebooks that demonstrate data visualization with lar
       gc.collect()
 
 
-Better ways to clear the memory are under consideration (see `Future work`_). 
+Better ways to clear the memory are under consideration (see `Future work`_).
 
 
 Assert statements
@@ -729,14 +729,14 @@ Steps should be short, one to a few sentences, and provide a single instruction 
 All `Narrative text`_ should be written in the imperative mood.
 
 In some cases, the action might not be interactive with the RSP, and that is OK.
-For example, after a query is executed, the next step might be simply for the user to 
+For example, after a query is executed, the next step might be simply for the user to
 confirm that X rows were retrieved, and compare their results view to a screenshot.
 
 
 Exercises for the learner
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is very common, but not mandatory, to end all tutorials with a section called 
+It is very common, but not mandatory, to end all tutorials with a section called
 "Exercises for the learner".
 
 See the guidance for :ref:`exercises in notebooks <format-style-notebooks-sections-exercises>`.
@@ -745,7 +745,7 @@ See the guidance for :ref:`exercises in notebooks <format-style-notebooks-sectio
 Code blocks
 -----------
 
-Ensure that all code and any Astronomical Data Query Language (ADQL) statements are 
+Ensure that all code and any Astronomical Data Query Language (ADQL) statements are
 put into code boxes in RST so that users may copy-paste whenever possible.
 In RST, this is done as in the following example.
 
@@ -753,8 +753,8 @@ In RST, this is done as in the following example.
 
      .. code-block:: SQL
 
-       SELECT e, q, incl 
-       FROM dp03_catalogs_10yr.MPCORB 
+       SELECT e, q, incl
+       FROM dp03_catalogs_10yr.MPCORB
        WHERE ssObjectId > 9000000000000000000
 
 
@@ -771,7 +771,7 @@ Filenames for figures should follow the convention of using the base of the RST 
 
 Data visualizations should use the guidance for `Colorblind-friendly plots`_.
 
-**Caption and alt-text:** 
+**Caption and alt-text:**
 All figures should be numbered, and have both a caption and an `Alternative-text (alt-text)`_ statement.
 The motivation and guidance for writing alt-text is provided under
 :ref:`Accessibility considerations<accessibility-considerations>`.
@@ -819,10 +819,10 @@ Guidelines for colorblind-friendly plots includes the following.
 * Use color combinations that are high contrast.
 * **Do not use color alone, but with different symbol and line styles.**
 
-In Jupyter Notebooks, in order to be accessible to those with Color Vision Deficiency (CVD or colorblind), 
+In Jupyter Notebooks, in order to be accessible to those with Color Vision Deficiency (CVD or colorblind),
 the color tables used for plots with ``matplotlib`` should be either a greyscale,
 a `preceptually uniform sequential colormap <https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential>`_
-like viridis or cividis, or 
+like viridis or cividis, or
 `seaborn-v0_8-colorblind <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/seaborn-colorblind.html>`_.
 
 The ``seaborn-v0_8-colorblind`` color table can be loaded with the following python code.
@@ -860,7 +860,7 @@ Use the following line styles:
   plot_linestyles = {'u': '--', 'g': (0, (3, 1, 1, 1)), 'r': '-.', 'i': '-', 'z': (0, (3, 1, 1, 1, 1, 1)), 'y': ':'}
 
 
-The code that generates the example images below is available in: 
+The code that generates the example images below is available in:
 `plot-colors-example.py <_static/plot-colors-example.py>`_.
 The symbols, linestyles, and colors recommended above can be retrieved by using the `lsst.utils.plotting` package:
 
@@ -888,12 +888,12 @@ Alternative-text (alt-text)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Alt-text is added to figures, images, and graphics in the documentation and documentation-based tutorials
-(but not notebooks, where figures are typically dynamically generated) to ensure that visually impaired 
-individuals, who use screen readers, are given sufficient information to understand what is displayed. 
+(but not notebooks, where figures are typically dynamically generated) to ensure that visually impaired
+individuals, who use screen readers, are given sufficient information to understand what is displayed.
 
-In general, alt-text descriptions can be written as either a literal description of the figure or image, 
+In general, alt-text descriptions can be written as either a literal description of the figure or image,
 or a more creative description.
-In CST tutorials, most figures display screen shots of the RSP portal interface and should 
+In CST tutorials, most figures display screen shots of the RSP portal interface and should
 describe the information in a practical way versus a creative way.
 
 Guidelines for writing alt-text:
@@ -925,10 +925,10 @@ but a customized application might be considered in the future (see `Future work
 Neurodivergent astronomers
 --------------------------
 
-Use fonts that work well for people with dyslexia, such as sans serif, monospaced, and roman font types such as 
-Helvetica, Courier, Arial, Verdana and CMU (Computer Modern Unicode), OpenDyslexic. 
+Use fonts that work well for people with dyslexia, such as sans serif, monospaced, and roman font types such as
+Helvetica, Courier, Arial, Verdana and CMU (Computer Modern Unicode), OpenDyslexic.
 
-*Italic fonts* decrease readability and should be used sparingly. 
+*Italic fonts* decrease readability and should be used sparingly.
 
 Avoid text crowding and long paragraphs.
 Use short sentences and, where possible, arrange text in shorter paragraphs.
@@ -1000,9 +1000,9 @@ Work is on-going in these areas, and in time they will become part of the guidel
 Embed notebook metadata (the header contents) in a way that can be scraped and used to auto-generate the ``README.md`` file or a Table of Contents for all notebooks, to enable users to browse notebook contents.
 
 **Accessibility:**
-Continue to improve tutorials' accessibility to people with disabilities by finding and implementing, 
-e.g., screen reader compatibility software, data sonification packages, 
-customized use of `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_, 
+Continue to improve tutorials' accessibility to people with disabilities by finding and implementing,
+e.g., screen reader compatibility software, data sonification packages,
+customized use of `nbconvert <https://nbconvert.readthedocs.io/en/latest/>`_,
 additional policies for supporting neurodivergent users, and other jupyter notebook accessibility techniques.
 
 **Translations:**
@@ -1019,3 +1019,8 @@ These could be, e.g., ADQL searches for the portal, code snippets for the comman
 or python modules that can be imported.
 When these are used in the advanced notebooks, also demonstrate use of the ``inspect.getsource``
 functionality for users to display function code.
+
+References
+==========
+
+.. bibliography::
