@@ -383,7 +383,11 @@ A link of markdown code similar to what is shown will automatically appear.
 
 ::
 
+  <div style="max-width:300px">
+  
   ![example.png](attachment:b512e6a5-d5f8-4ae3-bde5-1b7177a29663.png)
+  
+  </div>
 
 
 Include a figure caption immediately after the embedded image, using `Indented text`_.
