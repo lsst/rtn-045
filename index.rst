@@ -378,12 +378,16 @@ Embedded images
 Use the drag-and-drop method to embed images in markdown cells.
 
 Double click on the markdown cell and put the cursor at the desired line.
-Drag-and-drop the image into the markdown cell.
-A link of markdown code similar to what is shown will automatically appear.
+Drag-and-drop the image into the markdown cell, and a line of markdown code (similar to what is shown in the second line in the snippet below) will automatically appear.
+It is optional to add the first and third lines in order to define style settings like size.
 
 ::
 
+  <div style="max-width:300px">
+  
   ![example.png](attachment:b512e6a5-d5f8-4ae3-bde5-1b7177a29663.png)
+  
+  </div>
 
 
 Include a figure caption immediately after the embedded image, using `Indented text`_.
