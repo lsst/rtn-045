@@ -817,12 +817,17 @@ Vision-impaired astronomers
 Colorblind-friendly plots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The most common form of colorblindness is being unable to differentiate red and green.
-Guidelines for colorblind-friendly plots includes the following.
+To improve accessibility of Rubin plots and visualizations, the following recommendations should be followed:
 
-* Do not use red and green together.
-* Use color combinations that are high contrast.
-* **Do not use color alone, but with different symbol and line styles.**
+* **Color alone should not be relied upon to distinguish between data series**.
+  Symbol shapes and line styles should be combined with color to provide redundancy, although it is recognized that this may not always be practical.
+* **Validated palettes should be used**.
+  The recommended palettes have been tested with Color Vision Deficiency (CVD) simulators, perceptual color difference calculations, and direct feedback from individuals with CVD.
+  It is not expected that every figure be processed through a simulator if these palettes are used and the guidelines in this section are followed.
+* **Red and green should not be used together**, since the most common form of CVD is difficulty differentiating red and green.
+  This requirement is particularly important for the black-background palette below.
+  For the white-background palette, tests have shown that the red–green contrast is acceptable.
+* **Color combinations with high contrast should be employed** so that they remain perceptually distinct.
 
 In Jupyter Notebooks, in order to be accessible to those with Color Vision Deficiency (CVD or colorblind),
 the color tables used for plots with ``matplotlib`` should be either a greyscale,
