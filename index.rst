@@ -548,6 +548,7 @@ Always sort a table before displaying it.
 Sorting makes the table display exactly reproducible, which helps when performing the non-interactive
 "differencing" to compare notebook output with old and new versions of the environment
 (i.e., when preparing to "bump" the recommended image).
+It also makes notebook outputs exactly reproducible for all users, which prevents any confusion.
 
 Results from a Table Access Protocol (TAP) service search are best displayed as an
 ``astropy`` table using ``.to_table()``, or as a pandas dataframe using ``.to_table().to_pandas()``.
