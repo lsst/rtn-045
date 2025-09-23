@@ -125,3 +125,12 @@ orcid = "https://orcid.org/0000-0003-2919-7495"
 name = "NSF NOIRLab"
 internal_id = "NOIRLab"
 ror = "https://ror.org/03zmsge54"
+
+[[technote.authors]]
+name = {given = "Shenming", family = "Fu"}
+internal_id = "fus"
+orcid = "https://orcid.org/0000-0001-5422-1958"
+[[technote.authors.affiliations]]
+name = "SLAC National Accelerator Laboratory"
+internal_id = "SLAC-Kavli"
+ror = "https://ror.org/00pwqz914"
