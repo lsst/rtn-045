@@ -325,15 +325,10 @@ Ensure ``flake8-nb`` runs clean before requesting a review.
 Use jupyterlab-spellchecker
 ---------------------------
 
-Notebook tutorial developers must install jupyterlab-spellchecker from the terminal in RSP:
+The Jupyterlab-spellchecker has been installed for everyone on RSP.
 
-::
-
-  pip install jupyterlab-spellchecker
-
-
-Install the jupyterlab-spellchecker extension using the command provided above. After installation, log out and log back in to activate the extension.
-When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words in red.
+When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words. 
+To avoid it highlighting unknown words in a code cell, use ``"{}".format(variable)`` or ``"%s"%variable`` instead of ``f"{variable}"`` in the code.
 
 
 .. _format-style-notebooks-markdown:
