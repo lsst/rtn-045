@@ -327,7 +327,8 @@ Use jupyterlab-spellchecker
 
 The Jupyterlab-spellchecker has been installed for everyone on RSP.
 
-When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words. To avoid it highlights unknown words in a code cell, use ``"{}".format(variable)`` or ``"%s"%variable`` instead of ``f"{variable}"`` in the code.
+When editing a markdown cell, Jupyterlab-spellchecker will highlight unknown words. 
+To avoid it highlighting unknown words in a code cell, use ``"{}".format(variable)`` or ``"%s"%variable`` instead of ``f"{variable}"`` in the code.
 
 
 .. _format-style-notebooks-markdown:
