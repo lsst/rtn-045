@@ -346,10 +346,15 @@ Monospace font
 Markdown cell text should be in ``monospace`` font if:
 
 * it is the name of a package, function, class, or method
+
   * e.g., ``numpy``, ``show_bokeh_inline``, ``SkyCoord``, ``Factory``, ``to_table()``
+
 * it is a variable used in a code cell
+
   * e.g., ``results``
+
 * it is the name of a TAP table or Butler dataset
+
   * e.g., ``Object``, ``deep_coadd``, ``source``
 
 
