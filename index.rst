@@ -353,9 +353,9 @@ Markdown cell text should be in ``monospace`` font if:
 
   * e.g., ``results``
 
-* it is the name of a TAP table or Butler dataset
+* it is the name of a TAP table or Butler dataset, or a column name
 
-  * e.g., ``Object``, ``deep_coadd``, ``source``
+  * e.g., ``Object``, ``deep_coadd``, ``source``, ``diaObjectId``
 
 
 
