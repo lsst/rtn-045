@@ -31,6 +31,8 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Credit:** *E.g., "Originally developed by" or "Based on tutorials developed by" and then people's names, including journal article or software release citations if appropriate.* Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
+**DOI:** `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
+
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
 *How-to tutorials should NOT need sections, and have a minimal number of very concise steps. How-tos should NOT have an introduction as this is covered by the learning objective above.*
