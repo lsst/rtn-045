@@ -164,6 +164,15 @@ repeating the field.
 
 
 
+.. _tutorial-reference:
+
+Reference
+---------
+
+All tutorials should provide the DOI reference for Rubin tutorials, `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_.  Appropriate means to referencing this DOI are included in :ref:`the Jupyter Notebooks tutorial template <format-style-notebooks-template>` and in :ref:`the Documentation-based tutorials template <format-style-docs-template>` below.
+
+
+
 .. _format-style-notebooks:
 
 Jupyter Notebooks
