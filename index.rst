@@ -194,7 +194,8 @@ Display the Rubin Observatory logo at upper left.
 To the right of the logo list the RSP deployment,
 the LSST Science Pipelines version,
 the container size, the data release,
-and the date last verified to run.
+the date last verified to run, 
+the repository, and the DOI.
 
 In the second markdown cell, write five short statements in the same cell, each on a new line.
 
