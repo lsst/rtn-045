@@ -164,6 +164,16 @@ repeating the field.
 
 
 
+.. _tutorial-reference:
+
+Reference
+=========
+
+All tutorials should provide the DOI reference for Rubin tutorials, `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_.
+Appropriate means to referencing this DOI are included in :ref:`the Jupyter Notebooks tutorial template <format-style-notebooks-template>` and in :ref:`the Documentation-based tutorials template <format-style-docs-template>` below.
+
+
+
 .. _format-style-notebooks:
 
 Jupyter Notebooks
@@ -192,10 +202,10 @@ In the first markdown cell, set the title using heading level 1 (use a single ``
 
 Display the Rubin Observatory logo at upper left.
 To the right of the logo list the RSP deployment,
+the data release, the container size, 
 the LSST Science Pipelines version,
-the container size, the data release,
-the date last verified to run, 
-the repository, and the DOI.
+the date last verified to run, the repository,  
+and the DOI.
 
 In the second markdown cell, write five short statements in the same cell, each on a new line.
 
@@ -683,6 +693,8 @@ The RST file should start with a header, as in the example below.
   **LSST data products:** _List the catalogs and images used._
 
   **Credit:** _E.g., "Originally developed by" or "Based on tutorials developed by" and then people's names, including journal article or software release citations if appropriate._ Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+
+  **DOI:** `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
   **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
