@@ -156,12 +156,9 @@ Thus, tutorials should have descriptive titles (names) that are as short as poss
 Yes, this seems like an oxymoron, and long titles might be necessary at times.
 A longer descriptive title is preferable to a shorter ambiguous title.
 
-The titles of tutorials in the 100 level should start with "How to", and
-tutorials in the 200 level should be named simply by their data product.
-Tutorials in the 300 level will be in sub-folders by astronomical field,
-and so the titles can focus on the analysis being demonstrated without
-repeating the field.
-
+The titles of tutorials in the 100 level should not actually start with "How to", but should be an action or the name of the service.
+Tutorials in the 200 level should be named simply by their data product.
+Tutorials in the 300 level should be in sub-folders by astronomical field, so that the titles can focus on the analysis being demonstrated without repeating the field.
 
 
 .. _tutorial-reference:
@@ -349,6 +346,23 @@ Markdown cells
 
 Every code cell should be preceded with a markdown cell that contains instructional statements
 written in the imperative mood (see the section on :ref:`narrative text <narrative-text>`).
+
+Use markdown format, and avoid ``html`` format.
+
+
+Line breaks
+^^^^^^^^^^^
+
+Avoid ``html`` format line breaks ``<br>`` in favor of ``\`` at the end of the line.
+Two spaces at the end of the line is also allowable in markdown, but a ``\`` is a less ambiguous indicator of a desired line break.
+
+
+Links
+^^^^^
+
+Format links with markdown, like ``[link name](link address)``.
+
+Do not use ``html`` links like ``<a href="link address">link name</a>``.
 
 
 Monospace font
