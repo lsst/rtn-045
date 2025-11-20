@@ -353,7 +353,8 @@ Use markdown format, and avoid ``html`` format.
 Line breaks
 ^^^^^^^^^^^
 
-Avoid ``html`` format line breaks ``<br>`` in favor of two spaces at the end of the line.
+Avoid ``html`` format line breaks ``<br>`` in favor of ``\`` at the end of the line.
+Two spaces at the end of the line is also allowable in markdown, but a ``\`` is a less ambiguous indicator of a desired line break.
 
 
 Links
