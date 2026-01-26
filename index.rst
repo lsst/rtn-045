@@ -42,7 +42,7 @@ Avoid jargon and define acronyms when they are first used.
 
 **Focused.**
 Limit the tutorial's content to only what is appropriate for the chosen `tutorial type <tutorial-types>`_ and what is necessary to meet the learning objective.
-Tutorials should not take more than 30 minutes to complete.
+Ideally, tutorials should not take more than 30 minutes to complete.
 
 **Consistent.**
 Follow the formatting guidelines and use the templates for `Jupyter Notebooks`_ and `Documentation-based tutorials`_.
@@ -175,6 +175,16 @@ Appropriate means to referencing this DOI are included in :ref:`the Jupyter Note
 
 Jupyter Notebooks
 =================
+
+
+.. _format-style-notebooks-environment:
+
+Environment
+-----------
+
+All tutorial notebooks must run with the RSP's recommended image, with the LSST kernel (i.e., the default RSP environment).
+If a code package is not already installed, notebooks should not install it or rely on it.
+If this presents a blocker for tutorial development, discuss with the CST lead.
 
 
 .. _format-style-notebooks-template:
