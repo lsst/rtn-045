@@ -673,6 +673,17 @@ associated with the tutorial notebooks repository.
 Do not add data files to the tutorial notebooks repository.
 
 
+.. _format-style-notebooks-output-data:
+
+Output data files
+-----------------
+
+If a Jupyter Notebook tutorial needs to write output files, instructions for where to save them depend on the use case.
+In cases where the files are only to be accessed programmatically, they should be saved to the "deleted_sundays" scratch folder.
+This folder can be accessed via the environment variable ``$SCRATCH_DIR``.
+Files that the user will be asked to open from the file browser should instead be saved to the user's home directory so that it will be visible to them.
+
+
 .. _format-style-docs:
 
 Documentation-based tutorials
