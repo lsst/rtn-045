@@ -858,12 +858,14 @@ a `preceptually uniform sequential colormap <https://matplotlib.org/stable/users
 like viridis or cividis, or
 `seaborn-v0_8-colorblind <https://viscid-hub.github.io/Viscid-docs/docs/dev/styles/seaborn-colorblind.html>`_.
 
-The ``seaborn-v0_8-colorblind`` color table can be loaded with the following python code.
+Jupyter notebooks should use the "Rubin plot style" that is defined as part of the ``lsst.utils.plotting`` package.
+In addition to other readability and accessiblity-based improvements to the default plotting behaviors, ``lsst.utils.plotting.set_rubin_plotstyle`` sets the default color cycle to use the "colorblind" palette defined at `this documentation site <https://seaborn.pydata.org/tutorial/color_palettes.html>`_.
+The plot style can be imported and set up as follows (the matplotlib style sheet this uses can be found `here <https://github.com/lsst/utils/blob/main/python/lsst/utils/plotting/rubin.mplstyle>`_):
 
 ::
 
-  import matplotlib.pyplot as plt
-  plt.style.use('seaborn-v0_8-colorblind')
+  from lsst.utils.plotting import set_rubin_plotstyle
+  set_rubin_plotstyle()
 
 
 For the LSST filter set ``ugrizy``, use the dictionaries provided below, and always use symbols and line styles to represent the filters in addition to color.
