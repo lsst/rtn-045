@@ -72,10 +72,10 @@ Every tutorial, whether a Jupyter Notebook or a documentation-based tutorial, mu
 Short tutorials with a learning objective of how to use a single RSP function or tool.
 These tutorials are typically written without scientific context or motivation - just simple examples for quick reference.
 
- * The "101 series" are how-to tutorials on a given RSP functionality, such as Jupyter Notebooks or the Portal UI.
- * The "101.1 tutorial" would be a very simple, introductory-level how-to tutorial on Jupyter Notebooks or the Portal UI.
- * Subsequent "101.x tutorials" would illustrate more advanced use of that functionality.
- * Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
+* The "101 series" are how-to tutorials on a given RSP functionality, such as Jupyter Notebooks or the Portal UI.
+* The "101.1 tutorial" would be a very simple, introductory-level how-to tutorial on Jupyter Notebooks or the Portal UI.
+* Subsequent "101.x tutorials" would illustrate more advanced use of that functionality.
+* Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
 
 
 .. _tutorial-org-prod:
@@ -86,10 +86,10 @@ These tutorials are typically written without scientific context or motivation -
 Tutorials with a learning objective of understanding one of the data products for a given release.
 They provide a description of the data and metadata, and demonstrate how to access the data product (via multiple methods, e.g., TAP and butler, where applicable).
 
- * The "201 series" would be for a data product type, such as catalogs or images.
- * The "201.1 tutorial" would be for one table (e.g., the ``Object`` table).
- * Subsequent "201.x tutorials" would be for other tables (``Source``, ``ForcedSource``, and so on).
- * Subsequent "20x series" would be for other data product types, like images and survey property maps.
+* The "201 series" would be for a data product type, such as catalogs or images.
+* The "201.1 tutorial" would be for one table (e.g., the ``Object`` table).
+* Subsequent "201.x tutorials" would be for other tables (``Source``, ``ForcedSource``, and so on).
+* Subsequent "20x series" would be for other data product types, like images and survey property maps.
 
 
 .. _tutorial-org-sci:
@@ -101,10 +101,10 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 These tutorials demonstrate data visualization techniques and scientific analyses that use multiple RSP tools and data products in sequence.
 They should describe key scientific concepts and include scientific context and motivation for why the data and tools are used.
 
- * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
- * The "301.1 tutorial" would be an introductory-level demonstration within the astronomical field.
- * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
- * Subsequent "30x series" would be for other astronomical fields, or astronomy analysis techniques.
+* The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
+* The "301.1 tutorial" would be an introductory-level demonstration within the astronomical field.
+* Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
+* Subsequent "30x series" would be for other astronomical fields, or astronomy analysis techniques.
 
 
 DOI
@@ -181,11 +181,11 @@ and the DOI.
 
 In the second markdown cell, write five short statements in the same cell, each on a new line.
 
- * **Learning objective:** A very brief description of notebook's learning objective.
- * **LSST data products:** List the catalogs and images used.
- * **Packages:** List the python packages that are relevant to the learning objective. For example, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
- * **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, as appropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
- * **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
+* **Learning objective:** A very brief description of notebook's learning objective.
+* **LSST data products:** List the catalogs and images used.
+* **Packages:** List the python packages that are relevant to the learning objective. For example, include ``afwDisplay`` and ``lsst.daf.butler`` for a notebook about retrieving and displaying images, but standard supporting packages like ``os``, ``glob``, or ``numpy`` usually don't need to be listed here.
+* **Credit:** Start with statements such as "Originally developed by..." or "Based on notebooks developed by..." and then people's names, including journal article or software release citations, as appropriate. Then add "Please consider acknowledging them if this notebook is used for the preparation of journal articles, software releases, or other notebooks."
+* **Get Support:** Use the following verbatim: "Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there."
 
 
 `Future work`_ includes being able to auto-generate a table of tutorial contents from notebook metadata and markdown cells, so it is important to follow the template.
