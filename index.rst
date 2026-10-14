@@ -8,8 +8,8 @@ DOI: `10.71929/rubin/2584020 <https://doi.org/10.71929/rubin/2584020>`_
 
    This document defines the guidelines, principles, and formats for user-facing tutorials that demonstrate how to use
    the Rubin Science Platform (RSP) to analyze data from the Legacy Survey of Space and Time (LSST).
-   All Rubin staff and the broader science community should use these guidelines when contributing to
-   the sets of Jupyter Notebook or documentation-based tutorials maintained by the Rubin Community Science team (CST).
+   All Rubin staff should use these guidelines when contributing to the sets of Jupyter Notebook or documentation-based
+   tutorials maintained by the Rubin Community Science team (CST).
 
 .. Metadata such as the title, authors, and description are set in metadata.yaml
 
@@ -28,7 +28,7 @@ DOI: `10.71929/rubin/2584020 <https://doi.org/10.71929/rubin/2584020>`_
 Principles
 ==========
 
-All tutorials should adhere to the following principles and to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
+All of Rubin's user-facing tutorials should adhere to the following principles and to the `Rubin Developers Guide <https://developer.lsst.io/>`__.
 
 **Inclusive.**
 Follow the best practices described under :ref:`Accessibility considerations <accessibility-considerations>`.
@@ -41,7 +41,7 @@ by following the best practices described under :ref:`Narrative text <narrative-
 Avoid jargon and define acronyms when they are first used.
 
 **Focused.**
-Limit the tutorial's content to only what is appropriate for the chosen `tutorial type <tutorial-types>`_ and what is necessary to meet the learning objective.
+Limit the tutorial's content to only what is appropriate for the chosen `tutorial level <tutorial-org>`_ and what is necessary to meet the learning objective.
 Ideally, tutorials should not take more than 30 minutes to complete.
 
 **Consistent.**
@@ -52,123 +52,87 @@ Provide the user with links to external resources (e.g., code package documentat
 Mention any precursor (or advanced) tutorials that users can consider as prerequisite (or as follow-up).
 
 **Credited.**
-Individuals who contributed to the tutorial, or whose work was used as a basis or inspiration for the tutorial, must be acknowledged by name.
+Individuals and/or teams who contributed to the tutorial, or whose work was used as a basis or inspiration for the tutorial, must be acknowledged by name.
 Include paper citations where possible.
 
 
-.. _tutorial-types:
+.. _tutorial-org:
 
-Tutorial types
-==============
+Tutorial organization
+=====================
 
-Every tutorial, whether a Jupyter Notebook or a documentation-based tutorial,
-must choose a single type from the three options below,
-be designed to fit into the tutorials' :ref:`organizational hierarchy <tutorial-types-org>`,
-and follow the :ref:`naming convention <tutorial-types-names>`.
+Every tutorial, whether a Jupyter Notebook or a documentation-based tutorial, must fit within the organizational hierarchy levels.
 
 
-.. _tutorial-types-howto:
+.. _tutorial-org-howto:
 
-How-to: RSP functionality
--------------------------
+100 level: "how-to"
+-------------------
 
 Short tutorials with a learning objective of how to use a single RSP function or tool.
-
 These tutorials are typically written without scientific context or motivation - just simple examples for quick reference.
-
-Each "How-to" tutorial should take up to about 10 minutes to work through.
-
-
-.. _tutorial-types-prod:
-
-Data product definitions
-------------------------
-
-Tutorials with a learning objective of understanding one of the data products for a given release.
-
-These tutorials each focus on one data product, e.g., one image type, one map type, or one catalog table.
-They provide a description of the data and metadata, and demonstrate how to access the data product -- via multiple methods (e.g., TAP and butler) where applicable.
-
-Descriptions of the data and metadata can be mainly qualitative (i.e., primary columns, recommended flags) but should include key quantities such as counts, sizes, volumes, coverage, etc.
-These tutorials should link to the appropriate section of the data release documentation.
-
-
-.. _tutorial-types-sci:
-
-Science demonstrations
-----------------------
-
-Longer tutorials with a learning objective of executing an end-to-end scientific workflow.
-
-These tutorials demonstrate data visualization techniques and scientific analyses that use multiple RSP tools and data products in sequence.
-They should describe key scientific concepts and include scientific context and motivation for why the data and tools are used.
-
-Each "Science demonstration" tutorial should not take more than about 30 minutes to work through.
-
-
-.. _tutorial-types-org:
-
-Organizational hierarchy
-------------------------
-
-Tutorials do not have defined learning levels or target audiences, but are arranged in a numbered, hierarchical system
-where they appear to the user in order from introductory-level to more advanced.
-
-The "100 level" are the `How-to: RSP functionality`_ tutorials.
 
  * The "101 series" are how-to tutorials on a given RSP functionality, such as Jupyter Notebooks or the Portal UI.
  * The "101.1 tutorial" would be a very simple, introductory-level how-to tutorial on Jupyter Notebooks or the Portal UI.
- * Subsequent "101.x tutorials" would illustrate more advanced use of the functionality.
+ * Subsequent "101.x tutorials" would illustrate more advanced use of that functionality.
  * Subsequent "10x series" would be for other functionality, like TAP, butler, Firefly, and so on.
 
-The "200 level" are the `Data product definitions`_ tutorials.
 
- * The "201 series" would be for a data product type, such as catalog tables.
- * The "201.1 tutorial" would be for the ``Object`` catalog.
- * Subsequent "201.x tutorials" would be for other tables, ``Source``, ``ForcedSource``, and so on.
+.. _tutorial-org-prod:
+
+200 level: data products
+------------------------
+
+Tutorials with a learning objective of understanding one of the data products for a given release.
+They provide a description of the data and metadata, and demonstrate how to access the data product (via multiple methods, e.g., TAP and butler, where applicable).
+
+ * The "201 series" would be for a data product type, such as catalogs or images.
+ * The "201.1 tutorial" would be for one table (e.g., the ``Object`` table).
+ * Subsequent "201.x tutorials" would be for other tables (``Source``, ``ForcedSource``, and so on).
  * Subsequent "20x series" would be for other data product types, like images and survey property maps.
 
-The "300 level" are the `Science demonstrations`_ tutorials.
+
+.. _tutorial-org-sci:
+
+300 level: science demos
+------------------------
+
+Longer tutorials with a learning objective of executing an end-to-end scientific workflow.
+These tutorials demonstrate data visualization techniques and scientific analyses that use multiple RSP tools and data products in sequence.
+They should describe key scientific concepts and include scientific context and motivation for why the data and tools are used.
 
  * The "301 series" would be for a given astronomical field, such as cosmology or time-domain.
  * The "301.1 tutorial" would be an introductory-level demonstration within the astronomical field.
  * Subsequent "301.x tutorials" would be more advanced demonstrations of scientific analysis for the field.
- * Subsequent "30x series" would be for other astronomical fields.
-
-**Why a "learning level" is not part of a tutorial's metadata:**
-In the past (DP0-era), tutorials defined their learning level (target audience) as beginner, intermediate, or advanced.
-This was not useful for two main reasons.
-One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_ :cite:labelpar:`RTN-002`),
-and two, the learning levels were only in the header or in the readme file and not easily seen by users.
-For these reasons, the tutorials no longer have defined learning levels or target audiences,
-and the ordering system described above has been adopted instead.
+ * Subsequent "30x series" would be for other astronomical fields, or astronomy analysis techniques.
 
 
-.. _tutorial-types-names:
-
-Title conventions
------------------
-
-Tutorial titles (filenames or primary headers) are the main way that users navigate the tutorial set.
-While there will be a readme file with descriptions, it's best to assume no one will read it.
-
-Thus, tutorials should have descriptive titles (names) that are as short as possible.
-Yes, this seems like an oxymoron, and long titles might be necessary at times.
-A longer descriptive title is preferable to a shorter ambiguous title.
-
-The titles of tutorials in the 100 level should not actually start with "How to", but should be an action or the name of the service.
-Tutorials in the 200 level should be named simply by their data product.
-Tutorials in the 300 level should be in sub-folders by astronomical field, so that the titles can focus on the analysis being demonstrated without repeating the field.
-
-
-.. _tutorial-reference:
-
-Reference
-=========
+DOI
+---
 
 All tutorials should provide the DOI reference for Rubin tutorials, `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_.
 Appropriate means to referencing this DOI are included in :ref:`the Jupyter Notebooks tutorial template <format-style-notebooks-template>` and in :ref:`the Documentation-based tutorials template <format-style-docs-template>` below.
 
+
+Naming convention
+-----------------
+
+Tutorial titles (filenames and primary headers) are the main way that users navigate the tutorial set.
+Tutorials should have descriptive titles that are as short as possible, but a longer descriptive title is preferable to a shorter ambiguous title.
+The titles of 100-level tutorials should not actually start with "How to", but should be an action or the name of the service.
+Tutorials in the 200-level should be named simply by their data product.
+Tutorials in the 300-level should be in sub-folders by astronomical field, so that the titles can focus on the analysis being demonstrated without repeating the field.
+Do not include "Rubin" or the data release in tutorial titles, as that information is redundant.
+
+
+Learning levels (deprecated)
+----------------------------
+
+In the past (DP0-era), tutorials defined their "learning level" (target audience) as beginner, intermediate, or advanced.
+This was not useful for two main reasons.
+One, it is too challenging to be consistent in the application of qualitative user profiles (see `RTN-002 <https://rtn-002.lsst.io/>`_ :cite:labelpar:`RTN-002`),
+and two, the learning levels were only in the header or in a readme file and were not easily seen by users.
+Tutorials no longer have a "learning level" and while series should generally increase in complexity, are not organized into "beginner" or "advanced" groups.
 
 
 .. _format-style-notebooks:
@@ -182,9 +146,10 @@ Jupyter Notebooks
 Environment
 -----------
 
-All tutorial notebooks must run with the RSP's recommended image, with the LSST kernel (i.e., the default RSP environment).
+All of Rubin's user-facing tutorial notebooks must run with the RSP's recommended image, with the LSST kernel (i.e., the default RSP environment).
 If a code package is not already installed, notebooks should not install it or rely on it.
 If this presents a blocker for tutorial development, discuss with the CST lead.
+Tutorial notebooks run under continuous integration on the user-facing Cloud deployment with the recommended image (mobu).
 
 
 .. _format-style-notebooks-template:
@@ -1020,8 +985,17 @@ Rubin's `User documentation style guide <https://developer.lsst.io/user-docs/ind
 How to contribute
 =================
 
-Contact any co-author of this document if you are interested in contributing to
-the set of tutorials.
+Contact the CST lead if you are interested in contributing to Rubin's user-facing tutorials that demonstrate use of the Rubin-generated data products, services, and tools within the Rubin Science Platform.
+
+User-generated tutorials
+------------------------
+
+Everyone is welcome to generate and host their own tutorials that use Rubin data.
+Tutorials that apply third-party (non-Rubin) software to Rubin data are best generated and maintained by the software developers.
+Educators may want to create and share tutorials that teach astronomy basics, for use in undergraduate classrooms or labs.
+These types of tutorials are beyond the scope of this document, and are best hosted in, e.g., GitHub repositories.
+
+`Go to the list of user-generated tutorials <https://rubinobservatory.org/for-scientists/resources/tutorials>`_.
 
 
 .. _future-work:
